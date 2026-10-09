@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhk0nufyhsyua"]
+
+[ext_resource type="Script" uid="uid://bbit4lisyadrd" path="res://boost_pad.gd" id="1_71cp0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vjb6u"]
+size = Vector3(2.4838257, 0.14355469, 2.1931152)
+
+[node name="BoostPad" type="Area3D"]
+script = ExtResource("1_71cp0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2293396, -0.42822266, -0.32092285)
+shape = SubResource("BoxShape3D_vjb6u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

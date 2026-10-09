@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://daqbvqf406dyu"]
+
+[ext_resource type="Script" uid="uid://ca7fmse5ox873" path="res://player_3d.gd" id="1_5wjm4"]
+[ext_resource type="PackedScene" uid="uid://x1aclmhxbbpc" path="res://character/Adventurer.fbx" id="2_3swsy"]
+[ext_resource type="PackedScene" uid="uid://csacbya0clq0r" path="res://character/arms_rig.glb" id="3_vrjnx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3n4ta"]
+radius = 0.265625
+height = 1.1515503
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5wjm4"]
+albedo_color = Color(0.09411765, 1, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5wjm4"]
+material = SubResource("StandardMaterial3D_5wjm4")
+
+[node name="Player3D" type="CharacterBody3D"]
+script = ExtResource("1_5wjm4")
+move_speed = 2.0
+jump_velocity = 12.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07970753, -0.09356099, -0.007862151)
+shape = SubResource("CapsuleShape3D_3n4ta")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_5wjm4")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.95944697, 0.28188944, 0, -0.28188944, 0.95944697, -0.11491299, 0.3860457, -0.08208966)
+
+[node name="Adventurer" parent="." instance=ExtResource("2_3swsy")]
+transform = Transform3D(-0.65, 0, -5.6824803e-08, 0, 0.65, 0, 5.6824803e-08, 0, -0.65, -0.112229824, -0.69898415, 0.03556013)
+
+[node name="arms_rig" parent="." instance=ExtResource("3_vrjnx")]
+transform = Transform3D(-1.25, 0, 1.8874475e-07, 0, 1.25, 0, -1.8874475e-07, 0, -1.25, -0.099791884, -1.9444649, -0.13843346)
