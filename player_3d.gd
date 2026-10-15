@@ -1,16 +1,22 @@
 extends CharacterBody3D
 
-@export var move_speed: float = 15.0
+@export var move_speed: float = 5.0
 @export var turn_speed: float = 2.5
-@export var jump_velocity: float = 123.0
+@export var jump_velocity: float = 5.0
 @export var gravity: float = 20.0
 
 var action_animation_playing: bool = false
 
-@onready var animation_player: AnimationPlayer = $arms_rig/AnimationPlayer
+@export var mouse_sensitivity: float = 0.0045
+
+@onready var camera: Camera3D = $Camera3D
+
+@onready var animation_player: AnimationPlayer = $Camera3D/arms_rig/AnimationPlayer
 
 func _ready() -> void:
-	pass
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	
 func _physics_process(delta: float) -> void:
 	
 	# Check player's birthday, if true, they get a gift (hat)
@@ -19,12 +25,12 @@ func _physics_process(delta: float) -> void:
 	# TURN
 	# -------------------------
 
-	var turn_input := Input.get_axis(
-		"turn_left",
-		"turn_right"
-	)
-
-	rotate_y(-turn_input * turn_speed * delta)
+	#var turn_input := Input.get_axis(
+		#"turn_left",
+		#"turn_right"
+	#)
+#
+	#rotate_y(-turn_input * turn_speed * delta)
 
 
 	# -------------------------
@@ -36,13 +42,19 @@ func _physics_process(delta: float) -> void:
 
 
 	# -------------------------
-	# JUMP
+	# PUSH
 	# -------------------------
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("interact") and is_on_floor():
 		#velocity.y = jump_velocity
 		play_action_animation("push_L")
-
+		
+	# -------------------------
+	# JUMP
+	# -------------------------
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_velocity
+		
 	# -------------------------
 	# MOVEMENT
 	# -------------------------
@@ -78,6 +90,13 @@ func _physics_process(delta: float) -> void:
 
 
 	move_and_slide()
+	if Input.is_action_pressed("move_forward"):
+		print(
+			"Requested speed: ", move_speed,
+			" | Actual speed: ", get_real_velocity().length(),
+			" | On floor: ", is_on_floor(),
+			" | On wall: ", is_on_wall()
+		)
 	update_animation()
 	
 
@@ -109,3 +128,25 @@ func play_looping_animation(animation_name: String) -> void:
 
 	if animation_player.current_animation != animation_name:
 		animation_player.play(animation_name)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			# Horizontal: turn the entire player
+			rotate_y(-event.screen_relative.x * mouse_sensitivity)
+
+			# Vertical: tilt only the camera
+			camera.rotate_x(-event.screen_relative.y * mouse_sensitivity)
+
+			# Prevent looking too far up or down
+			camera.rotation.x = clamp(
+				camera.rotation.x,
+				deg_to_rad(-85.0),
+				deg_to_rad(85.0)
+			)
+
+	if event.is_action_pressed("ui_cancel"):
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
