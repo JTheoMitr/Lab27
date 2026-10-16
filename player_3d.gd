@@ -11,6 +11,8 @@ var action_animation_playing: bool = false
 
 @onready var camera: Camera3D = $Camera3D
 
+@onready var interaction_ray: RayCast3D = $Camera3D/InteractionRay
+
 @onready var animation_player: AnimationPlayer = $Camera3D/arms_rig/AnimationPlayer
 
 func _ready() -> void:
@@ -150,3 +152,24 @@ func _unhandled_input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		else:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			
+	if event.is_action_pressed("interact"):
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			try_interact()
+			
+			
+func try_interact() -> void:
+	if not interaction_ray.is_colliding():
+		return
+
+	var hit = interaction_ray.get_collider()
+
+	if hit == null:
+		return
+
+	# The ray hits the door's Area3D.
+	# Its parent has our door interaction script.
+	var interactable = hit.get_parent()
+
+	if interactable.has_method("interact"):
+		interactable.interact()

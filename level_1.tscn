@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3s10pn6blyex"]
+[gd_scene load_steps=9 format=3 uid="uid://b3s10pn6blyex"]
 
 [ext_resource type="Script" uid="uid://bti3wk0i5heun" path="res://level_1.gd" id="1_hn12h"]
 [ext_resource type="PackedScene" uid="uid://daqbvqf406dyu" path="res://player_3d.tscn" id="2_hbghi"]
@@ -9,6 +9,12 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hbghi"]
 size = Vector3(159.3381, 1, 156.0597)
+
+[sub_resource type="Environment" id="Environment_5hph3"]
+ambient_light_source = 2
+ambient_light_color = Color(0.2, 0.1764706, 0.34117648, 1)
+ambient_light_energy = 0.1
+reflected_light_source = 1
 
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_hn12h")
@@ -21,10 +27,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.927353, -22.3336, -46.2759
 shape = SubResource("BoxShape3D_hbghi")
 
 [node name="Player3D" parent="." instance=ExtResource("2_hbghi")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 37.705883, -36.411613, -40.238934)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 40.165413, -31.061714, -40.238934)
 
 [node name="Sun" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6782646, 21.661621, -29.499367)
+visible = false
 light_color = Color(1, 0.38431373, 0.46666667, 1)
 light_energy = 10.0
 omni_range = 44.249
@@ -52,27 +59,28 @@ omni_range = 44.249
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.88958, -38.48947, -66.183876)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.0298, -25.670387, -67.65372)
-light_color = Color(0.35686275, 1, 0.1764706, 1)
-light_energy = 11.062
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.691746, -28.425604, -45.414635)
+light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
+light_energy = 0.5
 light_volumetric_fog_energy = 0.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.0298, -25.670387, -79.29636)
-light_color = Color(0.35686275, 1, 0.1764706, 1)
-light_energy = 15.186
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.74454, -28.425604, -36.565113)
+light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.0298, -19.016308, -81.48482)
-light_color = Color(0.35686275, 1, 0.1764706, 1)
-light_energy = 15.186
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1404, -30.506504, -28.459925)
+light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.05314, -19.016308, -63.93162)
-light_color = Color(0.35686275, 1, 0.1764706, 1)
-light_energy = 15.186
-
-[node name="WallCollision" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.727577, -30.506504, -23.459387)
+light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
 
 [node name="BoostPad" parent="." instance=ExtResource("7_j7kpp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.089663, 1.885457, -0.59760666)
@@ -82,3 +90,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 47.33547, -36.507828, -43.831
 
 [node name="HSPTL" parent="." instance=ExtResource("6_5hph3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.568733, -43.49854, -40.793427)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5hph3")
