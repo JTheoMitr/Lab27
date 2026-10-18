@@ -27,33 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.927353, -22.3336, -46.2759
 shape = SubResource("BoxShape3D_hbghi")
 
 [node name="Player3D" parent="." instance=ExtResource("2_hbghi")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 40.165413, -31.061714, -40.238934)
-
-[node name="Sun" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6782646, 21.661621, -29.499367)
-visible = false
-light_color = Color(1, 0.38431373, 0.46666667, 1)
-light_energy = 10.0
-omni_range = 44.249
-
-[node name="Sun2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.460358, 21.661621, -29.499367)
-visible = false
-light_energy = 5.0
-omni_range = 44.249
-
-[node name="Sun3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.460358, 21.661621, -81.2119)
-visible = false
-light_energy = 10.0
-omni_range = 44.249
-
-[node name="Sun4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.540031, 21.661621, -81.2119)
-visible = false
-light_color = Color(1, 0.4, 0.42745098, 1)
-light_energy = 15.0
-omni_range = 44.249
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -5.742702, -31.978676, -10.220566)
 
 [node name="Sewers" parent="." instance=ExtResource("4_rka8t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.88958, -38.48947, -66.183876)
@@ -63,6 +37,100 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.691746, -28.425604, -45.41
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.887657, -34.024117, -41.06044)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.232273, -34.97651, -41.06044)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.55836, -34.71577, -33.573853)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D16" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.690834, -35.001965, -43.34164)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D17" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.81969, -34.57143, -40.417065)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D18" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.77311, -34.47766, -46.180576)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D19" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.485664, -34.47766, -46.180576)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D20" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.95399, -34.47766, -46.180576)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D21" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.06478, -34.413193, -45.861828)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D22" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.37987, -34.413193, -53.075665)
+light_color = Color(0.9529412, 0.8235294, 0.27450982, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D23" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.37987, -35.13397, -56.69934)
+light_color = Color(0.9137255, 0.6901961, 0.32941177, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D24" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.37987, -35.13397, -57.775135)
+light_color = Color(0.9137255, 0.5803922, 0.32941177, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D25" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.37987, -39.831085, -70.895584)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="."]
+transform = Transform3D(-0.96064836, 0, -0.2777674, 0, 1, 0, 0.2777674, 0, -0.96064836, 35.364006, -34.022015, -32.953793)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+shadow_blur = 6.825
+omni_range = 3.0
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="."]
+transform = Transform3D(-0.96064836, 0, -0.2777674, 0, 1, 0, 0.2777674, 0, -0.96064836, 31.643745, -34.227184, -39.802704)
+light_color = Color(0.91449094, 0, 0.3301935, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+shadow_blur = 6.825
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.74454, -28.425604, -36.565113)
@@ -82,11 +150,53 @@ light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
 
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.694153, -30.401829, -21.286997)
+light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.393547, -30.15672, -19.793047)
+light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.781113, -30.15672, -19.793047)
+light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4001281, -30.15672, -19.793047)
+light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.640394, -30.211285, -14.671454)
+light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
+light_energy = 0.25
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9283175, -30.45461, -15.184956)
+light_color = Color(0.91641855, 0, 0.27772823, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
+[node name="OmniLight3D26" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9283175, -30.45461, -10.719273)
+light_color = Color(0.91641855, 0, 0.27772823, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+
 [node name="BoostPad" parent="." instance=ExtResource("7_j7kpp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.089663, 1.885457, -0.59760666)
 
 [node name="SCP-096" parent="." instance=ExtResource("9_gyffv")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 47.33547, -36.507828, -43.831276)
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 32.922283, -31.751562, -20.32766)
 
 [node name="HSPTL" parent="." instance=ExtResource("6_5hph3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.568733, -43.49854, -40.793427)

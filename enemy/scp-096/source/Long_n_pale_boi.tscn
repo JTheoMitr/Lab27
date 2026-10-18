@@ -13940,11 +13940,13 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bg3y4"]
-radius = 0.27685547
+radius = 0.22753906
 height = 1.1295433
 
 [node name="LNPB" type="CharacterBody3D"]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_3es1n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -13953,8 +13955,10 @@ libraries = {
 }
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.99999857, 0, 0, 0, 0.99999857, 0, 0, 0, 0.99999857, -0.0016412725, -0.04235272, 0.029045895)
+transform = Transform3D(0.99999857, 0, 0, 0, 0.99999857, 0, 0, 0, 0.99999857, -0.00801614, -0.042352706, -0.06463821)
 shape = SubResource("CapsuleShape3D_bg3y4")
 
 [node name="SCP096" parent="." instance=ExtResource("2_3es1n")]
 transform = Transform3D(-0.4999999, 0, -4.3711378e-08, 0, 0.4999999, 0, 4.3711378e-08, 0, -0.4999999, -0.021062516, -0.59582967, 0.04039225)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

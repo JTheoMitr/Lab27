@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
-@export var move_speed: float = 5.0
+@export var walk_speed: float = 2.0
+@export var sprint_speed: float = 4.5
 @export var turn_speed: float = 2.5
 @export var jump_velocity: float = 5.0
 @export var gravity: float = 20.0
@@ -80,21 +81,22 @@ func _physics_process(delta: float) -> void:
 	direction = direction.normalized()
 
 
+	var current_speed: float = walk_speed
+
+	if Input.is_action_pressed("sprint"):
+		current_speed = sprint_speed
+
 	if direction.length() > 0:
-		velocity.x = direction.x * move_speed
-		velocity.z = direction.z * move_speed
-		#animation_player.play("RobotArmature|Robot_Running")
-
+		velocity.x = direction.x * current_speed
+		velocity.z = direction.z * current_speed
 	else:
-		velocity.x = 0
-		velocity.z = 0
-		#animation_player.play("RobotArmature|Robot_Idle")
-
+		velocity.x = 0.0
+		velocity.z = 0.0
 
 	move_and_slide()
 	if Input.is_action_pressed("move_forward"):
 		print(
-			"Requested speed: ", move_speed,
+			"Requested speed: ", current_speed,
 			" | Actual speed: ", get_real_velocity().length(),
 			" | On floor: ", is_on_floor(),
 			" | On wall: ", is_on_wall()
