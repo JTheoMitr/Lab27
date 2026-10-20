@@ -309,6 +309,7 @@ agent_radius = 0.1
 shape = SubResource("ConcavePolygonShape3D_4pwv5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_2m_0" index="0"]
+collision_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_2m_0/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_ducgh")
@@ -319,8 +320,11 @@ shape = SubResource("ConcavePolygonShape3D_ducgh")
 shape = SubResource("ConcavePolygonShape3D_pmfc0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_4m_0" index="0"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_4m_0/StaticBody3D" index="0"]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_tg42k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/Hospital01/Hospital01_5m_0" index="0"]
@@ -817,5 +821,6 @@ transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 49.2
 shape = SubResource("BoxShape3D_ducgh")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." index="1"]
+visible = false
 navigation_mesh = SubResource("NavigationMesh_4pwv5")
 script = ExtResource("3_ducgh")

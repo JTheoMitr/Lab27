@@ -94,13 +94,13 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0.0
 
 	move_and_slide()
-	if Input.is_action_pressed("move_forward"):
-		print(
-			"Requested speed: ", current_speed,
-			" | Actual speed: ", get_real_velocity().length(),
-			" | On floor: ", is_on_floor(),
-			" | On wall: ", is_on_wall()
-		)
+	#if Input.is_action_pressed("move_forward"):
+		#print(
+			#"Requested speed: ", current_speed,
+			#" | Actual speed: ", get_real_velocity().length(),
+			#" | On floor: ", is_on_floor(),
+			#" | On wall: ", is_on_wall()
+		#)
 	update_animation()
 	
 
