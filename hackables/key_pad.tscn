@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://neyp8gkdnk0c"]
+
+[ext_resource type="Script" uid="uid://b2mx1ylkaijvs" path="res://hackables/key_pad.gd" id="1_58v0s"]
+[ext_resource type="PackedScene" uid="uid://bho30u6vxxwsx" path="res://hackables/keypad.glb" id="1_wpwhk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_58v0s"]
+size = Vector3(1.2529297, 1.7231445, 0.4074707)
+
+[node name="KeyPad" type="Node3D"]
+script = ExtResource("1_58v0s")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060662866, 0.107752085, 0.018556118)
+shape = SubResource("BoxShape3D_58v0s")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_wpwhk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08258474, 0, 0.083465815)

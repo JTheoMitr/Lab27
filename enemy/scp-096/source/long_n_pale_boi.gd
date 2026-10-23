@@ -90,6 +90,13 @@ var long_sight_timer: float = 0.0
 @onready var animation_player: AnimationPlayer = $LNPB2/AnimationPlayer
 
 # -------------------------
+# CREATURE SFX
+# -------------------------
+
+@onready var found_you: AudioStreamPlayer3D = $FoundYou
+@onready var rushing: AudioStreamPlayer3D = $Rushing
+
+# -------------------------
 # VARIABLES
 # -------------------------
 
@@ -228,12 +235,14 @@ func _physics_process(delta: float) -> void:
 		State.INVESTIGATING:
 			if sees_player:
 				set_target(player.global_position)
+				
 			elif navigation_agent.is_navigation_finished():
 				enter_state(State.SEARCHING)
 
 		State.CHASING:
 			if sees_player:
 				lost_sight_timer = 0.0
+				#rushing.play()
 				set_target(player.global_position)
 
 				if horizontal_distance_to_player() <= attack_distance:
@@ -321,6 +330,7 @@ func update_detection(delta: float, detection_level: int) -> void:
 				print("SCP-096 SHORT VISION — CHASING!")
 
 			enter_state(State.CHASING)
+			rushing.play()
 
 		return
 
@@ -333,6 +343,7 @@ func update_detection(delta: float, detection_level: int) -> void:
 				print("SCP-096 LONG VISION — INVESTIGATING!")
 
 			enter_state(State.INVESTIGATING)
+			found_you.play()
 
 		var required_time: float = long_detection_time
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=101 format=3 uid="uid://cie16vxxiewc5"]
 
-[ext_resource type="PackedScene" uid="uid://cashlqalsxrmd" path="res://abandoned_hospital_part_one.glb" id="1_b8cvl"]
+[ext_resource type="PackedScene" uid="uid://cashlqalsxrmd" path="res://hospital/abandoned_hospital_part_one.glb" id="1_b8cvl"]
 [ext_resource type="Script" uid="uid://ddwskl2vhgjml" path="res://door_basic.gd" id="2_4pwv5"]
 [ext_resource type="Script" uid="uid://c81rfpvuvofrw" path="res://navigation_region_3d.gd" id="3_ducgh"]
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3s10pn6blyex"]
+[gd_scene load_steps=11 format=3 uid="uid://b3s10pn6blyex"]
 
 [ext_resource type="Script" uid="uid://bti3wk0i5heun" path="res://level_1.gd" id="1_hn12h"]
 [ext_resource type="PackedScene" uid="uid://daqbvqf406dyu" path="res://player_3d.tscn" id="2_hbghi"]
-[ext_resource type="PackedScene" uid="uid://des6roxfro2ib" path="res://stinky_sewers.glb" id="4_rka8t"]
+[ext_resource type="PackedScene" uid="uid://des6roxfro2ib" path="res://stinky_sewers_1/stinky_sewers.glb" id="4_rka8t"]
 [ext_resource type="PackedScene" uid="uid://cie16vxxiewc5" path="res://hospital_new.tscn" id="6_5hph3"]
+[ext_resource type="PackedScene" uid="uid://neyp8gkdnk0c" path="res://hackables/key_pad.tscn" id="7_5rr72"]
+[ext_resource type="AudioStream" uid="uid://cgj7hny12on1j" path="res://sfx_room_ambience/Ambience_Room_Tone_1.wav" id="7_bjebc"]
 [ext_resource type="PackedScene" uid="uid://dhk0nufyhsyua" path="res://boost_pad.tscn" id="7_j7kpp"]
 [ext_resource type="PackedScene" uid="uid://r81w2ils2070" path="res://enemy/scp-096/source/Long_n_pale_boi.tscn" id="9_gyffv"]
 
@@ -215,3 +217,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.369438, -31.438221, -19.75
 
 [node name="PatrolPoint3" type="Marker3D" parent="SCPPatrolPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.725237, -31.438221, -19.937737)
+
+[node name="KeyPad" parent="." instance=ExtResource("7_5rr72")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.862702, -31.776518, -17.882164)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_bjebc")
+volume_db = -6.0
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

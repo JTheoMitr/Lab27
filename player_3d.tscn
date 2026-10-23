@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://daqbvqf406dyu"]
+[gd_scene load_steps=8 format=3 uid="uid://daqbvqf406dyu"]
 
 [ext_resource type="Script" uid="uid://ca7fmse5ox873" path="res://player_3d.gd" id="1_5wjm4"]
+[ext_resource type="Script" uid="uid://b57xuydt5xuv6" path="res://hacking_reticle.gd" id="3_bp1xh"]
+[ext_resource type="Script" uid="uid://gxst4wcpc486" path="res://hacking_controller.gd" id="3_dulx6"]
 [ext_resource type="PackedScene" uid="uid://csacbya0clq0r" path="res://character/arms_rig.glb" id="3_vrjnx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3n4ta"]
@@ -33,6 +35,32 @@ transform = Transform3D(1, 0, 0, 0, 0.95944697, 0.28188944, 0, -0.28188944, 0.95
 transform = Transform3D(-1.25, 0, 1.8874475e-07, 5.3205145e-08, 1.1993085, 0.35236177, -1.8109056e-07, 0.35236177, -1.1993085, 0.015121102, -2.2201183, -0.71100515)
 
 [node name="InteractionRay" type="RayCast3D" parent="Camera3D"]
-target_position = Vector3(0, 0, -3)
+target_position = Vector3(0, 0, -2)
 collision_mask = 3
 collide_with_areas = true
+
+[node name="HackingRay" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -4.5)
+collision_mask = 7
+collide_with_areas = true
+
+[node name="HUD" type="CanvasLayer" parent="." node_paths=PackedStringArray("hacking_ray", "hacking_reticle")]
+script = ExtResource("3_dulx6")
+hacking_ray = NodePath("../Camera3D/HackingRay")
+hacking_reticle = NodePath("HackingReticle")
+
+[node name="HackingReticle" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_bp1xh")
+
+[node name="HackingPanel" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

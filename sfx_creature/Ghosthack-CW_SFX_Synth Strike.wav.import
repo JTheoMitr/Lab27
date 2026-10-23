@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drfk75ptjrruv"
+path="res://.godot/imported/Ghosthack-CW_SFX_Synth Strike.wav-42434749b2beb7f3db438356cd01b666.sample"
+
+[deps]
+
+source_file="res://sfx_creature/Ghosthack-CW_SFX_Synth Strike.wav"
+dest_files=["res://.godot/imported/Ghosthack-CW_SFX_Synth Strike.wav-42434749b2beb7f3db438356cd01b666.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bti3wk0i5heun" path="res://level_1.gd" id="1_15wb7"]
 [ext_resource type="PackedScene" uid="uid://daqbvqf406dyu" path="res://player_3d.tscn" id="2_eoq84"]
-[ext_resource type="PackedScene" uid="uid://des6roxfro2ib" path="res://stinky_sewers.glb" id="3_yl73a"]
-[ext_resource type="PackedScene" uid="uid://b7dq87ib7w57" path="res://free_low_poly_forest.glb" id="4_xbcdb"]
+[ext_resource type="PackedScene" uid="uid://des6roxfro2ib" path="res://stinky_sewers_1/stinky_sewers.glb" id="3_yl73a"]
+[ext_resource type="PackedScene" uid="uid://b7dq87ib7w57" path="res://low_poly_forest/free_low_poly_forest.glb" id="4_xbcdb"]
 [ext_resource type="PackedScene" uid="uid://b4bgxhwik4f6r" path="res://firefly_cluster.tscn" id="5_s77qv"]
 [ext_resource type="PackedScene" uid="uid://dhk0nufyhsyua" path="res://boost_pad.tscn" id="6_5hnhx"]
-[ext_resource type="PackedScene" uid="uid://p204g8in1hyd" path="res://ruined_city_free_5.glb" id="7_78pok"]
-[ext_resource type="PackedScene" uid="uid://ck8lr65pen5cc" path="res://street_city_buildings_8.glb" id="8_lvfll"]
+[ext_resource type="PackedScene" uid="uid://p204g8in1hyd" path="res://ruined_city_1/ruined_city_free_5.glb" id="7_78pok"]
+[ext_resource type="PackedScene" uid="uid://ck8lr65pen5cc" path="res://street_city_buildings/street_city_buildings_8.glb" id="8_lvfll"]
 [ext_resource type="PackedScene" uid="uid://r81w2ils2070" path="res://enemy/scp-096/source/Long_n_pale_boi.tscn" id="9_jcnlr"]
-[ext_resource type="PackedScene" uid="uid://cashlqalsxrmd" path="res://abandoned_hospital_part_one.glb" id="10_5kfcu"]
+[ext_resource type="PackedScene" uid="uid://cashlqalsxrmd" path="res://hospital/abandoned_hospital_part_one.glb" id="10_5kfcu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hbghi"]
 size = Vector3(159.3381, 1, 156.0597)

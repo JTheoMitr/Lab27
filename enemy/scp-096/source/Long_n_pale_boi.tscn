@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://r81w2ils2070"]
+[gd_scene load_steps=6 format=3 uid="uid://r81w2ils2070"]
 
 [ext_resource type="Script" uid="uid://dy7tik018hovc" path="res://enemy/scp-096/source/long_n_pale_boi.gd" id="1_3es1n"]
 [ext_resource type="PackedScene" uid="uid://b6vomsndols47" path="res://enemy/fully_reanimated_scp-096_updated.glb" id="3_bg3y4"]
+[ext_resource type="AudioStream" uid="uid://clfq6xynrqm5d" path="res://sfx_creature/found_you.wav" id="3_ym11o"]
+[ext_resource type="AudioStream" uid="uid://bbng4ni5ddswq" path="res://sfx_creature/DAF_Fx_Monster.wav" id="4_yp0he"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bg3y4"]
 radius = 0.13378906
@@ -68,5 +70,14 @@ bones/41/rotation = Quaternion(-0.7017192, 0.699008, -0.08368694, -0.10942848)
 bones/42/rotation = Quaternion(0.72679186, 0.6701431, -0.145194, 0.040006395)
 bones/43/rotation = Quaternion(-0.38852587, 0.11201652, -0.061103594, 0.9125604)
 bones/44/rotation = Quaternion(0.6731901, -0.19239925, 0.22598226, 0.6772959)
+
+[node name="FoundYou" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_ym11o")
+volume_db = 3.5
+pitch_scale = 1.6
+
+[node name="Rushing" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_yp0he")
+volume_db = 2.0
 
 [editable path="LNPB2"]
