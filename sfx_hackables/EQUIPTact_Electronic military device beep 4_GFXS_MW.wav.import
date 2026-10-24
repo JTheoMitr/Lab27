@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b71r06w7572is"
+path="res://.godot/imported/EQUIPTact_Electronic military device beep 4_GFXS_MW.wav-22530c5c2f78b218136d74eedf62f013.sample"
+
+[deps]
+
+source_file="res://sfx_hackables/EQUIPTact_Electronic military device beep 4_GFXS_MW.wav"
+dest_files=["res://.godot/imported/EQUIPTact_Electronic military device beep 4_GFXS_MW.wav-22530c5c2f78b218136d74eedf62f013.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

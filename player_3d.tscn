@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://daqbvqf406dyu"]
+[gd_scene load_steps=9 format=3 uid="uid://daqbvqf406dyu"]
 
 [ext_resource type="Script" uid="uid://ca7fmse5ox873" path="res://player_3d.gd" id="1_5wjm4"]
 [ext_resource type="Script" uid="uid://b57xuydt5xuv6" path="res://hacking_reticle.gd" id="3_bp1xh"]
 [ext_resource type="Script" uid="uid://gxst4wcpc486" path="res://hacking_controller.gd" id="3_dulx6"]
 [ext_resource type="PackedScene" uid="uid://csacbya0clq0r" path="res://character/arms_rig.glb" id="3_vrjnx"]
+[ext_resource type="AudioStream" uid="uid://boj5fu4lqkipr" path="res://sfx_player/AA_FWLF_A#_Synth_Swell.wav" id="5_dulx6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3n4ta"]
 radius = 0.265625
@@ -132,5 +133,15 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="HackingController" type="Control" parent="HUD"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HackSwell" type="AudioStreamPlayer" parent="HUD/HackingController"]
+stream = ExtResource("5_dulx6")
+pitch_scale = 0.7
 
 [editable path="Camera3D/HandOffset/arms_rig"]

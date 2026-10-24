@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://neyp8gkdnk0c"]
+[gd_scene load_steps=10 format=3 uid="uid://neyp8gkdnk0c"]
 
 [ext_resource type="Script" uid="uid://b2mx1ylkaijvs" path="res://hackables/key_pad.gd" id="1_58v0s"]
 [ext_resource type="PackedScene" uid="uid://bho30u6vxxwsx" path="res://hackables/keypad.glb" id="1_wpwhk"]
+[ext_resource type="AudioStream" uid="uid://d3q7meeaq84yw" path="res://sfx_hackables/UIBeep_Sci fi data interface beep 7_GFXS_SPFX.wav" id="3_jgqig"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_58v0s"]
 
@@ -58,3 +59,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7700806, -1.2600708, 2.6626
 shape = SubResource("BoxShape3D_mhe1r")
 
 [node name="SuccessSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_jgqig")
+volume_db = 7.0
+pitch_scale = 0.7

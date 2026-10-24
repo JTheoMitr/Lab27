@@ -1,6 +1,10 @@
 
 extends Node
 
+
+@onready var hack_swell: AudioStreamPlayer = $HackingController/HackSwell
+
+
 @export var hacking_ray: RayCast3D
 @export var hacking_reticle: Control
 
@@ -73,6 +77,7 @@ func _process(_delta: float) -> void:
 
 	update_hacking_target()
 	update_hacking_hand_shake(_delta)
+	update_hacking_audio()
 
 	if current_target != null and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		hacking_reticle.call("start_charge")
@@ -104,6 +109,7 @@ func exit_hacking_mode() -> void:
 	hacking_reticle.call("cancel_charge")
 	
 	retract_hacking_hand()
+	hack_swell.stop()
 
 	print("Hacking mode deactivated")
 
@@ -134,10 +140,12 @@ func _on_hack_charge_complete() -> void:
 		return
 
 	charge_completed = true
+	hack_swell.stop()
 
 	print("Hack charge completed: ", current_target.name)
 
 	current_target.call("begin_hack")
+	
 	
 	
 
@@ -262,3 +270,23 @@ func update_hacking_hand_shake(delta: float) -> void:
 	) * hand_shake_amount
 
 	hand_offset_node.position += hand_shake_offset
+
+
+
+func update_hacking_audio() -> void:
+	if hack_swell == null:
+		return
+
+	var should_play: bool = (
+		hacking_mode
+		and current_target != null
+		and hacking_reticle.charging
+		and not charge_completed
+	)
+
+	if should_play:
+		if not hack_swell.playing:
+			hack_swell.play()
+	else:
+		if hack_swell.playing:
+			hack_swell.stop()
