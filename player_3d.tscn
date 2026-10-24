@@ -31,9 +31,6 @@ mesh = SubResource("CapsuleMesh_5wjm4")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.95944697, 0.28188944, 0, -0.28188944, 0.95944697, -0.11491299, 0.3860457, -0.08208966)
 
-[node name="arms_rig" parent="Camera3D" instance=ExtResource("3_vrjnx")]
-transform = Transform3D(-1.25, 0, 1.8874475e-07, 5.3205145e-08, 1.1993085, 0.35236177, -1.8109056e-07, 0.35236177, -1.1993085, 0.015121102, -2.2201183, -0.71100515)
-
 [node name="InteractionRay" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -2)
 collision_mask = 3
@@ -44,10 +41,81 @@ target_position = Vector3(0, 0, -4.5)
 collision_mask = 7
 collide_with_areas = true
 
-[node name="HUD" type="CanvasLayer" parent="." node_paths=PackedStringArray("hacking_ray", "hacking_reticle")]
+[node name="HandOffset" type="Node3D" parent="Camera3D"]
+
+[node name="arms_rig" parent="Camera3D/HandOffset" instance=ExtResource("3_vrjnx")]
+transform = Transform3D(-1.25, 0, 1.8874475e-07, 5.3205145e-08, 1.1993085, 0.3523618, -1.8109056e-07, 0.3523618, -1.1993085, 0.015121102, -2.2201183, -0.7110052)
+
+[node name="Skeleton3D" parent="Camera3D/HandOffset/arms_rig/ArmsRig" index="0"]
+bones/1/rotation = Quaternion(-0.6139811, 0.35091314, 0.3511588, 0.61365676)
+bones/2/position = Vector3(-0.008651842, 0.202249, -0.010967674)
+bones/2/rotation = Quaternion(-0.075323045, -0.7460369, 0.2799843, 0.5994699)
+bones/3/rotation = Quaternion(0.21969162, -0.0027334888, 0.0054173414, 0.9755505)
+bones/4/rotation = Quaternion(-0.057797797, 0.010611158, 0.032256015, 0.9977507)
+bones/5/position = Vector3(0.0040954626, 0.038309466, 0.02635751)
+bones/5/rotation = Quaternion(0.010035974, -0.7703345, -0.09816673, 0.6299582)
+bones/6/rotation = Quaternion(0.18016067, 0.046207428, 0.02234776, 0.9822971)
+bones/7/rotation = Quaternion(-0.016746087, -0.02063143, 0.007952843, 0.99961525)
+bones/8/rotation = Quaternion(-0.0020922276, -0.0032982165, 0.00439274, 0.9999827)
+bones/9/position = Vector3(0.008271406, -0.0027545367, 0.020711208)
+bones/9/rotation = Quaternion(0.0122313835, -0.41402337, -0.309255, 0.8560353)
+bones/10/rotation = Quaternion(0.17710984, 0.0033417947, 0.022471411, 0.98392886)
+bones/11/rotation = Quaternion(0.09226217, -0.11139584, 0.031415023, 0.9889853)
+bones/12/position = Vector3(0.0069001443, 0.04115169, 0.0076276865)
+bones/12/rotation = Quaternion(-0.032968752, -0.73012894, -0.071261436, 0.67878324)
+bones/13/rotation = Quaternion(0.15924469, 0.0114482045, 0.012669118, 0.9870915)
+bones/14/rotation = Quaternion(0.00918466, 0.010510933, 0.0046377606, 0.9998918)
+bones/15/rotation = Quaternion(0.0041797943, 0.004529751, 0.0012190415, 0.9999803)
+bones/16/rotation = Quaternion(0.0033799661, 0.6954603, -0.08253685, 0.7138006)
+bones/17/rotation = Quaternion(-0.0022160953, 0.98712975, -0.15748289, -0.027736079)
+bones/18/rotation = Quaternion(-0.0040587215, -0.004936731, 0.0042689512, 0.9999705)
+bones/19/rotation = Quaternion(0.039756734, 0.039047528, 0.002853081, 0.99844205)
+bones/21/rotation = Quaternion(0.14901382, -0.014479384, 0.004337612, 0.9887196)
+bones/22/rotation = Quaternion(0.028310338, 0.0294708, 0.018822039, 0.99898744)
+bones/23/rotation = Quaternion(-0.030961184, -0.024856662, -0.0008456031, 0.99921113)
+bones/24/rotation = Quaternion(-0.6143471, -0.35155362, -0.35051805, 0.61329013)
+bones/25/position = Vector3(0.008628923, 0.20224895, -0.01098562)
+bones/25/rotation = Quaternion(-0.075615175, 0.74666226, -0.27990544, 0.5986909)
+bones/26/rotation = Quaternion(0.21969278, 0.0027334683, -0.0054172277, 0.9755503)
+bones/27/rotation = Quaternion(-0.057798643, -0.010611214, -0.03225602, 0.9977507)
+bones/28/position = Vector3(-0.0040957937, 0.038309406, 0.02635711)
+bones/28/rotation = Quaternion(0.010038007, 0.7703345, 0.09816913, 0.62995785)
+bones/29/rotation = Quaternion(0.18016109, -0.046207957, -0.02235077, 0.98229694)
+bones/30/rotation = Quaternion(-0.016746147, 0.020631447, -0.007952876, 0.99961525)
+bones/31/rotation = Quaternion(-0.0020922024, 0.0032981832, -0.004392738, 0.9999827)
+bones/32/rotation = Quaternion(0.01223311, 0.41402316, 0.3092526, 0.8560362)
+bones/33/rotation = Quaternion(0.17710981, -0.0033418601, -0.022471411, 0.98392886)
+bones/34/rotation = Quaternion(0.0922622, 0.11139583, -0.03141504, 0.9889853)
+bones/35/position = Vector3(-0.006900219, 0.04115167, 0.0076272306)
+bones/35/rotation = Quaternion(-0.03296654, 0.73012906, 0.07126371, 0.67878306)
+bones/36/rotation = Quaternion(0.15924488, -0.011448696, -0.012672285, 0.98709136)
+bones/37/rotation = Quaternion(0.0091846585, -0.0105109345, -0.00463776, 0.9998918)
+bones/38/rotation = Quaternion(0.004179832, -0.0045297523, -0.0012190373, 0.9999803)
+bones/39/rotation = Quaternion(0.0033822544, -0.69546026, 0.08253459, 0.7138009)
+bones/40/rotation = Quaternion(0.0022129142, 0.98712975, -0.15748288, 0.027736556)
+bones/41/rotation = Quaternion(-0.004058715, 0.0049367393, -0.0042689596, 0.9999705)
+bones/42/rotation = Quaternion(0.039756704, -0.039047536, -0.0028530806, 0.99844205)
+bones/43/rotation = Quaternion(-0.12909606, 0.6619, -0.04275055, 0.7371534)
+bones/44/rotation = Quaternion(0.14901388, 0.01447939, -0.0043376265, 0.9887196)
+bones/45/rotation = Quaternion(0.028310329, -0.029470792, -0.018822037, 0.99898744)
+bones/46/rotation = Quaternion(-0.030961199, 0.024856672, 0.0008456027, 0.99921113)
+bones/47/position = Vector3(8.962437e-09, 0.27745497, -5.7740377e-15)
+bones/47/rotation = Quaternion(0.49989796, -0.5001017, 0.500102, -0.49989837)
+bones/48/position = Vector3(-0.6604739, 1.3061002, -0.05074787)
+bones/48/rotation = Quaternion(0.02143595, 0.04266431, 0.8901127, 0.4532325)
+bones/49/position = Vector3(-0.4639069, 1.429291, -0.26763627)
+bones/50/position = Vector3(0.6604739, 1.3061002, -0.05074787)
+bones/50/rotation = Quaternion(-0.02143595, 0.04266431, 0.8901127, -0.4532325)
+bones/51/position = Vector3(0.4639069, 1.429291, -0.26763627)
+bones/51/rotation = Quaternion(0.34815243, -0.6154591, 0.6154591, -0.34815246)
+
+[node name="HUD" type="CanvasLayer" parent="." node_paths=PackedStringArray("hacking_ray", "hacking_reticle", "hand_offset_node", "hand_animation_player")]
 script = ExtResource("3_dulx6")
 hacking_ray = NodePath("../Camera3D/HackingRay")
 hacking_reticle = NodePath("HackingReticle")
+hand_offset_node = NodePath("../Camera3D/HandOffset")
+hand_animation_player = NodePath("../Camera3D/HandOffset/arms_rig/AnimationPlayer")
+hand_animation_name = &"push_L"
 
 [node name="HackingReticle" type="Control" parent="HUD"]
 layout_mode = 3
@@ -64,3 +132,5 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[editable path="Camera3D/HandOffset/arms_rig"]

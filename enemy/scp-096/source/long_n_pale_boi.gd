@@ -331,6 +331,7 @@ func update_detection(delta: float, detection_level: int) -> void:
 
 			enter_state(State.CHASING)
 			rushing.play()
+			
 
 		return
 
@@ -343,6 +344,7 @@ func update_detection(delta: float, detection_level: int) -> void:
 				print("SCP-096 LONG VISION — INVESTIGATING!")
 
 			enter_state(State.INVESTIGATING)
+			
 			found_you.play()
 
 		var required_time: float = long_detection_time
@@ -357,6 +359,7 @@ func update_detection(delta: float, detection_level: int) -> void:
 					print("SCP-096 DETECTION TIMER COMPLETE — CHASING!")
 
 				enter_state(State.CHASING)
+				rushing.play()
 
 		return
 

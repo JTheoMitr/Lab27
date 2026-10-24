@@ -14,7 +14,7 @@ var action_animation_playing: bool = false
 
 @onready var interaction_ray: RayCast3D = $Camera3D/InteractionRay
 
-@onready var animation_player: AnimationPlayer = $Camera3D/arms_rig/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Camera3D/HandOffset/arms_rig/AnimationPlayer
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -50,8 +50,8 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("interact") and is_on_floor():
 		#velocity.y = jump_velocity
-		play_action_animation("push_L")
-		
+		#play_action_animation("push_L")
+		pass
 	# -------------------------
 	# JUMP
 	# -------------------------
