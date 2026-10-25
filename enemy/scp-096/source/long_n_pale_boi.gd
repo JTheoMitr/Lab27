@@ -818,3 +818,27 @@ func debug_player_collision() -> void:
 			if child.shape is CapsuleShape3D:
 				print("CAPSULE HEIGHT: ", child.shape.height)
 				print("CAPSULE RADIUS: ", child.shape.radius)
+
+
+
+func get_heartbeat_threat() -> float:
+	match state:
+		State.PASSIVE:
+			return 0.0
+
+		State.INVESTIGATING:
+			return 0.35
+
+		State.CHASING:
+			return 1.0
+
+		State.SEARCHING:
+			return 0.55
+
+		State.ATTACKING:
+			return 1.0
+
+		State.STUNNED:
+			return 0.4
+
+	return 0.0

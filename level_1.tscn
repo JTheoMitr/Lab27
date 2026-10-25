@@ -31,6 +31,9 @@ shape = SubResource("BoxShape3D_hbghi")
 [node name="Player3D" parent="." instance=ExtResource("2_hbghi")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -5.742702, -31.978676, -10.220566)
 
+[node name="HeartbeatController" parent="Player3D" index="4" node_paths=PackedStringArray("enemy")]
+enemy = NodePath("../../SCP-096")
+
 [node name="Sewers" parent="." instance=ExtResource("4_rka8t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.88958, -38.48947, -66.183876)
 
@@ -226,3 +229,6 @@ stream = ExtResource("7_bjebc")
 volume_db = -6.0
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+
+[editable path="Player3D"]
+[editable path="Player3D/Camera3D/HandOffset/arms_rig"]

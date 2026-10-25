@@ -145,10 +145,6 @@ func _on_hack_charge_complete() -> void:
 	print("Hack charge completed: ", current_target.name)
 
 	current_target.call("begin_hack")
-	
-	
-	
-
 
 func extend_hacking_hand() -> void:
 	if hand_animation_player == null:
