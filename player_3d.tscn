@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://daqbvqf406dyu"]
+[gd_scene load_steps=20 format=3 uid="uid://daqbvqf406dyu"]
 
 [ext_resource type="Script" uid="uid://ca7fmse5ox873" path="res://player_3d.gd" id="1_5wjm4"]
 [ext_resource type="Script" uid="uid://b57xuydt5xuv6" path="res://hacking_reticle.gd" id="3_bp1xh"]
@@ -7,6 +7,15 @@
 [ext_resource type="AudioStream" uid="uid://boj5fu4lqkipr" path="res://sfx_player/AA_FWLF_A#_Synth_Swell.wav" id="5_dulx6"]
 [ext_resource type="Script" uid="uid://4y1r56yw1dqh" path="res://heartbeat_controller.gd" id="6_1metf"]
 [ext_resource type="AudioStream" uid="uid://cvmmcyixkdc2h" path="res://sfx_player/heartbeat-speeding-up-02.wav" id="7_hlvg3"]
+[ext_resource type="Script" uid="uid://cfil3el6023e5" path="res://footstep_controller.gd" id="8_hlvg3"]
+[ext_resource type="AudioStream" uid="uid://cp1rrygoh77x1" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 01_ESM_CPG.wav" id="9_hadp7"]
+[ext_resource type="AudioStream" uid="uid://u43r5f1vhej6" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 02_ESM_CPG.wav" id="10_yk5um"]
+[ext_resource type="AudioStream" uid="uid://b6b1dtblln4hs" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 03_ESM_CPG.wav" id="11_mcytg"]
+[ext_resource type="AudioStream" uid="uid://clb5pman3xvjx" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 04_ESM_CPG.wav" id="12_lcis0"]
+[ext_resource type="AudioStream" uid="uid://cweb5ksix01q" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 05_ESM_CPG.wav" id="13_d2kcw"]
+[ext_resource type="AudioStream" uid="uid://bwiexksl7ctiy" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 06_ESM_CPG.wav" id="14_s2aq0"]
+[ext_resource type="AudioStream" uid="uid://byfwljvtt03ts" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 07_ESM_CPG.wav" id="15_4i51g"]
+[ext_resource type="AudioStream" uid="uid://c6ga7wkgu5qcf" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 08_ESM_CPG.wav" id="16_5b37d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3n4ta"]
 radius = 0.265625
@@ -152,5 +161,14 @@ script = ExtResource("6_1metf")
 [node name="Heartbeat" type="AudioStreamPlayer" parent="HeartbeatController"]
 stream = ExtResource("7_hlvg3")
 volume_db = -5.0
+
+[node name="FootstepController" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("8_hlvg3")
+player = NodePath("..")
+footstep_sounds = Array[AudioStream]([ExtResource("9_hadp7"), ExtResource("10_yk5um"), ExtResource("11_mcytg"), ExtResource("12_lcis0"), ExtResource("13_d2kcw"), ExtResource("14_s2aq0"), ExtResource("15_4i51g"), ExtResource("16_5b37d")])
+
+[node name="FootstepAudio" type="AudioStreamPlayer" parent="FootstepController"]
+volume_db = -25.0
+pitch_scale = 0.65
 
 [editable path="Camera3D/HandOffset/arms_rig"]

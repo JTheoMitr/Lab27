@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c6ga7wkgu5qcf"
+path="res://.godot/imported/FEETHmn_Footsteps Locomotion Human Concrete Sharp 08_ESM_CPG.wav-a9694f65e8a2516f4d8560c4b6b01933.sample"
+
+[deps]
+
+source_file="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 08_ESM_CPG.wav"
+dest_files=["res://.godot/imported/FEETHmn_Footsteps Locomotion Human Concrete Sharp 08_ESM_CPG.wav-a9694f65e8a2516f4d8560c4b6b01933.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
