@@ -12,6 +12,14 @@ extends Node3D
 @export_group("Security")
 @export var starts_locked: bool = false
 
+
+@export_group("Audio")
+@export var door_open_sound: AudioStream
+@export var door_close_sound: AudioStream
+
+@onready var door_audio: AudioStreamPlayer3D = $DoorAudio
+
+
 var is_locked: bool = false
 
 
@@ -45,10 +53,14 @@ func interact() -> void:
 	if is_moving or door == null or window_pane == null or door_body == null:
 		return
 
+	
 	is_moving = true
 	is_open = not is_open
 
+	play_door_sound()
+
 	var angle_offset = open_angle if is_open else 0.0
+
 
 	var tween = create_tween()
 	tween.set_parallel(true)
@@ -95,3 +107,13 @@ func lock_door() -> void:
 
 	is_locked = true
 	print("Door locked by keypad: ", name)
+
+
+func play_door_sound() -> void:
+	var selected_sound: AudioStream = door_open_sound if is_open else door_close_sound
+
+	if selected_sound == null:
+		return
+
+	door_audio.stream = selected_sound
+	door_audio.play()
