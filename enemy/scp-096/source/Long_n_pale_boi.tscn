@@ -1,15 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://r81w2ils2070"]
+[gd_scene load_steps=21 format=3 uid="uid://r81w2ils2070"]
 
 [ext_resource type="Script" uid="uid://dy7tik018hovc" path="res://enemy/scp-096/source/long_n_pale_boi.gd" id="1_3es1n"]
 [ext_resource type="PackedScene" uid="uid://b6vomsndols47" path="res://enemy/fully_reanimated_scp-096_updated.glb" id="3_bg3y4"]
 [ext_resource type="AudioStream" uid="uid://clfq6xynrqm5d" path="res://sfx_creature/found_you.wav" id="3_ym11o"]
 [ext_resource type="AudioStream" uid="uid://bbng4ni5ddswq" path="res://sfx_creature/DAF_Fx_Monster.wav" id="4_yp0he"]
+[ext_resource type="Script" uid="uid://kbbl52rp2dcv" path="res://enemy/scp-096/source/creature_footsteps.gd" id="5_yp0he"]
+[ext_resource type="AudioStream" uid="uid://q0lgw6v2fd5m" path="res://sfx_creature/MAGSpel_Ability Shield Orb Power Boost Moan Circuit Break Spark 01_ESM_FRWD.wav" id="6_4361u"]
+[ext_resource type="AudioStream" uid="uid://dh7oiewqa8o1q" path="res://sfx_creature/MAGSpel_Ability Shield Orb Power Boost Moan Circuit Break Spark 02_ESM_FRWD.wav" id="7_mbfl4"]
+[ext_resource type="AudioStream" uid="uid://dktch45no0k38" path="res://sfx_creature/MAGSpel_Ability Shield Orb Power Boost Moan Circuit Break Spark 03_ESM_FRWD.wav" id="8_3fxrr"]
+[ext_resource type="AudioStream" uid="uid://bjfvgxc6wg5ak" path="res://sfx_creature/MAGSpel_Ability Shield Orb Power Boost Moan Circuit Break Spark 05_ESM_FRWD.wav" id="9_lhsg6"]
+[ext_resource type="AudioStream" uid="uid://bq6fqwnwl8qmr" path="res://sfx_creature/MAGSpel_Ability Shield Orb Power Boost Moan Circuit Break Spark 06_ESM_FRWD.wav" id="10_14maf"]
+[ext_resource type="AudioStream" uid="uid://rnxrjuf7rw3f" path="res://sfx_creature/MAGSpel_Ability Shield Orb Power Boost Moan Circuit Break Spark 10_ESM_FRWD.wav" id="11_iqumu"]
+[ext_resource type="Script" uid="uid://cv80hln804c1b" path="res://enemy/scp-096/source/creature_vocals.gd" id="12_mbfl4"]
+[ext_resource type="AudioStream" uid="uid://1xvv0v3g8am4" path="res://sfx_creature/BIRDMisc_Creature Animal Bird Woodpecker Drumming Distant 03_ESM_HALG.wav" id="13_2sgpo"]
+[ext_resource type="AudioStream" uid="uid://bofadcey6xmrx" path="res://sfx_creature/BIRDMisc_Creature Animal Bird Woodpecker Drumming Distant 04_ESM_HALG.wav" id="14_4vhq6"]
+[ext_resource type="AudioStream" uid="uid://c0w4tjm4asmp1" path="res://sfx_creature/BIRDMisc_Creature Animal Bird Woodpecker Drumming Distant 05_ESM_HALG.wav" id="15_hgfcn"]
+[ext_resource type="AudioStream" uid="uid://c1x3scyhgftur" path="res://sfx_creature/CREAHmn_Breathing zombie vocal 5_GFXS_UV.wav" id="16_uheac"]
+[ext_resource type="AudioStream" uid="uid://cl7t0atroyfd2" path="res://sfx_creature/CREAHmn_Breathing zombie vocal_GFXS_UV.wav" id="17_gag8x"]
+[ext_resource type="AudioStream" uid="uid://mjgrlb4f8diy" path="res://sfx_creature/HMNBrth_Female shocked gasp 3_GFXS_HV.wav" id="18_42ttx"]
+[ext_resource type="AudioStream" uid="uid://di81jnoq5pa3t" path="res://sfx_creature/HMNBrth_Female surprise gasp_GFXS_HV.wav" id="19_x0whm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bg3y4"]
 radius = 0.13378906
 height = 1.1295433
 
-[node name="LNPB" type="CharacterBody3D"]
+[node name="LNPB" type="CharacterBody3D" groups=["creature"]]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 collision_layer = 3
 collision_mask = 3
@@ -79,5 +94,33 @@ pitch_scale = 1.6
 [node name="Rushing" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_yp0he")
 volume_db = 2.0
+
+[node name="CreatureFootsteps" type="Node3D" parent="."]
+script = ExtResource("5_yp0he")
+walking_sounds = Array[AudioStream]([ExtResource("6_4361u"), ExtResource("7_mbfl4"), ExtResource("8_3fxrr"), ExtResource("9_lhsg6"), ExtResource("10_14maf"), ExtResource("11_iqumu")])
+running_sounds = Array[AudioStream]([ExtResource("7_mbfl4"), ExtResource("8_3fxrr"), ExtResource("9_lhsg6")])
+walk_step_interval = 0.6
+minimum_pitch = 0.65
+maximum_pitch = 0.7
+walking_volume_db = -20.0
+running_volume_db = -12.0
+
+[node name="FootstepAudio" type="AudioStreamPlayer3D" parent="CreatureFootsteps"]
+stream = ExtResource("7_mbfl4")
+unit_size = 12.0
+pitch_scale = 0.9
+max_distance = 35.0
+
+[node name="CreatureVocals" type="Node3D" parent="."]
+script = ExtResource("12_mbfl4")
+crying_sounds = Array[AudioStream]([ExtResource("13_2sgpo"), ExtResource("14_4vhq6"), ExtResource("15_hgfcn")])
+breathing_sounds = Array[AudioStream]([ExtResource("16_uheac"), ExtResource("17_gag8x")])
+panic_sounds = Array[AudioStream]([ExtResource("18_42ttx"), ExtResource("19_x0whm")])
+panic_min_delay = 0.5
+panic_max_delay = 1.2
+
+[node name="VocalAudio" type="AudioStreamPlayer3D" parent="CreatureVocals"]
+pitch_scale = 0.75
+max_distance = 35.0
 
 [editable path="LNPB2"]

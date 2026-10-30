@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c1x3scyhgftur"
+path="res://.godot/imported/CREAHmn_Breathing zombie vocal 5_GFXS_UV.wav-9e38ceeeb671c5f32e3db5d26143deb7.sample"
+
+[deps]
+
+source_file="res://sfx_creature/CREAHmn_Breathing zombie vocal 5_GFXS_UV.wav"
+dest_files=["res://.godot/imported/CREAHmn_Breathing zombie vocal 5_GFXS_UV.wav-9e38ceeeb671c5f32e3db5d26143deb7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://di81jnoq5pa3t"
+path="res://.godot/imported/HMNBrth_Female surprise gasp_GFXS_HV.wav-60c67542c069f9abd3bc55fe909aa8f5.sample"
+
+[deps]
+
+source_file="res://sfx_creature/HMNBrth_Female surprise gasp_GFXS_HV.wav"
+dest_files=["res://.godot/imported/HMNBrth_Female surprise gasp_GFXS_HV.wav-60c67542c069f9abd3bc55fe909aa8f5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

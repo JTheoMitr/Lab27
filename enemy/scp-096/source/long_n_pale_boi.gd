@@ -10,6 +10,13 @@ enum State {
 	ATTACKING
 }
 
+
+@export_group("Hearing Investigation")
+@export var hearing_investigation_timeout: float = 7.0
+
+var hearing_investigation_timer: float = 0.0
+var investigating_from_sound: bool = false
+
 # -------------------------
 # MOVEMENT
 # -------------------------
@@ -153,6 +160,19 @@ func _start_navigation() -> void:
 # -------------------------
 
 func _physics_process(delta: float) -> void:
+	
+	
+	if investigating_from_sound and state == State.INVESTIGATING:
+		hearing_investigation_timer -= delta
+
+		if hearing_investigation_timer <= 0.0:
+			investigating_from_sound = false
+			hearing_investigation_timer = 0.0
+
+			print("SCP-096 HEARING INVESTIGATION EXPIRED")
+
+			enter_state(State.SEARCHING)
+
 
 	# Gravity
 	if not is_on_floor():
@@ -330,6 +350,7 @@ func update_detection(delta: float, detection_level: int) -> void:
 				print("SCP-096 SHORT VISION — CHASING!")
 
 			enter_state(State.CHASING)
+			investigating_from_sound = false
 			rushing.play()
 			
 
@@ -359,6 +380,7 @@ func update_detection(delta: float, detection_level: int) -> void:
 					print("SCP-096 DETECTION TIMER COMPLETE — CHASING!")
 
 				enter_state(State.CHASING)
+				investigating_from_sound = false
 				rushing.play()
 
 		return
@@ -372,12 +394,24 @@ func update_detection(delta: float, detection_level: int) -> void:
 # -------------------------
 
 
+func get_player_vision_target() -> Vector3:
+	if not is_instance_valid(player):
+		return Vector3.ZERO
+
+	for child in player.get_children():
+		if child is CollisionShape3D and not child.disabled:
+			return child.global_position
+
+	return player.global_position
+
+
+
 func player_in_vision(vision_distance: float, vision_angle: float) -> bool:
 	if not is_instance_valid(player):
 		return false
 
 	var eye: Vector3 = global_position + Vector3.UP * eye_height
-	var target: Vector3 = player.global_position + Vector3.UP * 1.0
+	var target: Vector3 = get_player_vision_target()
 
 	var offset: Vector3 = target - eye
 
@@ -411,7 +445,7 @@ func has_line_of_sight() -> bool:
 		return false
 
 	var eye: Vector3 = global_position + Vector3.UP * eye_height
-	var target: Vector3 = player.global_position
+	var target: Vector3 = get_player_vision_target()
 
 	var player_shape: CollisionShape3D = null
 
@@ -446,7 +480,21 @@ func has_line_of_sight() -> bool:
 	if result.is_empty():
 		return false
 
-	return result["collider"] == player
+	
+	var can_see_player: bool = result["collider"] == player
+
+	if can_see_player and debug_detection:
+		print(
+			"CONFIRMED VISION | ",
+			"Enemy: ", global_position,
+			" | Player: ", player.global_position,
+			" | Eye: ", eye,
+			" | Target: ", target,
+			" | Hit position: ", result["position"]
+		)
+
+	return can_see_player
+
 
 func get_detection_level() -> int:
 	if not is_instance_valid(player):
@@ -709,6 +757,7 @@ func hear_noise(noise_position: Vector3, rage_increase: float = 15.0) -> void:
 
 	if rage >= chase_rage:
 		enter_state(State.CHASING)
+		investigating_from_sound = false
 	else:
 		enter_state(State.INVESTIGATING)
 
@@ -842,3 +891,65 @@ func get_heartbeat_threat() -> float:
 			return 0.4
 
 	return 0.0
+
+
+func get_footstep_mode() -> int:
+	match state:
+		State.PASSIVE:
+			return 1
+		State.INVESTIGATING:
+			return 1
+		State.SEARCHING:
+			return 1
+		State.CHASING:
+			return 2
+		State.ATTACKING:
+			return 0
+		State.STUNNED:
+			return 0
+
+	return 0
+	
+
+func get_vocal_mode() -> int:
+	match state:
+		State.PASSIVE:
+			return 1
+
+		State.INVESTIGATING:
+			return 2
+
+		State.CHASING:
+			return 3
+
+		State.SEARCHING:
+			return 2
+
+		State.STUNNED:
+			return 0
+
+		State.ATTACKING:
+			return 3
+
+	return 0
+
+
+
+
+func hear_footstep(noise_position: Vector3) -> void:
+	if state == State.STUNNED or state == State.ATTACKING:
+		return
+
+	if state == State.CHASING:
+		return
+
+	last_known_position = noise_position
+	hearing_investigation_timer = hearing_investigation_timeout
+
+	if state == State.PASSIVE or state == State.SEARCHING:
+		investigating_from_sound = true
+		print("SCP-096 HEARD FOOTSTEPS — INVESTIGATING")
+		enter_state(State.INVESTIGATING)
+
+	elif state == State.INVESTIGATING and investigating_from_sound:
+		set_target(last_known_position)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://q0lgw6v2fd5m"
+path="res://.godot/imported/MAGSpel_Ability Shield Orb Power Boost Moan Circuit Break Spark 01_ESM_FRWD.wav-6c72c46102fd68f0f4f8d9eaf22d78d3.sample"
+
+[deps]
+
+source_file="res://sfx_creature/MAGSpel_Ability Shield Orb Power Boost Moan Circuit Break Spark 01_ESM_FRWD.wav"
+dest_files=["res://.godot/imported/MAGSpel_Ability Shield Orb Power Boost Moan Circuit Break Spark 01_ESM_FRWD.wav-6c72c46102fd68f0f4f8d9eaf22d78d3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

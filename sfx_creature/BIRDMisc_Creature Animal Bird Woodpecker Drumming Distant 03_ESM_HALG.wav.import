@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1xvv0v3g8am4"
+path="res://.godot/imported/BIRDMisc_Creature Animal Bird Woodpecker Drumming Distant 03_ESM_HALG.wav-40db9075a09a11b8d4d70d22299c28b1.sample"
+
+[deps]
+
+source_file="res://sfx_creature/BIRDMisc_Creature Animal Bird Woodpecker Drumming Distant 03_ESM_HALG.wav"
+dest_files=["res://.godot/imported/BIRDMisc_Creature Animal Bird Woodpecker Drumming Distant 03_ESM_HALG.wav-40db9075a09a11b8d4d70d22299c28b1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

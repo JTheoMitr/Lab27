@@ -6,6 +6,21 @@ extends CharacterBody3D
 @export var jump_velocity: float = 5.0
 @export var gravity: float = 20.0
 
+
+@export_group("Crouching")
+@export var crouch_speed: float = 1.1
+
+
+@export_group("Crouch Camera")
+@export var crouch_camera_offset: float = 0.65
+@export var crouch_transition_speed: float = 8.0
+
+var standing_camera_position: Vector3
+
+
+var is_crouching: bool = false
+
+
 var action_animation_playing: bool = false
 
 @export var mouse_sensitivity: float = 0.0045
@@ -18,9 +33,24 @@ var action_animation_playing: bool = false
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	standing_camera_position = $Camera3D.position
 	
 	
 func _physics_process(delta: float) -> void:
+	
+	is_crouching = Input.is_action_pressed("crouch")
+	
+	
+	var target_camera_position: Vector3 = standing_camera_position
+
+	if is_crouching:
+		target_camera_position.y -= crouch_camera_offset
+
+	$Camera3D.position = $Camera3D.position.lerp(
+		target_camera_position,
+		clampf(crouch_transition_speed * delta, 0.0, 1.0)
+	)
+
 	
 	# Check player's birthday, if true, they get a gift (hat)
 
@@ -82,6 +112,9 @@ func _physics_process(delta: float) -> void:
 
 
 	var current_speed: float = walk_speed
+	
+	if is_crouching:
+		current_speed = crouch_speed
 
 	if Input.is_action_pressed("sprint"):
 		current_speed = sprint_speed

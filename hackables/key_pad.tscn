@@ -34,12 +34,12 @@ script = ExtResource("1_58v0s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08258474, 0, 0.083465815)
 
 [node name="ScreenRed" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.17, 0, 0, 0, 0.3, 0, 0, 0, 0.5, 0.28816378, 0.7193665, 0.19142675)
+transform = Transform3D(0.9654645, 0, 0, 0, 0.22612241, 0, 0, 0, 0.5, 0.2961818, 0.7294379, 0.19142675)
 mesh = SubResource("BoxMesh_58v0s")
 surface_material_override/0 = SubResource("StandardMaterial3D_jgqig")
 
 [node name="ScreenGreen" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.1756276, 0, 0, 0, 0.30295682, 0, 0, 0, 0.34579176, 0.2918889, 0.7210847, 0.13011384)
+transform = Transform3D(0.96668947, 0, 0, 0, 0.21514787, 0, 0, 0, 0.34579176, 0.29945403, 0.7342726, 0.13011384)
 mesh = SubResource("BoxMesh_jgqig")
 
 [node name="HackArea" type="Area3D" parent="."]
