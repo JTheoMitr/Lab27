@@ -803,7 +803,7 @@ transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 49.2
 shape = SubResource("BoxShape3D_ducgh")
 
 [node name="DoorAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door4_SM" index="4"]
-volume_db = -25.0
+volume_db = -30.0
 
 [node name="door3_SM" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode" index="2" node_paths=PackedStringArray("door", "window_pane", "door_body")]
 script = ExtResource("2_4pwv5")
@@ -830,6 +830,237 @@ transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 52.4
 shape = SubResource("BoxShape3D_ducgh")
 
 [node name="DoorAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM" index="4"]
+stream = ExtResource("3_tg42k")
+volume_db = -25.0
+pitch_scale = 0.95
+
+[node name="door3_SM001" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode" index="3" node_paths=PackedStringArray("door", "window_pane", "door_body")]
+script = ExtResource("2_4pwv5")
+door = NodePath("door3_SM001_door3m_0")
+window_pane = NodePath("door3_SM001_GLASS_Dark_Inst_0")
+door_body = NodePath("DoorBody")
+
+[node name="InteractionArea" type="Area3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM001" index="2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM001/InteractionArea" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 55.793457, 2.2089844, 120.94989)
+shape = SubResource("BoxShape3D_4pwv5")
+
+[node name="DoorBody" type="AnimatableBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM001" index="3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM001/DoorBody" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 52.42334, -2.7268066, 115.83392)
+shape = SubResource("BoxShape3D_ducgh")
+
+[node name="DoorAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM001" index="4"]
+stream = ExtResource("3_tg42k")
+volume_db = -25.0
+pitch_scale = 0.95
+
+[node name="door3_SM002" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode" index="4" node_paths=PackedStringArray("door", "window_pane", "door_body")]
+script = ExtResource("2_4pwv5")
+door = NodePath("door3_SM002_door3m_0")
+window_pane = NodePath("door3_SM002_GLASS_Dark_Inst_0")
+door_body = NodePath("DoorBody")
+
+[node name="InteractionArea" type="Area3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM002" index="2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM002/InteractionArea" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 55.793457, 2.2089844, 120.94989)
+shape = SubResource("BoxShape3D_4pwv5")
+
+[node name="DoorBody" type="AnimatableBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM002" index="3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM002/DoorBody" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 52.42334, -2.7268066, 115.83392)
+shape = SubResource("BoxShape3D_ducgh")
+
+[node name="DoorAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM002" index="4"]
+stream = ExtResource("3_tg42k")
+volume_db = -25.0
+pitch_scale = 0.95
+
+[node name="door3_SM003" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode" index="5" node_paths=PackedStringArray("door", "window_pane", "door_body")]
+script = ExtResource("2_4pwv5")
+door = NodePath("door3_SM003_door3m_0")
+window_pane = NodePath("door3_SM003_GLASS_Dark_Inst_0")
+door_body = NodePath("DoorBody")
+
+[node name="InteractionArea" type="Area3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM003" index="2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM003/InteractionArea" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 55.793457, 2.2089844, 120.94989)
+shape = SubResource("BoxShape3D_4pwv5")
+
+[node name="DoorBody" type="AnimatableBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM003" index="3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM003/DoorBody" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 52.42334, -2.7268066, 115.83392)
+shape = SubResource("BoxShape3D_ducgh")
+
+[node name="DoorAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM003" index="4"]
+stream = ExtResource("3_tg42k")
+volume_db = -25.0
+pitch_scale = 0.95
+
+[node name="door3_SM004" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode" index="7" node_paths=PackedStringArray("door", "window_pane", "door_body")]
+script = ExtResource("2_4pwv5")
+door = NodePath("door3_SM004_door3m_0")
+window_pane = NodePath("door3_SM004_GLASS_Dark_Inst_0")
+door_body = NodePath("DoorBody")
+
+[node name="InteractionArea" type="Area3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM004" index="2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM004/InteractionArea" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 55.793457, 2.2089844, 120.94989)
+shape = SubResource("BoxShape3D_4pwv5")
+
+[node name="DoorBody" type="AnimatableBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM004" index="3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM004/DoorBody" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 52.42334, -2.7268066, 115.83392)
+shape = SubResource("BoxShape3D_ducgh")
+
+[node name="DoorAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM004" index="4"]
+stream = ExtResource("3_tg42k")
+volume_db = -25.0
+pitch_scale = 0.95
+
+[node name="door3_SM005" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode" index="8" node_paths=PackedStringArray("door", "window_pane", "door_body")]
+script = ExtResource("2_4pwv5")
+door = NodePath("door3_SM005_door3m_0")
+window_pane = NodePath("door3_SM005_GLASS_Dark_Inst_0")
+door_body = NodePath("DoorBody")
+
+[node name="InteractionArea" type="Area3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM005" index="2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM005/InteractionArea" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 55.793457, 2.2089844, 120.94989)
+shape = SubResource("BoxShape3D_4pwv5")
+
+[node name="DoorBody" type="AnimatableBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM005" index="3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM005/DoorBody" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 52.42334, -2.7268066, 115.83392)
+shape = SubResource("BoxShape3D_ducgh")
+
+[node name="DoorAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM005" index="4"]
+stream = ExtResource("3_tg42k")
+volume_db = -25.0
+pitch_scale = 0.95
+
+[node name="door3_SM006" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode" index="9" node_paths=PackedStringArray("door", "window_pane", "door_body")]
+script = ExtResource("2_4pwv5")
+door = NodePath("door3_SM006_door3m_0")
+window_pane = NodePath("door3_SM006_GLASS_Dark_Inst_0")
+door_body = NodePath("DoorBody")
+
+[node name="InteractionArea" type="Area3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM006" index="2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM006/InteractionArea" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 55.793457, 2.2089844, 120.94989)
+shape = SubResource("BoxShape3D_4pwv5")
+
+[node name="DoorBody" type="AnimatableBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM006" index="3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM006/DoorBody" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 52.42334, -2.7268066, 115.83392)
+shape = SubResource("BoxShape3D_ducgh")
+
+[node name="DoorAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM006" index="4"]
+stream = ExtResource("3_tg42k")
+volume_db = -25.0
+pitch_scale = 0.95
+
+[node name="door3_SM007" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode" index="10" node_paths=PackedStringArray("door", "window_pane", "door_body")]
+script = ExtResource("2_4pwv5")
+door = NodePath("door3_SM007_door3m_0")
+window_pane = NodePath("door3_SM007_GLASS_Dark_Inst_0")
+door_body = NodePath("DoorBody")
+
+[node name="InteractionArea" type="Area3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM007" index="2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM007/InteractionArea" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 55.793457, 2.2089844, 120.94989)
+shape = SubResource("BoxShape3D_4pwv5")
+
+[node name="DoorBody" type="AnimatableBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM007" index="3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM007/DoorBody" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 52.42334, -2.7268066, 115.83392)
+shape = SubResource("BoxShape3D_ducgh")
+
+[node name="DoorAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door3_SM007" index="4"]
+stream = ExtResource("3_tg42k")
+volume_db = -25.0
+pitch_scale = 0.95
+
+[node name="InteractionArea" type="Area3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM" index="2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM/InteractionArea" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 55.793457, 2.2089844, 120.94989)
+shape = SubResource("BoxShape3D_4pwv5")
+
+[node name="DoorBody" type="AnimatableBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM" index="3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM/DoorBody" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 52.42334, -2.7268066, 115.83392)
+shape = SubResource("BoxShape3D_ducgh")
+
+[node name="DoorAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM" index="4"]
+stream = ExtResource("3_tg42k")
+volume_db = -25.0
+pitch_scale = 0.95
+
+[node name="InteractionArea" type="Area3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM001" index="2"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM001/InteractionArea" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 55.793457, 2.2089844, 120.94989)
+shape = SubResource("BoxShape3D_4pwv5")
+
+[node name="DoorBody" type="AnimatableBody3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM001" index="3"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM001/DoorBody" index="0"]
+transform = Transform3D(1, 0, -4.4101616e-24, 0, 1, 0, -7.939178e-24, 0, 1, 52.42334, -2.7268066, 115.83392)
+shape = SubResource("BoxShape3D_ducgh")
+
+[node name="DoorAudio" type="AudioStreamPlayer3D" parent="Sketchfab_model/Hospital_part1_low_FBX/RootNode/door6_SM001" index="4"]
 stream = ExtResource("3_tg42k")
 volume_db = -25.0
 pitch_scale = 0.95

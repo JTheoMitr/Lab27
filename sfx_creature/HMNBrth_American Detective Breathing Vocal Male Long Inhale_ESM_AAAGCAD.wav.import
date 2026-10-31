@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bowbsk3fjcuwq"
+path="res://.godot/imported/HMNBrth_American Detective Breathing Vocal Male Long Inhale_ESM_AAAGCAD.wav-827b0c6d928bb67c4f0ffb940fce3f63.sample"
+
+[deps]
+
+source_file="res://sfx_creature/HMNBrth_American Detective Breathing Vocal Male Long Inhale_ESM_AAAGCAD.wav"
+dest_files=["res://.godot/imported/HMNBrth_American Detective Breathing Vocal Male Long Inhale_ESM_AAAGCAD.wav-827b0c6d928bb67c4f0ffb940fce3f63.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

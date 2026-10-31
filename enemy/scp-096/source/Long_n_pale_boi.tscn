@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://r81w2ils2070"]
+[gd_scene load_steps=22 format=3 uid="uid://r81w2ils2070"]
 
 [ext_resource type="Script" uid="uid://dy7tik018hovc" path="res://enemy/scp-096/source/long_n_pale_boi.gd" id="1_3es1n"]
 [ext_resource type="PackedScene" uid="uid://b6vomsndols47" path="res://enemy/fully_reanimated_scp-096_updated.glb" id="3_bg3y4"]
@@ -15,9 +15,10 @@
 [ext_resource type="AudioStream" uid="uid://1xvv0v3g8am4" path="res://sfx_creature/BIRDMisc_Creature Animal Bird Woodpecker Drumming Distant 03_ESM_HALG.wav" id="13_2sgpo"]
 [ext_resource type="AudioStream" uid="uid://bofadcey6xmrx" path="res://sfx_creature/BIRDMisc_Creature Animal Bird Woodpecker Drumming Distant 04_ESM_HALG.wav" id="14_4vhq6"]
 [ext_resource type="AudioStream" uid="uid://c0w4tjm4asmp1" path="res://sfx_creature/BIRDMisc_Creature Animal Bird Woodpecker Drumming Distant 05_ESM_HALG.wav" id="15_hgfcn"]
-[ext_resource type="AudioStream" uid="uid://c1x3scyhgftur" path="res://sfx_creature/CREAHmn_Breathing zombie vocal 5_GFXS_UV.wav" id="16_uheac"]
-[ext_resource type="AudioStream" uid="uid://cl7t0atroyfd2" path="res://sfx_creature/CREAHmn_Breathing zombie vocal_GFXS_UV.wav" id="17_gag8x"]
+[ext_resource type="AudioStream" uid="uid://by8wbjookngvn" path="res://sfx_creature/HMNBrth_American Detective Breathing Vocal Male Exhausted Catch Breath_ESM_AAAGCAD.wav" id="16_4vhq6"]
+[ext_resource type="AudioStream" uid="uid://cs0kij6d7f8ge" path="res://sfx_creature/HMNBrth_American Detective Breathing Vocal Male Hmm Thoughtful Long_ESM_AAAGCAD.wav" id="17_hgfcn"]
 [ext_resource type="AudioStream" uid="uid://mjgrlb4f8diy" path="res://sfx_creature/HMNBrth_Female shocked gasp 3_GFXS_HV.wav" id="18_42ttx"]
+[ext_resource type="AudioStream" uid="uid://bowbsk3fjcuwq" path="res://sfx_creature/HMNBrth_American Detective Breathing Vocal Male Long Inhale_ESM_AAAGCAD.wav" id="18_uheac"]
 [ext_resource type="AudioStream" uid="uid://di81jnoq5pa3t" path="res://sfx_creature/HMNBrth_Female surprise gasp_GFXS_HV.wav" id="19_x0whm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bg3y4"]
@@ -93,7 +94,6 @@ pitch_scale = 1.6
 
 [node name="Rushing" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_yp0he")
-volume_db = 2.0
 
 [node name="CreatureFootsteps" type="Node3D" parent="."]
 script = ExtResource("5_yp0he")
@@ -102,25 +102,26 @@ running_sounds = Array[AudioStream]([ExtResource("7_mbfl4"), ExtResource("8_3fxr
 walk_step_interval = 0.6
 minimum_pitch = 0.65
 maximum_pitch = 0.7
-walking_volume_db = -20.0
-running_volume_db = -12.0
+walking_volume_db = -25.0
+running_volume_db = -16.0
 
 [node name="FootstepAudio" type="AudioStreamPlayer3D" parent="CreatureFootsteps"]
 stream = ExtResource("7_mbfl4")
 unit_size = 12.0
-pitch_scale = 0.9
+pitch_scale = 0.7
 max_distance = 35.0
 
 [node name="CreatureVocals" type="Node3D" parent="."]
 script = ExtResource("12_mbfl4")
 crying_sounds = Array[AudioStream]([ExtResource("13_2sgpo"), ExtResource("14_4vhq6"), ExtResource("15_hgfcn")])
-breathing_sounds = Array[AudioStream]([ExtResource("16_uheac"), ExtResource("17_gag8x")])
+breathing_sounds = Array[AudioStream]([ExtResource("16_4vhq6"), ExtResource("17_hgfcn"), ExtResource("18_uheac")])
 panic_sounds = Array[AudioStream]([ExtResource("18_42ttx"), ExtResource("19_x0whm")])
 panic_min_delay = 0.5
 panic_max_delay = 1.2
 
 [node name="VocalAudio" type="AudioStreamPlayer3D" parent="CreatureVocals"]
-pitch_scale = 0.75
+volume_db = -5.0
+pitch_scale = 0.6
 max_distance = 35.0
 
 [editable path="LNPB2"]

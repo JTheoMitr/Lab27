@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://by8wbjookngvn"
+path="res://.godot/imported/HMNBrth_American Detective Breathing Vocal Male Exhausted Catch Breath_ESM_AAAGCAD.wav-66a34ef7775c110530dd06481041e0bd.sample"
+
+[deps]
+
+source_file="res://sfx_creature/HMNBrth_American Detective Breathing Vocal Male Exhausted Catch Breath_ESM_AAAGCAD.wav"
+dest_files=["res://.godot/imported/HMNBrth_American Detective Breathing Vocal Male Exhausted Catch Breath_ESM_AAAGCAD.wav-66a34ef7775c110530dd06481041e0bd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

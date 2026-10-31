@@ -169,6 +169,6 @@ footstep_sounds = Array[AudioStream]([ExtResource("9_hadp7"), ExtResource("10_yk
 
 [node name="FootstepAudio" type="AudioStreamPlayer" parent="FootstepController"]
 volume_db = -25.0
-pitch_scale = 0.65
+pitch_scale = 0.6
 
 [editable path="Camera3D/HandOffset/arms_rig"]

@@ -81,9 +81,9 @@ func play_footstep() -> void:
 	
 	
 	if player.is_crouching:
-		footstep_audio.volume_db = -35.0
+		footstep_audio.volume_db = -37.0
 	else:
-		footstep_audio.volume_db = -25.0
+		footstep_audio.volume_db = -30.0
 
 	
 	footstep_audio.play()

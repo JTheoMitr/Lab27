@@ -224,6 +224,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.725237, -31.438221, -19.93
 [node name="KeyPad" parent="." instance=ExtResource("7_5rr72")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.862702, -31.776518, -17.882164)
 
+[node name="KeyPad2" parent="." instance=ExtResource("7_5rr72")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 25.586607, -31.776518, -17.882164)
+
+[node name="KeyPad3" parent="." instance=ExtResource("7_5rr72")]
+transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, 20.288496, -31.776518, -21.519789)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_bjebc")
 volume_db = -6.0
