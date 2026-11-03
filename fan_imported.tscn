@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://2yducvxsj5i8"]
+
+[ext_resource type="PackedScene" uid="uid://do77twxprh3ul" path="res://vintage_fan.glb" id="1_hf0sw"]
+[ext_resource type="Script" uid="uid://betawfg1y1fel" path="res://fan_imported.gd" id="2_bmc8p"]
+
+[node name="Fan_Imported" node_paths=PackedStringArray("animation_player") instance=ExtResource("1_hf0sw")]
+script = ExtResource("2_bmc8p")
+animation_player = NodePath("AnimationPlayer")
+animation_name = &"Fan hgpl anim"
+loop_start_time = 4.64
+loop_end_time = 6.67
+
+[node name="pCube3" parent="Sketchfab_model/50c106c4f26143f1a0f30dd09550d7c7_fbx/Object_2/RootNode" index="1"]
+transform = Transform3D(0.3219319, 0, -0.054114863, 0, 0.038127635, 0, 0.23967485, 0, 0.07268722, -0.17428438, -1.3000101, 0)
+
+[node name="group8" parent="Sketchfab_model/50c106c4f26143f1a0f30dd09550d7c7_fbx/Object_2/RootNode" index="4"]
+transform = Transform3D(0.9848076, -0.1401087, -0.102582835, 0.17364816, 0.79459584, 0.5817762, -7.4505797e-09, -0.590751, 0.8068539, 0, 0, 0)
+
+[node name="AnimationPlayer" parent="." index="1"]
+speed_scale = 5.0

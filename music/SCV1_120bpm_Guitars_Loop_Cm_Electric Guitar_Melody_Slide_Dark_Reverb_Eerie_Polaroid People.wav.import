@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dorjgcp6ddj6r"
+path="res://.godot/imported/SCV1_120bpm_Guitars_Loop_Cm_Electric Guitar_Melody_Slide_Dark_Reverb_Eerie_Polaroid People.wav-6b7e6c54ea4053ae8cd50b93f512985a.sample"
+
+[deps]
+
+source_file="res://music/SCV1_120bpm_Guitars_Loop_Cm_Electric Guitar_Melody_Slide_Dark_Reverb_Eerie_Polaroid People.wav"
+dest_files=["res://.godot/imported/SCV1_120bpm_Guitars_Loop_Cm_Electric Guitar_Melody_Slide_Dark_Reverb_Eerie_Polaroid People.wav-6b7e6c54ea4053ae8cd50b93f512985a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
