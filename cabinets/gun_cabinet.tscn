@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://4xyeevc8gv80"]
+
+[ext_resource type="PackedScene" uid="uid://5sknobpujwkg" path="res://armored_cabinet.glb" id="1_7xhln"]
+[ext_resource type="Script" uid="uid://dtqw28pmv4xpq" path="res://cabinets/gun_cabinet.gd" id="1_16orp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16orp"]
+size = Vector3(0.7487793, 1.0988464, 0.17785645)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2p8nr"]
+size = Vector3(1.1466064, 2.0344238, 0.5956726)
+
+[node name="GunCabinet" type="Node3D" node_paths=PackedStringArray("animation_player", "interaction_area", "contents")]
+script = ExtResource("1_16orp")
+animation_player = NodePath("CabinetModel/AnimationPlayer")
+interaction_area = NodePath("InteractionArea")
+contents = NodePath("Contents")
+
+[node name="CabinetModel" parent="." instance=ExtResource("1_7xhln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42828012, 0, 0.33015227)
+
+[node name="Skeleton3D" parent="CabinetModel/Sketchfab_model/root/GLTF_SceneRootNode/skeleton_13/GLTF_created_0" index="0"]
+bones/2/rotation = Quaternion(0.353556, 0.6123729, 0.61237097, 0.35355264)
+bones/3/rotation = Quaternion(0.6123742, 0.3535538, 0.35355037, 0.6123722)
+
+[node name="InteractionArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43662298, 1.0110376, 0.63787055)
+shape = SubResource("BoxShape3D_16orp")
+
+[node name="CabinetCollision" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CabinetCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4265995, 0.9744873, 0.32902527)
+shape = SubResource("BoxShape3D_2p8nr")
+
+[node name="Contents" type="Node3D" parent="."]
+
+[editable path="CabinetModel"]

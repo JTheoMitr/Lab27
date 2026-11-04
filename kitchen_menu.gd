@@ -19,9 +19,9 @@ extends Node3D
 
 @export_group("Camera Movement")
 @export var stand_up_duration: float = 1.5
-@export var turn_duration: float = 1.5
+@export var turn_duration: float = 2.5
 @export var walking_duration: float = 4.0
-@export var lie_down_duration: float = 2.0
+@export var lie_down_duration: float = 1.25
 @export var fade_to_black_duration: float = 1.5
 
 

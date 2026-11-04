@@ -225,7 +225,7 @@ autoplay = "Idle"
 transform = Transform3D(0.9172757, 0, 0.39825284, 0, 1, 0, -0.39825284, 0, 0.9172757, 1.8531573, 1.1656356, -1.2620872)
 
 [node name="StandUp" type="Marker3D" parent="CameraMarkers"]
-transform = Transform3D(0.62344307, 0, 0.7818688, 0, 1, 0, -0.7818688, 0, 0.62344307, 1.8531573, 1.7069764, -1.2620872)
+transform = Transform3D(0.65139693, 0, 0.75873727, 0, 1, 0, -0.75873727, 0, 0.65139693, 1.8531573, 1.7069764, -1.2620872)
 
 [node name="BedLookPosition" type="Marker3D" parent="CameraMarkers"]
 transform = Transform3D(-0.9851573, 0, -0.17165405, 0, 1, 0, 0.17165405, 0, -0.9851573, 1.8531573, 1.8259072, -0.9550575)
