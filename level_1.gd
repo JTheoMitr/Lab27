@@ -3,6 +3,7 @@ extends Node3D
 @onready var level_ambience_1 = $AudioStreamPlayer
 
 func _ready() -> void:
+	#print("LEVEL 1: Ready completed!")
 	level_ambience_1.play()
 	
 

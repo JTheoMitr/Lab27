@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://4xyeevc8gv80"]
 
-[ext_resource type="PackedScene" uid="uid://5sknobpujwkg" path="res://armored_cabinet.glb" id="1_7xhln"]
+[ext_resource type="PackedScene" uid="uid://5sknobpujwkg" path="res://cabinets/armored_cabinet.glb" id="1_7xhln"]
 [ext_resource type="Script" uid="uid://dtqw28pmv4xpq" path="res://cabinets/gun_cabinet.gd" id="1_16orp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_16orp"]

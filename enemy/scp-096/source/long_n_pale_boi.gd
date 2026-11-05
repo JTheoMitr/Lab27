@@ -246,11 +246,12 @@ func _physics_process(delta: float) -> void:
 						arrive_at_patrol_point()
 
 					elif debug_navigation and Engine.get_physics_frames() % 60 == 0:
-						print(
-							"PATROL PATH ENDED | Marker: ", current_patrol_point.name,
-							" | Distance to endpoint: ", distance_to_final.length(),
-							" | Endpoint to marker: ", final_to_marker.length()
-						)
+						#print(
+							#"PATROL PATH ENDED | Marker: ", current_patrol_point.name,
+							#" | Distance to endpoint: ", distance_to_final.length(),
+							#" | Endpoint to marker: ", final_to_marker.length()
+						#)
+						pass
 
 		State.INVESTIGATING:
 			if sees_player:

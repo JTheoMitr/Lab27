@@ -1,0 +1,254 @@
+[gd_scene load_steps=17 format=3 uid="uid://dbdw3hl0qm2sj"]
+
+[ext_resource type="PackedScene" uid="uid://co2yv3k818n82" path="res://kitchentro/kitchen_apartment.glb" id="1_cqvvb"]
+[ext_resource type="Script" uid="uid://c31flh62lyoya" path="res://kitchentro/kitchen_menu.gd" id="1_ft8sm"]
+[ext_resource type="PackedScene" uid="uid://2yducvxsj5i8" path="res://fan_imported.tscn" id="2_cqvvb"]
+[ext_resource type="Script" uid="uid://cq4kpsh3hn23n" path="res://flickering_light.gd" id="2_mt4ks"]
+[ext_resource type="PackedScene" uid="uid://deutfmtla0skv" path="res://items_aesthetic/ash_tray.glb" id="3_2e8lm"]
+[ext_resource type="AudioStream" uid="uid://dorjgcp6ddj6r" path="res://music/SCV1_120bpm_Guitars_Loop_Cm_Electric Guitar_Melody_Slide_Dark_Reverb_Eerie_Polaroid People.wav" id="5_87phd"]
+[ext_resource type="PackedScene" uid="uid://b6vomsndols47" path="res://enemy/fully_reanimated_scp-096_updated.glb" id="7_hpl7j"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mt4ks"]
+emission_shape = 3
+emission_box_extents = Vector3(0.3, 0.2, 0.3)
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 0.049999997
+initial_velocity_max = 0.25
+gravity = Vector3(0, 0, 0)
+turbulence_enabled = true
+turbulence_noise_strength = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87phd"]
+albedo_color = Color(0.033853278, 0.033853278, 0.033853274, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ft8sm"]
+material = SubResource("StandardMaterial3D_87phd")
+radius = 0.005
+height = 0.008
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mt4ks"]
+albedo_color = Color(0.11858138, 0.11858138, 0.11858138, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_87phd"]
+material = SubResource("StandardMaterial3D_mt4ks")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_87phd"]
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 0.01
+initial_velocity_max = 0.06
+gravity = Vector3(0, 0, 0)
+turbulence_noise_strength = 0.01
+turbulence_noise_scale = 0.05
+turbulence_noise_speed_random = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ft8sm"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.3590689, 0.35906917, 0.35906896, 1)
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_hpl7j"]
+material = SubResource("StandardMaterial3D_ft8sm")
+size = Vector2(0.001, 0.001)
+
+[sub_resource type="Environment" id="Environment_hpl7j"]
+background_energy_multiplier = 0.1
+ambient_light_source = 2
+ambient_light_color = Color(0.00012922806, 0, 0.17741808, 1)
+
+[node name="KitchenMenu" type="Node3D"]
+script = ExtResource("1_ft8sm")
+
+[node name="kitchen_apartment" parent="." instance=ExtResource("1_cqvvb")]
+
+[node name="FlyParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8238789, 1.3560627, -2.813018)
+amount = 5
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_mt4ks")
+draw_pass_1 = SubResource("SphereMesh_ft8sm")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="MainLight" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22627091, 2.9645474, 0)
+light_color = Color(0.8917602, 0.8836914, 0.44684565, 1)
+light_energy = 0.18
+
+[node name="FlickeringLight" type="SpotLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.23344542, 0.9723699, 0, -0.9723699, 0.23344542, 0.36722523, 1.892489, -2.8703234)
+light_color = Color(0.8102498, 0.89347494, 0.7900946, 1)
+light_energy = 0.18
+script = ExtResource("2_mt4ks")
+normal_energy = 0.25
+min_time_between_flickers = 0.25
+max_time_between_flickers = 4.0
+flicker_chance = 0.97
+
+[node name="LightCover" type="MeshInstance3D" parent="Lighting/FlickeringLight"]
+transform = Transform3D(0.15, 0, 0, 0, 0.035016816, -0.14585549, 0, 0.14585549, 0.035016816, -0.07172674, 0.012521744, 0.0059814453)
+mesh = SubResource("SphereMesh_87phd")
+skeleton = NodePath("../..")
+
+[node name="AccentLight" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9993632, 0.9805907, -1.6742424)
+light_color = Color(1, 0.35686275, 0.1764706, 1)
+light_energy = 0.01
+
+[node name="AccentLight2" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9993632, 0.9805907, 2.120842)
+light_color = Color(1, 0.35686275, 0.1764706, 1)
+light_energy = 0.05
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="RoomAmbience" type="AudioStreamPlayer" parent="Audio"]
+
+[node name="Music" type="AudioStreamPlayer" parent="Audio"]
+
+[node name="ApplianceHum" type="AudioStreamPlayer3D" parent="Audio"]
+
+[node name="FlyBuzz" type="AudioStreamPlayer3D" parent="Audio"]
+
+[node name="CameraRig" type="Node3D" parent="."]
+transform = Transform3D(0.910626, 0, 0.41323158, 0, 1, 0, -0.41323158, 0, 0.910626, 1.8531573, 1.1656356, -1.0992563)
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+transform = Transform3D(1, 4.4703484e-08, -2.9802322e-08, -4.4703484e-08, 1, -2.2625933e-08, 2.9802322e-08, 2.2625937e-08, 1, 0.04271841, 2.3841858e-07, -0.09413797)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuPanel" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TakeNapButton" type="Button" parent="CanvasLayer/MenuPanel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Take a nap"
+
+[node name="FadeOverlay" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Fan_Imported" parent="." instance=ExtResource("2_cqvvb")]
+transform = Transform3D(-0.12150198, 0, -0.1328054, 0, 0.17999998, 0, 0.1328054, 0, -0.12150198, 2.1147857, 1.1628475, -2.67697)
+
+[node name="Ciggibutt" parent="." instance=ExtResource("3_2e8lm")]
+transform = Transform3D(0.0265347, 0, 0.022823445, 0, 0.035, 0, -0.022823445, 0, 0.0265347, 1.9964793, 0.9497364, -1.6639062)
+
+[node name="Atmosphere" type="Node3D" parent="."]
+
+[node name="CigaretteSmoke" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9990151, 0.9849614, -1.6727169)
+cast_shadow = 0
+amount = 128
+lifetime = 1.5
+speed_scale = 0.7
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_87phd")
+draw_pass_1 = SubResource("QuadMesh_hpl7j")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_87phd")
+volume_db = -3.0
+pitch_scale = 0.85
+autoplay = true
+
+[node name="CornerBoi" parent="." instance=ExtResource("7_hpl7j")]
+transform = Transform3D(0.5930957, 0, 0.8051319, 0, 1, 0, -0.8051319, 0, 0.5930957, -1.6664822, 0.47222424, -1.4061459)
+
+[node name="Skeleton3D" parent="CornerBoi/Sketchfab_model/bc03a9a4e23143bd9c69d7a70429f361_fbx/Object_2/RootNode/scp096_skeleton_001/Object_9" index="0"]
+bones/6/position = Vector3(-9.998912e-07, -0.1328202, 1.463138)
+bones/6/rotation = Quaternion(0.6675421, -0.00034994906, 0.0003137446, 0.744572)
+bones/7/rotation = Quaternion(0.11875656, 0.06350167, 0.01511669, 0.9907754)
+bones/8/rotation = Quaternion(0.16240057, -0.050009448, 0.004007285, 0.98544866)
+bones/9/rotation = Quaternion(-0.0012509339, 0.8758067, 0.4755148, 0.08274484)
+bones/10/rotation = Quaternion(0.508185, 0.06427187, -0.014123463, 0.85873026)
+bones/11/position = Vector3(-0.0016703224, 0.31608033, -0.38741854)
+bones/11/rotation = Quaternion(0.843254, -0.53421426, -0.04863761, -0.03423847)
+bones/12/position = Vector3(-0.0019410346, 0.31607106, -0.3874089)
+bones/12/rotation = Quaternion(0.57575166, 0.55119115, 0.5555657, -0.23673871)
+bones/13/position = Vector3(0.0012751212, 0.30546397, -0.3571993)
+bones/13/rotation = Quaternion(-0.4438291, 0.8935499, 0.044552177, -0.05098543)
+bones/14/position = Vector3(0.0012750356, 0.30546433, -0.35720026)
+bones/14/rotation = Quaternion(-0.32417095, -0.6361276, -0.39085367, 0.58093756)
+bones/15/rotation = Quaternion(0.34910047, -0.052935906, -0.04948604, -0.93427926)
+bones/16/rotation = Quaternion(0.1097239, -0.029508915, -0.0074454267, 0.9934961)
+bones/17/rotation = Quaternion(-0.1981817, 0.058215804, 0.035140246, 0.9778037)
+bones/18/rotation = Quaternion(0.41428936, 0.5746596, 0.47570947, -0.52137434)
+bones/19/rotation = Quaternion(-0.6425425, 0.06244185, -0.20213524, 0.73646563)
+bones/20/rotation = Quaternion(-0.2313273, -0.24112627, 0.36937377, -0.8671268)
+bones/21/rotation = Quaternion(-0.28766832, -0.21955025, -0.23668435, 0.90167916)
+bones/22/rotation = Quaternion(-0.20731004, 0.3221279, 0.53596115, 0.75233096)
+bones/23/rotation = Quaternion(-0.091777064, -0.15160386, 0.34475914, 0.9218104)
+bones/24/rotation = Quaternion(-0.20724943, -0.17714937, 0.33144253, 0.90322286)
+bones/25/rotation = Quaternion(-0.26212266, -0.1732909, 0.3073094, 0.8982333)
+bones/26/rotation = Quaternion(-0.4046056, -0.31941938, 0.28230363, 0.8090552)
+bones/27/rotation = Quaternion(-0.37923098, 0.5332888, 0.4677185, 0.5941602)
+bones/28/rotation = Quaternion(-0.65356255, -0.0054455507, 0.22941583, 0.7212453)
+bones/29/rotation = Quaternion(0.09729174, 0.049441993, 0.43548042, 0.89355844)
+bones/30/rotation = Quaternion(-0.42339545, -0.10114514, 0.19168106, 0.8796388)
+bones/31/rotation = Quaternion(-0.29420853, -0.21120264, -0.3806895, 0.8508293)
+bones/32/rotation = Quaternion(-0.27046743, 0.21369903, -0.33327007, 0.8775598)
+bones/33/rotation = Quaternion(-0.25147352, 0.21360344, -0.3159364, 0.8895611)
+bones/34/rotation = Quaternion(-0.2755595, 0.078014255, -0.31034032, 0.90646005)
+bones/35/rotation = Quaternion(-0.25079656, 0.16291125, -0.3135194, 0.9012584)
+bones/36/rotation = Quaternion(0.68759316, 0.71213114, -0.054993525, 0.13061664)
+bones/37/rotation = Quaternion(-0.66811955, 0.67739385, 0.23730022, 0.19606757)
+bones/38/rotation = Quaternion(-0.31906995, 0.027004449, 0.16020866, 0.9337014)
+bones/39/rotation = Quaternion(0.7774325, 0.051130507, -0.09478201, 0.6196781)
+bones/41/rotation = Quaternion(-0.7017192, 0.699008, -0.08368694, -0.10942848)
+bones/42/rotation = Quaternion(0.6918483, 0.7184013, -0.0584108, -0.042822186)
+bones/43/rotation = Quaternion(-0.37102252, 0.3365842, -0.1369094, 0.8545813)
+bones/44/rotation = Quaternion(0.6731901, -0.19239928, 0.2259823, 0.6772958)
+
+[node name="AnimationPlayer" parent="CornerBoi" index="1"]
+autoplay = "Idle"
+
+[node name="CameraMarkers" type="Node3D" parent="."]
+
+[node name="SeatedPosition" type="Marker3D" parent="CameraMarkers"]
+transform = Transform3D(0.9172757, 0, 0.39825284, 0, 1, 0, -0.39825284, 0, 0.9172757, 1.8531573, 1.1656356, -1.2620872)
+
+[node name="StandUp" type="Marker3D" parent="CameraMarkers"]
+transform = Transform3D(0.65139693, 0, 0.75873727, 0, 1, 0, -0.75873727, 0, 0.65139693, 1.8531573, 1.7069764, -1.2620872)
+
+[node name="BedLookPosition" type="Marker3D" parent="CameraMarkers"]
+transform = Transform3D(-0.9851573, 0, -0.17165405, 0, 1, 0, 0.17165405, 0, -0.9851573, 1.8531573, 1.8259072, -0.9550575)
+
+[node name="StepPosition1" type="Marker3D" parent="CameraMarkers"]
+transform = Transform3D(-0.9851573, 0, -0.17165405, 0, 1, 0, 0.17165405, 0, -0.9851573, 1.8531573, 1.6266305, -0.5175251)
+
+[node name="StepPosition2" type="Marker3D" parent="CameraMarkers"]
+transform = Transform3D(-0.9851573, 0, -0.17165405, 0, 1, 0, 0.17165405, 0, -0.9851573, 1.8531573, 1.8549974, 0.056677222)
+
+[node name="StepPosition3" type="Marker3D" parent="CameraMarkers"]
+transform = Transform3D(-0.9851573, 0, -0.17165405, 0, 1, 0, 0.17165405, 0, -0.9851573, 1.8531573, 1.645148, 0.6598487)
+
+[node name="StepPosition4" type="Marker3D" parent="CameraMarkers"]
+transform = Transform3D(-0.9851573, 0, -0.17165405, 0, 1, 0, 0.17165405, 0, -0.9851573, 1.8531573, 1.9040658, 1.1312196)
+
+[node name="BedApproachPosition" type="Marker3D" parent="CameraMarkers"]
+transform = Transform3D(-0.77097553, 0.3629066, -0.5233503, 0.3169077, 0.9314096, 0.17901309, 0.55241853, -0.027839324, -0.8331017, 2.1764996, 1.7788419, 1.7440464)
+
+[node name="LyingPosition" type="Marker3D" parent="CameraMarkers"]
+transform = Transform3D(0.8397431, -0.542984, 0, 0.44855815, 0.6937103, -0.5635261, 0.30598566, 0.47321713, 0.82609826, 3.3203185, 0.5083345, 2.894041)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hpl7j")
+
+[editable path="CornerBoi"]

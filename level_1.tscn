@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3s10pn6blyex"]
+[gd_scene load_steps=15 format=3 uid="uid://b3s10pn6blyex"]
 
 [ext_resource type="Script" uid="uid://bti3wk0i5heun" path="res://level_1.gd" id="1_hn12h"]
 [ext_resource type="PackedScene" uid="uid://daqbvqf406dyu" path="res://player_3d.tscn" id="2_hbghi"]
-[ext_resource type="PackedScene" uid="uid://des6roxfro2ib" path="res://stinky_sewers_1/stinky_sewers.glb" id="4_rka8t"]
+[ext_resource type="PackedScene" uid="uid://davslvnm2vnqh" path="res://lights/light_bulb.tscn" id="3_27bay"]
 [ext_resource type="PackedScene" uid="uid://cie16vxxiewc5" path="res://hospital_new.tscn" id="6_5hph3"]
 [ext_resource type="PackedScene" uid="uid://neyp8gkdnk0c" path="res://hackables/key_pad.tscn" id="7_5rr72"]
 [ext_resource type="AudioStream" uid="uid://cgj7hny12on1j" path="res://sfx_room_ambience/Ambience_Room_Tone_1.wav" id="7_bjebc"]
-[ext_resource type="PackedScene" uid="uid://dhk0nufyhsyua" path="res://boost_pad.tscn" id="7_j7kpp"]
+[ext_resource type="PackedScene" uid="uid://dhyjp61m6guuy" path="res://corpses/murder_scene_cloth_body.glb" id="8_5rr72"]
 [ext_resource type="PackedScene" uid="uid://4xyeevc8gv80" path="res://cabinets/gun_cabinet.tscn" id="9_5rr72"]
 [ext_resource type="PackedScene" uid="uid://r81w2ils2070" path="res://enemy/scp-096/source/Long_n_pale_boi.tscn" id="9_gyffv"]
-[ext_resource type="PackedScene" uid="uid://btkvke3xagonx" path="res://corpses/corpse_in_a_black_body_bag_with_ropes.glb" id="10_1pe0h"]
+[ext_resource type="Script" uid="uid://dcyipbut2w2og" path="res://distance_test_marker.gd" id="10_gyffv"]
+[ext_resource type="PackedScene" uid="uid://cjt3grnca4x0y" path="res://furniture/autopsy_lab_-_assets.glb" id="11_1pe0h"]
 [ext_resource type="PackedScene" uid="uid://dnogfmtmice7k" path="res://lights/work_light.glb" id="11_27bay"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hbghi"]
@@ -34,186 +35,313 @@ shape = SubResource("BoxShape3D_hbghi")
 [node name="Player3D" parent="." instance=ExtResource("2_hbghi")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -5.742702, -31.978676, -10.220566)
 
+[node name="Skeleton3D" parent="Player3D/Camera3D/HandOffset/arms_rig/ArmsRig" index="0"]
+bones/1/rotation = Quaternion(-0.61398107, 0.35091317, 0.35115877, 0.6136568)
+bones/2/position = Vector3(-0.008651848, 0.20224904, -0.010967851)
+bones/2/rotation = Quaternion(-0.07880049, -0.74099094, 0.280257, 0.60512716)
+bones/3/rotation = Quaternion(0.2196909, -0.002733485, 0.0054173237, 0.97555065)
+bones/4/rotation = Quaternion(-0.060811203, 0.007603968, 0.038141906, 0.9973913)
+bones/5/position = Vector3(0.00409576, 0.038309533, 0.02635752)
+bones/5/rotation = Quaternion(0.010035965, -0.7703345, -0.09816678, 0.6299582)
+bones/6/rotation = Quaternion(0.18016069, 0.046207428, 0.022347765, 0.9822971)
+bones/7/rotation = Quaternion(-0.016746076, -0.020631455, 0.00795285, 0.99961525)
+bones/8/rotation = Quaternion(-0.0020922462, -0.0032982046, 0.004392738, 0.9999827)
+bones/9/position = Vector3(0.008271288, -0.0027545462, 0.020711206)
+bones/9/rotation = Quaternion(0.012231383, -0.41402337, -0.309255, 0.8560353)
+bones/10/rotation = Quaternion(0.17710981, 0.003341802, 0.022471419, 0.98392886)
+bones/11/rotation = Quaternion(0.09226219, -0.11139584, 0.031415015, 0.9889852)
+bones/12/position = Vector3(0.0069003785, 0.041151706, 0.0076276883)
+bones/12/rotation = Quaternion(-0.032968737, -0.7301289, -0.07126142, 0.6787833)
+bones/13/rotation = Quaternion(0.15924469, 0.0114482, 0.012669116, 0.9870915)
+bones/14/rotation = Quaternion(0.009184696, 0.010510943, 0.004637764, 0.9998918)
+bones/15/rotation = Quaternion(0.004179801, 0.0045297546, 0.0012190467, 0.9999803)
+bones/16/rotation = Quaternion(0.0033799417, 0.6954604, -0.08253682, 0.71380055)
+bones/17/rotation = Quaternion(-0.002216096, 0.9871296, -0.15748288, -0.027736075)
+bones/18/rotation = Quaternion(-0.004058707, -0.0049367337, 0.004268954, 0.9999705)
+bones/19/rotation = Quaternion(0.03975673, 0.03904753, 0.0028530823, 0.99844205)
+bones/21/rotation = Quaternion(0.14901386, -0.014479387, 0.004337628, 0.9887196)
+bones/22/rotation = Quaternion(0.02831033, 0.02947081, 0.018822037, 0.9989873)
+bones/23/rotation = Quaternion(-0.030961195, -0.024856668, -0.0008456017, 0.99921113)
+bones/24/rotation = Quaternion(-0.6143471, -0.35155368, -0.3505181, 0.61329013)
+bones/25/position = Vector3(0.008628928, 0.202249, -0.010985744)
+bones/25/rotation = Quaternion(-0.07909294, 0.74162203, -0.2801746, 0.60435355)
+bones/26/rotation = Quaternion(0.2196917, 0.002733482, -0.0054172417, 0.9755505)
+bones/27/rotation = Quaternion(-0.060811803, -0.007603829, -0.038141992, 0.9973912)
+bones/28/position = Vector3(-0.0040955557, 0.038309556, 0.026357062)
+bones/28/rotation = Quaternion(0.010037994, 0.77033454, 0.09816914, 0.6299578)
+bones/29/rotation = Quaternion(0.18016109, -0.04620797, -0.022350775, 0.98229694)
+bones/30/rotation = Quaternion(-0.016746089, 0.020631459, -0.007952869, 0.99961525)
+bones/31/rotation = Quaternion(-0.0020921875, 0.003298192, -0.004392738, 0.9999827)
+bones/32/rotation = Quaternion(0.012233101, 0.41402322, 0.30925262, 0.8560362)
+bones/33/rotation = Quaternion(0.17710984, -0.003341867, -0.022471378, 0.98392886)
+bones/34/rotation = Quaternion(0.0922622, 0.111395836, -0.031415053, 0.9889852)
+bones/35/position = Vector3(-0.0069001745, 0.04115173, 0.0076272227)
+bones/35/rotation = Quaternion(-0.032966513, 0.73012894, 0.07126369, 0.67878306)
+bones/36/rotation = Quaternion(0.15924488, -0.011448691, -0.0126722725, 0.98709136)
+bones/37/rotation = Quaternion(0.009184664, -0.010510941, -0.004637763, 0.9998918)
+bones/38/rotation = Quaternion(0.004179831, -0.0045297546, -0.001219048, 0.9999803)
+bones/39/rotation = Quaternion(0.0033822444, -0.6954603, 0.082534574, 0.71380085)
+bones/40/rotation = Quaternion(0.0022129132, 0.9871296, -0.15748289, 0.027736548)
+bones/41/rotation = Quaternion(-0.004058692, 0.0049367384, -0.0042689587, 0.9999705)
+bones/42/rotation = Quaternion(0.03975676, -0.03904752, -0.0028530825, 0.99844205)
+bones/43/rotation = Quaternion(-0.12909606, 0.6619, -0.042750534, 0.7371533)
+bones/44/rotation = Quaternion(0.14901385, 0.014479392, -0.004337631, 0.9887196)
+bones/45/rotation = Quaternion(0.02831034, -0.029470792, -0.018822037, 0.9989873)
+bones/46/rotation = Quaternion(-0.030961158, 0.024856683, 0.0008455937, 0.99921113)
+bones/47/position = Vector3(9.011e-09, 0.2774551, 6.3624757e-15)
+bones/47/rotation = Quaternion(0.499898, -0.5001017, 0.500102, -0.49989834)
+bones/48/position = Vector3(-0.6604738, 1.3061, -0.050747856)
+bones/48/rotation = Quaternion(0.021435948, 0.042664316, 0.8901127, 0.45323253)
+bones/49/position = Vector3(-0.46390694, 1.429291, -0.26763627)
+bones/50/position = Vector3(0.6604738, 1.3061, -0.050747856)
+bones/50/rotation = Quaternion(-0.021435948, 0.042664316, 0.8901127, -0.45323253)
+bones/51/position = Vector3(0.46390694, 1.429291, -0.26763627)
+bones/51/rotation = Quaternion(0.34815237, -0.615459, 0.61545914, -0.3481524)
+
 [node name="HeartbeatController" parent="Player3D" index="4" node_paths=PackedStringArray("enemy")]
 enemy = NodePath("../../SCP-096")
 
-[node name="Sewers" parent="." instance=ExtResource("4_rka8t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.88958, -38.48947, -66.183876)
+[node name="Lights" type="Node3D" parent="."]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.691746, -28.425604, -45.414635)
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D11" type="OmniLight3D" parent="."]
+[node name="OmniLight3D11" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.887657, -34.024117, -41.06044)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D13" type="OmniLight3D" parent="."]
+[node name="OmniLight3D13" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.232273, -34.97651, -41.06044)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D15" type="OmniLight3D" parent="."]
+[node name="OmniLight3D15" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.55836, -34.71577, -33.573853)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D16" type="OmniLight3D" parent="."]
+[node name="OmniLight3D16" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.690834, -35.001965, -43.34164)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D17" type="OmniLight3D" parent="."]
+[node name="OmniLight3D17" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.81969, -34.57143, -40.417065)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D18" type="OmniLight3D" parent="."]
+[node name="OmniLight3D18" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.77311, -34.47766, -46.180576)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D19" type="OmniLight3D" parent="."]
+[node name="OmniLight3D19" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.485664, -34.47766, -46.180576)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D20" type="OmniLight3D" parent="."]
+[node name="OmniLight3D20" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.95399, -34.47766, -46.180576)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D21" type="OmniLight3D" parent="."]
+[node name="OmniLight3D21" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.06478, -34.413193, -45.861828)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D22" type="OmniLight3D" parent="."]
+[node name="OmniLight3D22" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.37987, -34.413193, -53.075665)
 light_color = Color(0.9529412, 0.8235294, 0.27450982, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D23" type="OmniLight3D" parent="."]
+[node name="OmniLight3D23" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.37987, -35.13397, -56.69934)
 light_color = Color(0.9137255, 0.6901961, 0.32941177, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D24" type="OmniLight3D" parent="."]
+[node name="OmniLight3D24" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.37987, -35.13397, -57.775135)
 light_color = Color(0.9137255, 0.5803922, 0.32941177, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D25" type="OmniLight3D" parent="."]
+[node name="OmniLight3D25" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.37987, -39.831085, -70.895584)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D12" type="OmniLight3D" parent="."]
+[node name="OmniLight3D12" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(-0.96064836, 0, -0.2777674, 0, 1, 0, 0.2777674, 0, -0.96064836, 35.364006, -34.022015, -32.953793)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 shadow_blur = 6.825
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 omni_range = 3.0
 
-[node name="OmniLight3D14" type="OmniLight3D" parent="."]
+[node name="OmniLight3D14" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(-0.96064836, 0, -0.2777674, 0, 1, 0, 0.2777674, 0, -0.96064836, 31.643745, -34.227184, -39.802704)
 light_color = Color(0.91449094, 0, 0.3301935, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
 shadow_blur = 6.825
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.74454, -28.425604, -36.565113)
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1404, -30.506504, -28.459925)
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+[node name="ElectricLight1" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(-0.84046257, 0, -0.54186964, 0, 1, 0, 0.54186964, 0, -0.84046257, 26.237871, -32.992825, -27.817562)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
+
+[node name="LampLight1" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(-0.31527978, -0.864854, -0.39067423, 0.52480274, -0.5018864, 0.68752617, -0.79068375, 0.011736189, 0.61211234, 8.671816, -31.711416, -14.642911)
+light_color = Color(0.6431373, 1, 1, 1)
+light_energy = 0.1
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
+
+[node name="LightBulb" parent="Lights/LampLight1" instance=ExtResource("3_27bay")]
+transform = Transform3D(0.075, 6.4028427e-10, -1.1175871e-08, -2.6193447e-09, 0.07500001, -6.2864274e-09, 0, -7.1595423e-09, 0.07500003, 0.006939888, -0.01887703, 0.05393219)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.727577, -30.506504, -23.459387)
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.694153, -30.401829, -21.286997)
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.393547, -30.15672, -19.793047)
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="."]
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.781113, -30.15672, -19.793047)
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D27" type="OmniLight3D" parent="."]
+[node name="OmniLight3D27" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.065663, -30.465172, -25.730686)
 light_color = Color(0.95315474, 0.9395325, 0.71837217, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D8" type="OmniLight3D" parent="."]
+[node name="OmniLight3D8" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4001281, -30.15672, -19.793047)
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D10" type="OmniLight3D" parent="."]
+[node name="OmniLight3D10" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.640394, -30.211285, -14.671454)
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
 light_energy = 0.25
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D9" type="OmniLight3D" parent="."]
+[node name="OmniLight3D9" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9283175, -30.45461, -15.184956)
 light_color = Color(0.91641855, 0, 0.27772823, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D26" type="OmniLight3D" parent="."]
+[node name="OmniLight3D26" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9283175, -30.45461, -10.719273)
 light_color = Color(0.91641855, 0, 0.27772823, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
 
-[node name="OmniLight3D28" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.474356, -33.016266, -27.106571)
-light_color = Color(0.96501786, 0.8617274, 0.8251022, 1)
-light_energy = 0.3
-light_volumetric_fog_energy = 0.0
-
-[node name="BoostPad" parent="." instance=ExtResource("7_j7kpp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.089663, 1.885457, -0.59760666)
+[node name="WorkLight" parent="Lights" instance=ExtResource("11_27bay")]
+transform = Transform3D(0.8226306, 0, 0.5685762, 0, 1, 0, -0.5685762, 0, 0.8226306, 26.206783, -33.230995, -27.848866)
 
 [node name="SCP-096" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("9_gyffv")]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 32.922283, -31.751562, -20.32766)
@@ -237,26 +365,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.369438, -31.438221, -19.75
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.725237, -31.438221, -19.937737)
 
 [node name="KeyPad" parent="." instance=ExtResource("7_5rr72")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 2.862702, -31.776518, -17.882164)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 2.9981325, -31.776518, -17.879087)
 
 [node name="KeyPad2" parent="." instance=ExtResource("7_5rr72")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 25.586607, -31.776518, -17.882164)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 25.832846, -31.776518, -17.882164)
 
 [node name="KeyPad3" parent="." instance=ExtResource("7_5rr72")]
-transform = Transform3D(-0.3, 0, -2.6226834e-08, 0, 0.3, 0, 2.6226834e-08, 0, -0.3, 20.288496, -31.776518, -21.519789)
+transform = Transform3D(-0.15, 0, -2.2649372e-08, 0, 0.15, 0, 2.2649372e-08, 0, -0.15, 20.288496, -31.776518, -21.519789)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_bjebc")
 volume_db = -6.0
 
-[node name="GunCabinet" parent="." instance=ExtResource("9_5rr72")]
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="DistanceTestMarker" type="Marker3D" parent="Markers" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.69032, -30.726797, -21.395132)
+script = ExtResource("10_gyffv")
+player = NodePath("../../Player3D")
+
+[node name="Furniture" type="Node3D" parent="."]
+
+[node name="GunCabinet" parent="Furniture" instance=ExtResource("9_5rr72")]
 transform = Transform3D(0.8633163, 0, 0.5046632, 0, 1, 0, -0.5046632, 0, 0.8633163, 10.847237, -33.231007, -27.16832)
 
-[node name="Corpse1" parent="." instance=ExtResource("10_1pe0h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.832996, -33.24033, -27.315529)
+[node name="Corpses" type="Node3D" parent="."]
 
-[node name="IndLight1" parent="." instance=ExtResource("11_27bay")]
-transform = Transform3D(0.4175023, 0, 0.90867585, 0, 1, 0, -0.90867585, 0, 0.4175023, 26.418806, -33.23165, -27.134117)
+[node name="Corpse" parent="Corpses" instance=ExtResource("8_5rr72")]
+transform = Transform3D(0.058140453, 0, 0.19136272, 0, 0.2, 0, -0.19136272, 0, 0.058140453, 28.095829, -33.229546, -26.551126)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("11_1pe0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.399143, -33.23101, -15.274292)
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
