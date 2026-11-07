@@ -18,6 +18,8 @@ extends CharacterBody3D
 var standing_camera_position: Vector3
 
 
+var cutscene_locked: bool = false
+
 var is_crouching: bool = false
 
 
@@ -37,6 +39,17 @@ func _ready() -> void:
 	
 	
 func _physics_process(delta: float) -> void:
+	
+	
+	if cutscene_locked:
+		if not is_on_floor():
+			velocity.y -= gravity * delta
+
+		velocity.x = 0.0
+		velocity.z = 0.0
+		move_and_slide()
+		return
+
 	
 	is_crouching = Input.is_action_pressed("crouch")
 	
@@ -167,6 +180,10 @@ func play_looping_animation(animation_name: String) -> void:
 		animation_player.play(animation_name)
 
 func _unhandled_input(event: InputEvent) -> void:
+	
+	if cutscene_locked:
+		return
+		
 	if event is InputEventMouseMotion:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			# Horizontal: turn the entire player
@@ -193,18 +210,35 @@ func _unhandled_input(event: InputEvent) -> void:
 			try_interact()
 			
 			
+
 func try_interact() -> void:
+	if cutscene_locked:
+		return
+
+	interaction_ray.force_raycast_update()
+
 	if not interaction_ray.is_colliding():
 		return
 
-	var hit = interaction_ray.get_collider()
+	var hit: Object = interaction_ray.get_collider()
 
 	if hit == null:
 		return
 
-	# The ray hits the door's Area3D.
-	# Its parent has our door interaction script.
-	var interactable = hit.get_parent()
+	var interactable: Node = hit.get_parent()
 
-	if interactable.has_method("interact"):
+	if interactable != null and interactable.has_method("interact"):
 		interactable.interact()
+
+
+
+func set_cutscene_locked(locked: bool) -> void:
+	cutscene_locked = locked
+
+	if locked:
+		velocity.x = 0.0
+		velocity.z = 0.0
+
+		print("PLAYER: Cutscene controls locked.")
+	else:
+		print("PLAYER: Controls restored.")

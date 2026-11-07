@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmhk2oqrkr662"
+path="res://.godot/imported/HMNBlow_Sniffle nose breath 3_GFXS_FC.wav-6191d83e36b763771dc70b380d09e253.sample"
+
+[deps]
+
+source_file="res://sfx_creature/HMNBlow_Sniffle nose breath 3_GFXS_FC.wav"
+dest_files=["res://.godot/imported/HMNBlow_Sniffle nose breath 3_GFXS_FC.wav-6191d83e36b763771dc70b380d09e253.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

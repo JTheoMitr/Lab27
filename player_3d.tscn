@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://daqbvqf406dyu"]
+[gd_scene load_steps=26 format=3 uid="uid://daqbvqf406dyu"]
 
 [ext_resource type="Script" uid="uid://ca7fmse5ox873" path="res://player_3d.gd" id="1_5wjm4"]
 [ext_resource type="Script" uid="uid://b57xuydt5xuv6" path="res://hacking_reticle.gd" id="3_bp1xh"]
@@ -16,6 +16,11 @@
 [ext_resource type="AudioStream" uid="uid://bwiexksl7ctiy" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 06_ESM_CPG.wav" id="14_s2aq0"]
 [ext_resource type="AudioStream" uid="uid://byfwljvtt03ts" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 07_ESM_CPG.wav" id="15_4i51g"]
 [ext_resource type="AudioStream" uid="uid://c6ga7wkgu5qcf" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 08_ESM_CPG.wav" id="16_5b37d"]
+[ext_resource type="Script" uid="uid://bfglqku7q6l3c" path="res://shaders/s4_activation_overlay.gd" id="17_lcis0"]
+[ext_resource type="Shader" uid="uid://nkkdqq65ux20" path="res://shaders/s4_activation_glitch.gdshader" id="18_d2kcw"]
+[ext_resource type="FontFile" uid="uid://mxako3pcxsj3" path="res://fonts/PixelTandysoft-0rJG.ttf" id="19_s2aq0"]
+[ext_resource type="AudioStream" uid="uid://ckqsikul0jjbo" path="res://sfx_player/electricity_glitch_11.wav" id="20_d2kcw"]
+[ext_resource type="AudioStream" uid="uid://wla2b3am20a5" path="res://sfx_player/beep-24.wav" id="21_s2aq0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3n4ta"]
 radius = 0.265625
@@ -26,6 +31,14 @@ albedo_color = Color(0.09411765, 1, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5wjm4"]
 material = SubResource("StandardMaterial3D_5wjm4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4i51g"]
+shader = ExtResource("18_d2kcw")
+shader_parameter/background_dim = 0.16
+shader_parameter/intensity = 0.0
+shader_parameter/rgb_split = 0.008
+shader_parameter/distortion = 0.025
+shader_parameter/scanline_strength = 0.2
 
 [node name="Player3D" type="CharacterBody3D" groups=["player"]]
 collision_mask = 3
@@ -41,7 +54,7 @@ visible = false
 mesh = SubResource("CapsuleMesh_5wjm4")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.95944697, 0.28188944, 0, -0.28188944, 0.95944697, -0.11491299, 0.3860457, -0.08208966)
+transform = Transform3D(1, 0, 0, 0, 0.95944697, 0.28188944, 0, -0.28188944, 0.95944697, -0.11491299, 0.73641086, -0.08208966)
 
 [node name="InteractionRay" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -2)
@@ -59,32 +72,33 @@ collide_with_areas = true
 transform = Transform3D(-1.25, 0, 1.8874475e-07, 5.3205145e-08, 1.1993085, 0.3523618, -1.8109056e-07, 0.3523618, -1.1993085, 0.015121102, -2.2201183, -0.7110052)
 
 [node name="Skeleton3D" parent="Camera3D/HandOffset/arms_rig/ArmsRig" index="0"]
-bones/1/rotation = Quaternion(-0.6139811, 0.35091314, 0.3511588, 0.61365676)
-bones/2/position = Vector3(-0.008651842, 0.202249, -0.010967674)
-bones/2/rotation = Quaternion(-0.075323045, -0.7460369, 0.2799843, 0.5994699)
-bones/3/rotation = Quaternion(0.21969162, -0.0027334888, 0.0054173414, 0.9755505)
-bones/4/rotation = Quaternion(-0.057797797, 0.010611158, 0.032256015, 0.9977507)
-bones/5/position = Vector3(0.0040954626, 0.038309466, 0.02635751)
-bones/5/rotation = Quaternion(0.010035974, -0.7703345, -0.09816673, 0.6299582)
-bones/6/rotation = Quaternion(0.18016067, 0.046207428, 0.02234776, 0.9822971)
-bones/7/rotation = Quaternion(-0.016746087, -0.02063143, 0.007952843, 0.99961525)
-bones/8/rotation = Quaternion(-0.0020922276, -0.0032982165, 0.00439274, 0.9999827)
-bones/9/position = Vector3(0.008271406, -0.0027545367, 0.020711208)
-bones/9/rotation = Quaternion(0.0122313835, -0.41402337, -0.309255, 0.8560353)
-bones/10/rotation = Quaternion(0.17710984, 0.0033417947, 0.022471411, 0.98392886)
-bones/11/rotation = Quaternion(0.09226217, -0.11139584, 0.031415023, 0.9889853)
-bones/12/position = Vector3(0.0069001443, 0.04115169, 0.0076276865)
-bones/12/rotation = Quaternion(-0.032968752, -0.73012894, -0.071261436, 0.67878324)
-bones/13/rotation = Quaternion(0.15924469, 0.0114482045, 0.012669118, 0.9870915)
-bones/14/rotation = Quaternion(0.00918466, 0.010510933, 0.0046377606, 0.9998918)
-bones/15/rotation = Quaternion(0.0041797943, 0.004529751, 0.0012190415, 0.9999803)
-bones/16/rotation = Quaternion(0.0033799661, 0.6954603, -0.08253685, 0.7138006)
-bones/17/rotation = Quaternion(-0.0022160953, 0.98712975, -0.15748289, -0.027736079)
-bones/18/rotation = Quaternion(-0.0040587215, -0.004936731, 0.0042689512, 0.9999705)
-bones/19/rotation = Quaternion(0.039756734, 0.039047528, 0.002853081, 0.99844205)
-bones/21/rotation = Quaternion(0.14901382, -0.014479384, 0.004337612, 0.9887196)
-bones/22/rotation = Quaternion(0.028310338, 0.0294708, 0.018822039, 0.99898744)
-bones/23/rotation = Quaternion(-0.030961184, -0.024856662, -0.0008456031, 0.99921113)
+bones/1/rotation = Quaternion(-0.6771994, 0.20400533, 0.20417176, 0.6768284)
+bones/2/position = Vector3(-0.008651819, 0.202249, -0.010967473)
+bones/2/rotation = Quaternion(0.14560084, -0.48732963, 0.77661955, 0.3717153)
+bones/3/rotation = Quaternion(0.77868235, 0.1321288, -0.11484339, 0.60250044)
+bones/4/rotation = Quaternion(-0.3546577, 0.2457679, 0.005192899, 0.9021026)
+bones/5/position = Vector3(0.0051893583, 0.03854346, 0.026435515)
+bones/5/rotation = Quaternion(-0.031584688, -0.77200973, -0.058316298, 0.6321414)
+bones/6/rotation = Quaternion(0.17987823, 0.04511, 0.013689545, 0.9825587)
+bones/7/rotation = Quaternion(-0.01667315, -0.02063086, 0.00795434, 0.9996165)
+bones/8/rotation = Quaternion(-0.0020192948, -0.0032978896, 0.004392976, 0.9999829)
+bones/9/position = Vector3(0.006497577, -0.0017490541, 0.0040312745)
+bones/9/rotation = Quaternion(-0.13234298, -0.32770208, -0.41104832, 0.84031904)
+bones/10/rotation = Quaternion(0.015525818, -0.00033932534, 0.022715976, 0.9996214)
+bones/11/rotation = Quaternion(-0.20142831, -0.11571191, -0.0025870411, 0.97264117)
+bones/12/position = Vector3(0.006900218, 0.04115174, 0.0076276283)
+bones/12/rotation = Quaternion(-0.052620545, -0.7302971, -0.054594576, 0.6789084)
+bones/13/rotation = Quaternion(0.15831354, 0.012791915, 0.028674737, 0.9868896)
+bones/14/rotation = Quaternion(0.008192262, 0.010506331, 0.0046481993, 0.99990046)
+bones/15/rotation = Quaternion(0.003187323, 0.004528543, 0.0012235405, 0.99998397)
+bones/16/rotation = Quaternion(0.0033799517, 0.6954603, -0.08253683, 0.7138006)
+bones/17/rotation = Quaternion(-0.021179331, 0.58664876, -0.80936337, -0.018045299)
+bones/18/rotation = Quaternion(0.70421606, -0.00047219195, 0.006509401, 0.7099558)
+bones/19/rotation = Quaternion(0.7341175, 0.029628186, -0.025593346, 0.6778928)
+bones/20/rotation = Quaternion(-0.12909606, -0.6619, 0.042750552, 0.73715335)
+bones/21/rotation = Quaternion(0.80449915, -0.0071714325, 0.013305768, 0.5937615)
+bones/22/rotation = Quaternion(0.72640914, 0.034148183, -0.0075298166, 0.6863723)
+bones/23/rotation = Quaternion(0.6846562, -0.018174239, 0.0169784, 0.7284417)
 bones/24/rotation = Quaternion(-0.6143471, -0.35155362, -0.35051805, 0.61329013)
 bones/25/position = Vector3(0.008628923, 0.20224895, -0.01098562)
 bones/25/rotation = Quaternion(-0.075615175, 0.74666226, -0.27990544, 0.5986909)
@@ -113,19 +127,20 @@ bones/45/rotation = Quaternion(0.028310329, -0.029470792, -0.018822037, 0.998987
 bones/46/rotation = Quaternion(-0.030961199, 0.024856672, 0.0008456027, 0.99921113)
 bones/47/position = Vector3(8.962437e-09, 0.27745497, -5.7740377e-15)
 bones/47/rotation = Quaternion(0.49989796, -0.5001017, 0.500102, -0.49989837)
-bones/48/position = Vector3(-0.6604739, 1.3061002, -0.05074787)
-bones/48/rotation = Quaternion(0.02143595, 0.04266431, 0.8901127, 0.4532325)
-bones/49/position = Vector3(-0.4639069, 1.429291, -0.26763627)
+bones/48/position = Vector3(-0.2473867, 1.5739123, 0.2378781)
+bones/48/rotation = Quaternion(0.00062826276, 0.77854145, 0.62626046, -0.04087417)
+bones/49/position = Vector3(-0.30957562, 1.4495264, -0.020980656)
 bones/50/position = Vector3(0.6604739, 1.3061002, -0.05074787)
 bones/50/rotation = Quaternion(-0.02143595, 0.04266431, 0.8901127, -0.4532325)
 bones/51/position = Vector3(0.4639069, 1.429291, -0.26763627)
 bones/51/rotation = Quaternion(0.34815243, -0.6154591, 0.6154591, -0.34815246)
 
-[node name="HUD" type="CanvasLayer" parent="." node_paths=PackedStringArray("hacking_ray", "hacking_reticle", "hand_offset_node", "hand_animation_player")]
+[node name="HUD" type="CanvasLayer" parent="." node_paths=PackedStringArray("hacking_ray", "hacking_reticle", "hand_offset_node", "player", "hand_animation_player")]
 script = ExtResource("3_dulx6")
 hacking_ray = NodePath("../Camera3D/HackingRay")
 hacking_reticle = NodePath("HackingReticle")
 hand_offset_node = NodePath("../Camera3D/HandOffset")
+player = NodePath("..")
 hand_animation_player = NodePath("../Camera3D/HandOffset/arms_rig/AnimationPlayer")
 hand_animation_name = &"push_L"
 
@@ -170,5 +185,65 @@ footstep_sounds = Array[AudioStream]([ExtResource("9_hadp7"), ExtResource("10_yk
 [node name="FootstepAudio" type="AudioStreamPlayer" parent="FootstepController"]
 volume_db = -25.0
 pitch_scale = 0.6
+
+[node name="S4ActivationOverlay" type="CanvasLayer" parent="."]
+layer = 10
+script = ExtResource("17_lcis0")
+text_fade_duration = 0.35
+text_hold_duration = 2.5
+fade_out_duration = 0.6
+beep_every_characters = 16
+
+[node name="GlitchRect" type="ColorRect" parent="S4ActivationOverlay"]
+material = SubResource("ShaderMaterial_4i51g")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GlitchAudioPlayer" type="AudioStreamPlayer" parent="S4ActivationOverlay"]
+stream = ExtResource("20_d2kcw")
+volume_db = -3.0
+pitch_scale = 0.5
+
+[node name="RedFlash" type="ColorRect" parent="S4ActivationOverlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.20392157, 0, 0.023529412, 1)
+
+[node name="BlackRect" type="ColorRect" parent="S4ActivationOverlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8235294)
+
+[node name="CenterContainer" type="CenterContainer" parent="S4ActivationOverlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActivationText" type="RichTextLabel" parent="S4ActivationOverlay/CenterContainer"]
+custom_minimum_size = Vector2(700, 420)
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("19_s2aq0")
+bbcode_enabled = true
+text = "S4-MYND: Neural interface booting"
+scroll_active = false
+
+[node name="TypingBeep" type="AudioStreamPlayer" parent="S4ActivationOverlay"]
+stream = ExtResource("21_s2aq0")
+volume_db = -2.0
+pitch_scale = 0.85
 
 [editable path="Camera3D/HandOffset/arms_rig"]

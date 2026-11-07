@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bykordbovhbpv"
+path="res://.godot/imported/HMNBlow_Human blowing breath 3_GFXS_FC.wav-4c065504312158585a0c61627bc5de0f.sample"
+
+[deps]
+
+source_file="res://sfx_creature/HMNBlow_Human blowing breath 3_GFXS_FC.wav"
+dest_files=["res://.godot/imported/HMNBlow_Human blowing breath 3_GFXS_FC.wav-4c065504312158585a0c61627bc5de0f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

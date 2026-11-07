@@ -148,6 +148,7 @@ func start_nap_sequence() -> void:
 	music.stop()
 
 	print("KITCHEN: Transition complete")
+	get_tree().change_scene_to_file("res://level_1.tscn")
 
 	# Hospital scene transition goes here later.
 

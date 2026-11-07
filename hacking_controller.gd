@@ -9,7 +9,7 @@ extends Node
 @export var hacking_reticle: Control
 
 @export var hand_offset_node: Node3D
-
+@export var player: CharacterBody3D
 
 @export_group("Hand Animation")
 @export var hand_animation_player: AnimationPlayer
@@ -61,7 +61,14 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	
+	
+	if not S4State.installed or (player != null and player.get("cutscene_locked") == true):
+		if hacking_mode:
+			exit_hacking_mode()
+		return
+
 	update_hacking_hand()
+	
 	var holding_q: bool = Input.is_action_pressed("hack_mode")
 
 	if not holding_q:
@@ -136,6 +143,10 @@ func update_hacking_target() -> void:
 
 
 func _on_hack_charge_complete() -> void:
+	
+	if not S4State.installed or (player != null and player.get("cutscene_locked") == true):
+		return
+
 	if current_target == null or not hacking_mode:
 		return
 

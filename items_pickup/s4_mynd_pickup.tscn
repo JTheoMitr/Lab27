@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1x6ijhpbawy0"]
+
+[ext_resource type="PackedScene" uid="uid://co6o8u38fc8mh" path="res://items_pickup/integrated_circuit_ic.glb" id="1_2wi2f"]
+[ext_resource type="Script" uid="uid://dxi8bq810drxq" path="res://items_pickup/s4_mynd_pickup.gd" id="1_sa3xb"]
+[ext_resource type="AudioStream" uid="uid://bvltcpwuaegy" path="res://sfx_player/WAGSF_FX_Squelch_2.wav" id="3_lviqw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sa3xb"]
+size = Vector3(7.9058228, 4.1710205, 7.0786285)
+
+[node name="S4MyndPickup" type="Node3D" node_paths=PackedStringArray("chip_model", "install_sound")]
+script = ExtResource("1_sa3xb")
+chip_model = NodePath("ChipModel")
+install_sound = NodePath("InstallSound")
+
+[node name="ChipModel" parent="." instance=ExtResource("1_2wi2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4286364, 0, -0.2072066)
+
+[node name="InteractionBody" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7433739, 2.0066853, -0.05880308)
+shape = SubResource("BoxShape3D_sa3xb")
+
+[node name="InstallSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lviqw")
+volume_db = 3.0

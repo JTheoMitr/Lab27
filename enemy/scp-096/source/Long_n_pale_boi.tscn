@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://r81w2ils2070"]
+[gd_scene load_steps=30 format=3 uid="uid://r81w2ils2070"]
 
 [ext_resource type="Script" uid="uid://dy7tik018hovc" path="res://enemy/scp-096/source/long_n_pale_boi.gd" id="1_3es1n"]
 [ext_resource type="PackedScene" uid="uid://b6vomsndols47" path="res://enemy/fully_reanimated_scp-096_updated.glb" id="3_bg3y4"]
@@ -19,7 +19,15 @@
 [ext_resource type="AudioStream" uid="uid://cs0kij6d7f8ge" path="res://sfx_creature/HMNBrth_American Detective Breathing Vocal Male Hmm Thoughtful Long_ESM_AAAGCAD.wav" id="17_hgfcn"]
 [ext_resource type="AudioStream" uid="uid://mjgrlb4f8diy" path="res://sfx_creature/HMNBrth_Female shocked gasp 3_GFXS_HV.wav" id="18_42ttx"]
 [ext_resource type="AudioStream" uid="uid://bowbsk3fjcuwq" path="res://sfx_creature/HMNBrth_American Detective Breathing Vocal Male Long Inhale_ESM_AAAGCAD.wav" id="18_uheac"]
+[ext_resource type="AudioStream" uid="uid://ngv02uanvmuq" path="res://sfx_creature/HMNBlow_Human blowing breath 2_GFXS_FC.wav" id="19_vg8nh"]
 [ext_resource type="AudioStream" uid="uid://di81jnoq5pa3t" path="res://sfx_creature/HMNBrth_Female surprise gasp_GFXS_HV.wav" id="19_x0whm"]
+[ext_resource type="AudioStream" uid="uid://bykordbovhbpv" path="res://sfx_creature/HMNBlow_Human blowing breath 3_GFXS_FC.wav" id="20_j8p6q"]
+[ext_resource type="AudioStream" uid="uid://c8b40bjmof0nl" path="res://sfx_creature/HMNBlow_Human blowing breath 4_GFXS_FC.wav" id="21_7s8om"]
+[ext_resource type="AudioStream" uid="uid://dy0pawryaj8r5" path="res://sfx_creature/HMNBlow_Human blowing breath_GFXS_FC.wav" id="22_5nhtp"]
+[ext_resource type="AudioStream" uid="uid://dww18wl5f4d0o" path="res://sfx_creature/HMNBlow_Smelling inhale breath 2_GFXS_FC.wav" id="23_rqj5v"]
+[ext_resource type="AudioStream" uid="uid://buhlkwcl3qk2r" path="res://sfx_creature/HMNBlow_Smelling inhale breath_GFXS_FC.wav" id="24_lv0hh"]
+[ext_resource type="AudioStream" uid="uid://dkdagnc672d1h" path="res://sfx_creature/HMNBlow_Sniffle nose breath 2_GFXS_FC.wav" id="25_0bbil"]
+[ext_resource type="AudioStream" uid="uid://bmhk2oqrkr662" path="res://sfx_creature/HMNBlow_Sniffle nose breath 3_GFXS_FC.wav" id="26_bp203"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bg3y4"]
 radius = 0.13378906
@@ -114,14 +122,15 @@ max_distance = 35.0
 [node name="CreatureVocals" type="Node3D" parent="."]
 script = ExtResource("12_mbfl4")
 crying_sounds = Array[AudioStream]([ExtResource("13_2sgpo"), ExtResource("14_4vhq6"), ExtResource("15_hgfcn")])
-breathing_sounds = Array[AudioStream]([ExtResource("16_4vhq6"), ExtResource("17_hgfcn"), ExtResource("18_uheac")])
+breathing_sounds = Array[AudioStream]([ExtResource("16_4vhq6"), ExtResource("17_hgfcn"), ExtResource("18_uheac"), ExtResource("19_vg8nh"), ExtResource("20_j8p6q"), ExtResource("21_7s8om"), ExtResource("22_5nhtp"), ExtResource("23_rqj5v"), ExtResource("24_lv0hh"), ExtResource("25_0bbil"), ExtResource("26_bp203")])
 panic_sounds = Array[AudioStream]([ExtResource("18_42ttx"), ExtResource("19_x0whm")])
 panic_min_delay = 0.5
 panic_max_delay = 1.2
 
 [node name="VocalAudio" type="AudioStreamPlayer3D" parent="CreatureVocals"]
-volume_db = -10.0
-pitch_scale = 0.6
+volume_db = -15.0
+max_db = -3.0
+pitch_scale = 0.55
 max_distance = 35.0
 
 [editable path="LNPB2"]

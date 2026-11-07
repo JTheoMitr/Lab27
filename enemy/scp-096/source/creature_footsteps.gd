@@ -108,9 +108,9 @@ func play_footstep(mode: int) -> void:
 
 	footstep_audio.play()
 
-	if debug_footsteps:
-		print(
-			"SCP FOOTSTEP | Mode: ", mode,
-			" | Sound: ", index,
-			" | Speed: ", enemy.get_real_velocity().length()
-		)
+	#if debug_footsteps:
+		#print(
+			#"SCP FOOTSTEP | Mode: ", mode,
+			#" | Sound: ", index,
+			#" | Speed: ", enemy.get_real_velocity().length()
+		#)

@@ -15,6 +15,10 @@ run/main_scene="uid://daqbvqf406dyu"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+S4State="*res://scripts/s4_state.gd"
+
 [input]
 
 jump={

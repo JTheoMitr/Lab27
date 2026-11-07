@@ -198,13 +198,14 @@ func _physics_process(delta: float) -> void:
 	update_detection(delta, detection_level)
 
 	if debug_detection and Engine.get_physics_frames() % 60 == 0:
-		print(
-			"DETECTION | Level: ", detection_level,
-			" | Distance: ", snappedf(horizontal_distance_to_player(), 0.1),
-			" | Rage: ", snappedf(rage, 0.1),
-			" | Sight timer: ", snappedf(long_sight_timer, 0.1),
-			" | State: ", State.keys()[state]
-		)
+		#print(
+			#"DETECTION | Level: ", detection_level,
+			#" | Distance: ", snappedf(horizontal_distance_to_player(), 0.1),
+			#" | Rage: ", snappedf(rage, 0.1),
+			#" | Sight timer: ", snappedf(long_sight_timer, 0.1),
+			#" | State: ", State.keys()[state]
+		#)
+		pass
 
 	# -------------------------
 	# STATE BEHAVIOR
@@ -470,13 +471,13 @@ func has_line_of_sight() -> bool:
 
 	var result: Dictionary = get_world_3d().direct_space_state.intersect_ray(query)
 
-	if debug_detection and Engine.get_physics_frames() % 60 == 0:
-		print(
-			"VISION | Eye: ", eye,
-			" | Target: ", target,
-			" | Hit: ", result.get("collider", "NOTHING"),
-			" | Shape found: ", player_shape != null
-		)
+	#if debug_detection and Engine.get_physics_frames() % 60 == 0:
+		#print(
+			#"VISION | Eye: ", eye,
+			#" | Target: ", target,
+			#" | Hit: ", result.get("collider", "NOTHING"),
+			#" | Shape found: ", player_shape != null
+		#)
 
 	if result.is_empty():
 		return false
@@ -484,15 +485,15 @@ func has_line_of_sight() -> bool:
 	
 	var can_see_player: bool = result["collider"] == player
 
-	if can_see_player and debug_detection:
-		print(
-			"CONFIRMED VISION | ",
-			"Enemy: ", global_position,
-			" | Player: ", player.global_position,
-			" | Eye: ", eye,
-			" | Target: ", target,
-			" | Hit position: ", result["position"]
-		)
+	#if can_see_player and debug_detection:
+		#print(
+			#"CONFIRMED VISION | ",
+			#"Enemy: ", global_position,
+			#" | Player: ", player.global_position,
+			#" | Eye: ", eye,
+			#" | Target: ", target,
+			#" | Hit position: ", result["position"]
+		#)
 
 	return can_see_player
 
@@ -798,9 +799,9 @@ func choose_patrol_point() -> void:
 	reset_stuck_tracking()
 	play_animation("Walk Near")
 
-	if debug_navigation:
-		print("Heading to patrol point: ", point.name)
-
+	#if debug_navigation:
+		#print("Heading to patrol point: ", point.name)
+#
 
 
 
