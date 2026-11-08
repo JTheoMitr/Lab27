@@ -10,8 +10,13 @@ script = ExtResource("1_q2rf8")
 [node name="GunModel" parent="." instance=ExtResource("1_veowv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0820446, -1.1920929e-07, 0.08186698)
 
+[node name="shell" parent="GunModel/Sketchfab_model/Flaregun_FBX/RootNode" index="1"]
+visible = false
+
 [node name="Muzzle" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08035785, 0.29876852, 0.36085266)
 
 [node name="FireSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_stfui")
+
+[editable path="GunModel"]

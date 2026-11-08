@@ -37,6 +37,9 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	standing_camera_position = $Camera3D.position
 	
+	# Prevent our interaction ray from detecting our own player body.
+	interaction_ray.add_exception(self)
+	
 	
 func _physics_process(delta: float) -> void:
 	
@@ -211,13 +214,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			
 			
 
+
 func try_interact() -> void:
-	if cutscene_locked:
-		return
+	print("PLAYER: E pressed")
 
 	interaction_ray.force_raycast_update()
 
 	if not interaction_ray.is_colliding():
+		print("INTERACTION: Nothing detected")
 		return
 
 	var hit: Object = interaction_ray.get_collider()
@@ -225,11 +229,19 @@ func try_interact() -> void:
 	if hit == null:
 		return
 
+	print("INTERACTION HIT: ", hit.name)
+	print("INTERACTION PATH: ", hit.get_path())
+
 	var interactable: Node = hit.get_parent()
 
-	if interactable != null and interactable.has_method("interact"):
-		interactable.interact()
+	if interactable != null:
+		print("INTERACTION PARENT: ", interactable.name)
 
+		if interactable.has_method("interact"):
+			print("INTERACTION: Calling interact()")
+			interactable.interact()
+		else:
+			print("INTERACTION: No interact() method")
 
 
 func set_cutscene_locked(locked: bool) -> void:
