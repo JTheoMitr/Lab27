@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://daqbvqf406dyu"]
+[gd_scene load_steps=30 format=3 uid="uid://daqbvqf406dyu"]
 
 [ext_resource type="Script" uid="uid://ca7fmse5ox873" path="res://player_3d.gd" id="1_5wjm4"]
 [ext_resource type="PackedScene" uid="uid://d1i30815kiilr" path="res://inventory/flare_gun.tscn" id="3_4i51g"]
@@ -6,8 +6,10 @@
 [ext_resource type="Script" uid="uid://gxst4wcpc486" path="res://hacking_controller.gd" id="3_dulx6"]
 [ext_resource type="PackedScene" uid="uid://csacbya0clq0r" path="res://character/arms_rig.glb" id="3_vrjnx"]
 [ext_resource type="PackedScene" uid="uid://dbn7ydmglx3k2" path="res://inventory/flare_projectile.tscn" id="4_5b37d"]
+[ext_resource type="Script" uid="uid://p57rn8sciy22" path="res://flashlight_controller.gd" id="5_5okgl"]
 [ext_resource type="AudioStream" uid="uid://boj5fu4lqkipr" path="res://sfx_player/AA_FWLF_A#_Synth_Swell.wav" id="5_dulx6"]
 [ext_resource type="Script" uid="uid://4y1r56yw1dqh" path="res://heartbeat_controller.gd" id="6_1metf"]
+[ext_resource type="AudioStream" uid="uid://o2hwpnge84uk" path="res://sfx_inventory/SFX_Sound Effect_Button_Click-72.wav" id="6_b4d5i"]
 [ext_resource type="AudioStream" uid="uid://cvmmcyixkdc2h" path="res://sfx_player/heartbeat-speeding-up-02.wav" id="7_hlvg3"]
 [ext_resource type="Script" uid="uid://cfil3el6023e5" path="res://footstep_controller.gd" id="8_hlvg3"]
 [ext_resource type="AudioStream" uid="uid://cp1rrygoh77x1" path="res://sfx_player/FEETHmn_Footsteps Locomotion Human Concrete Sharp 01_ESM_CPG.wav" id="9_hadp7"]
@@ -150,6 +152,20 @@ player = NodePath("../../../../../../../..")
 player_camera = NodePath("../../../../../../..")
 projectile_scene = ExtResource("4_5b37d")
 hand_animation_player = NodePath("../../../../../AnimationPlayer")
+
+[node name="FlashLight" type="SpotLight3D" parent="Camera3D" node_paths=PackedStringArray("toggle_sound")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33974373, -0.35798424, -0.5410019)
+light_energy = 1.8
+shadow_enabled = true
+spot_range = 15.0
+spot_angle = 32.0
+script = ExtResource("5_5okgl")
+toggle_sound = NodePath("../FlashLightClick")
+
+[node name="FlashLightClick" type="AudioStreamPlayer" parent="Camera3D"]
+stream = ExtResource("6_b4d5i")
+volume_db = -10.0
+pitch_scale = 1.2
 
 [node name="HUD" type="CanvasLayer" parent="." node_paths=PackedStringArray("hacking_ray", "hacking_reticle", "hand_offset_node", "player", "hand_animation_player")]
 script = ExtResource("3_dulx6")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b3s10pn6blyex"]
+[gd_scene load_steps=18 format=3 uid="uid://b3s10pn6blyex"]
 
 [ext_resource type="Script" uid="uid://bti3wk0i5heun" path="res://level_1.gd" id="1_hn12h"]
 [ext_resource type="PackedScene" uid="uid://daqbvqf406dyu" path="res://player_3d.tscn" id="2_hbghi"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://r81w2ils2070" path="res://enemy/scp-096/source/Long_n_pale_boi.tscn" id="9_gyffv"]
 [ext_resource type="PackedScene" uid="uid://cjt3grnca4x0y" path="res://furniture/autopsy_lab_-_assets.glb" id="11_1pe0h"]
 [ext_resource type="PackedScene" uid="uid://dnogfmtmice7k" path="res://lights/work_light.glb" id="11_27bay"]
+[ext_resource type="PackedScene" uid="uid://bob1t1myv68m8" path="res://items_pickup/flashlight_pickup.tscn" id="12_ubhxj"]
 [ext_resource type="PackedScene" uid="uid://b1x6ijhpbawy0" path="res://items_pickup/s4_mynd_pickup.tscn" id="13_sof0w"]
 [ext_resource type="PackedScene" uid="uid://bhmo6clhd7ili" path="res://furniture/scifi_terminal_2.glb" id="14_ggavl"]
 
@@ -35,7 +36,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.927353, -22.3336, -46.2759
 shape = SubResource("BoxShape3D_hbghi")
 
 [node name="Player3D" parent="." instance=ExtResource("2_hbghi")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -5.742702, -31.978676, -10.220566)
+transform = Transform3D(-0.7534021, 0, 0.26904517, 0, 0.79999995, 0, -0.26904517, 0, -0.7534021, -5.742702, -31.978676, -10.220566)
 
 [node name="Camera3D" parent="Player3D" index="2"]
 fov = 55.0
@@ -102,6 +103,12 @@ bones/50/position = Vector3(0.6604738, 1.3061, -0.050747856)
 bones/50/rotation = Quaternion(-0.021435948, 0.042664316, 0.8901127, -0.45323253)
 bones/51/position = Vector3(0.46390694, 1.429291, -0.26763627)
 bones/51/rotation = Quaternion(0.34815237, -0.615459, 0.61545914, -0.3481524)
+
+[node name="RightHandAttachment" parent="Player3D/Camera3D/HandOffset/arms_rig/ArmsRig/Skeleton3D" index="1"]
+transform = Transform3D(-0.596254, -0.80000806, 0.06683959, 0.80273795, -0.5931423, 0.0615929, -0.009629354, 0.09037982, 0.9958605, -0.6604738, 1.3061, -0.050747693)
+
+[node name="FlashLight" parent="Player3D/Camera3D" index="3"]
+test_flashlight_unlocked = false
 
 [node name="HeartbeatController" parent="Player3D" index="4" node_paths=PackedStringArray("enemy")]
 enemy = NodePath("../../SCP-096")
@@ -308,6 +315,14 @@ light_volumetric_fog_energy = 0.0
 distance_fade_enabled = true
 distance_fade_shadow = 20.0
 
+[node name="OmniLight3D28" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.110596, -30.15672, -13.969341)
+light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
+light_energy = 0.5
+light_volumetric_fog_energy = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 20.0
+
 [node name="OmniLight3D7" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.781113, -30.15672, -19.793047)
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
@@ -357,15 +372,16 @@ distance_fade_shadow = 20.0
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9283175, -30.45461, -15.184956)
-light_color = Color(0.91641855, 0, 0.27772823, 1)
-light_energy = 0.5
+light_color = Color(0.7266565, 0, 0.2129474, 1)
+light_energy = 0.2
 light_volumetric_fog_energy = 0.0
 distance_fade_enabled = true
 distance_fade_shadow = 20.0
+omni_range = 1.0
 
 [node name="OmniLight3D26" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9283175, -30.45461, -10.719273)
-light_color = Color(0.91641855, 0, 0.27772823, 1)
+light_color = Color(0.3167878, 0.39455935, 0.70318455, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
 distance_fade_enabled = true
@@ -395,15 +411,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.369438, -31.438221, -19.75
 [node name="PatrolPoint3" type="Marker3D" parent="SCPPatrolPoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.725237, -31.438221, -19.937737)
 
-[node name="KeyPad" parent="." instance=ExtResource("7_5rr72")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 2.9981325, -31.776518, -17.879087)
-
-[node name="KeyPad2" parent="." instance=ExtResource("7_5rr72")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 25.832846, -31.776518, -17.882164)
-
-[node name="KeyPad3" parent="." instance=ExtResource("7_5rr72")]
-transform = Transform3D(-0.15, 0, -2.2649372e-08, 0, 0.15, 0, 2.2649372e-08, 0, -0.15, 20.288496, -31.776518, -21.519789)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_bjebc")
 volume_db = -6.0
@@ -425,6 +432,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.399143, -33.23101, -15.2742
 
 [node name="Items" type="Node3D" parent="."]
 
+[node name="FlashlightPickup" parent="Items" node_paths=PackedStringArray("player", "flashlight_controller", "flashlight_model") instance=ExtResource("12_ubhxj")]
+transform = Transform3D(0.25, 0, 0, 0, 0.012064259, -0.24970874, 0, 0.24970874, 0.012064259, 18.60626, -33.055595, -14.51906)
+player = NodePath("../../Player3D")
+flashlight_controller = NodePath("../../Player3D/Camera3D/FlashLight")
+flashlight_model = NodePath("FlashlightModel")
+
 [node name="S4MyndPickup" parent="." node_paths=PackedStringArray("player", "activation_overlay") instance=ExtResource("13_sof0w")]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 8.921295, -32.44916, -15.120401)
 player = NodePath("../Player3D")
@@ -433,7 +446,21 @@ activation_overlay = NodePath("../Player3D/S4ActivationOverlay")
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("14_ggavl")]
 transform = Transform3D(-0.5689063, 0, 0.82240236, 0, 1, 0, -0.82240236, 0, -0.5689063, 10.389147, -31.225403, -14.343224)
 
+[node name="KeyPads" type="Node3D" parent="."]
+
+[node name="KeyPad" parent="KeyPads" instance=ExtResource("7_5rr72")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 2.9981325, -31.776518, -17.879087)
+
+[node name="KeyPad2" parent="KeyPads" instance=ExtResource("7_5rr72")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 25.832846, -31.776518, -17.882164)
+
+[node name="KeyPad3" parent="KeyPads" instance=ExtResource("7_5rr72")]
+transform = Transform3D(-0.15, 0, -2.2649372e-08, 0, 0.15, 0, 2.2649372e-08, 0, -0.15, 20.288496, -31.776518, -21.519789)
+
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
 [editable path="Player3D"]
 [editable path="Player3D/Camera3D/HandOffset/arms_rig"]
+[editable path="Player3D/Camera3D/HandOffset/arms_rig/ArmsRig/Skeleton3D/RightHandAttachment/WeaponGrip/FlareGun"]
+[editable path="Player3D/Camera3D/HandOffset/arms_rig/ArmsRig/Skeleton3D/RightHandAttachment/WeaponGrip/FlareGun/GunModel"]
+[editable path="Items/FlashlightPickup"]
