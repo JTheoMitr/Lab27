@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dy1tmii4jokvu"
+path="res://.godot/imported/AIRHiss_Pneumatic mechanism pressure hiss_GFXS_MMFX.wav-e524ad0b768d87f21efe24ee0116df28.sample"
+
+[deps]
+
+source_file="res://sfx_inventory/AIRHiss_Pneumatic mechanism pressure hiss_GFXS_MMFX.wav"
+dest_files=["res://.godot/imported/AIRHiss_Pneumatic mechanism pressure hiss_GFXS_MMFX.wav-e524ad0b768d87f21efe24ee0116df28.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

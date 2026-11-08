@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dbn7ydmglx3k2"]
+
+[ext_resource type="Script" uid="uid://bw2emthmo10w" path="res://inventory/flare_projectile.gd" id="1_630bg"]
+[ext_resource type="AudioStream" uid="uid://dy1tmii4jokvu" path="res://sfx_inventory/AIRHiss_Pneumatic mechanism pressure hiss_GFXS_MMFX.wav" id="2_uvhvk"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_kp7wl"]
+radius = 0.05
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp7wl"]
+shading_mode = 0
+albedo_color = Color(1, 0.11372549, 0.09019608, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uvhvk"]
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, -15, 0)
+damping_min = 2.0
+damping_max = 5.0
+scale_min = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fy0de"]
+shading_mode = 0
+albedo_color = Color(0.99999994, 0.8751812, 0.7260277, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3vnhy"]
+material = SubResource("StandardMaterial3D_fy0de")
+radius = 0.008
+height = 0.016
+
+[node name="FlareProjectile" type="Node3D"]
+script = ExtResource("1_630bg")
+
+[node name="FlareMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_kp7wl")
+surface_material_override/0 = SubResource("StandardMaterial3D_kp7wl")
+
+[node name="FlareLight" type="OmniLight3D" parent="."]
+light_color = Color(1, 0.23921569, 0.14117648, 1)
+light_energy = 2.0
+distance_fade_enabled = true
+
+[node name="ImpactSparks" type="GPUParticles3D" parent="."]
+amount = 250
+lifetime = 0.09999999999999999
+process_material = SubResource("ParticleProcessMaterial_uvhvk")
+draw_pass_1 = SubResource("SphereMesh_3vnhy")
+
+[node name="FlareHiss" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_uvhvk")
