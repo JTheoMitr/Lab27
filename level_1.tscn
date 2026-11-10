@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b3s10pn6blyex"]
+[gd_scene load_steps=20 format=3 uid="uid://b3s10pn6blyex"]
 
 [ext_resource type="Script" uid="uid://bti3wk0i5heun" path="res://level_1.gd" id="1_hn12h"]
 [ext_resource type="PackedScene" uid="uid://daqbvqf406dyu" path="res://player_3d.tscn" id="2_hbghi"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cq7ytn4l5hrp" path="res://items_pickup/flashlight_preview.tscn" id="13_65or1"]
 [ext_resource type="PackedScene" uid="uid://b1x6ijhpbawy0" path="res://items_pickup/s4_mynd_pickup.tscn" id="13_sof0w"]
 [ext_resource type="PackedScene" uid="uid://bhmo6clhd7ili" path="res://furniture/scifi_terminal_2.glb" id="14_ggavl"]
+[ext_resource type="SpriteFrames" uid="uid://dfn6yajv8gan2" path="res://tutorial_videos/flashlight_tut.tres" id="14_lhbbi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hbghi"]
 size = Vector3(159.3381, 1, 156.0597)
@@ -392,7 +393,7 @@ distance_fade_shadow = 20.0
 transform = Transform3D(0.8226306, 0, 0.5685762, 0, 1, 0, -0.5685762, 0, 0.8226306, 26.206783, -33.230995, -27.848866)
 
 [node name="SCP-096" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("9_gyffv")]
-transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 33.61014, -31.751562, -19.956646)
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 43.024307, -31.351334, -38.01834)
 patrol_points = [NodePath("../SCPPatrolPoints/PatrolPoint1"), NodePath("../SCPPatrolPoints/PatrolPoint2"), NodePath("../SCPPatrolPoints/PatrolPoint3")]
 
 [node name="HSPTL" parent="." instance=ExtResource("6_5hph3")]
@@ -440,6 +441,7 @@ flashlight_controller = NodePath("../../Player3D/Camera3D/FlashLight")
 flashlight_model = NodePath("FlashlightModel")
 discovery_ui = NodePath("../../Player3D/ItemDiscoveryUI")
 preview_scene = ExtResource("13_65or1")
+tutorial_frames = ExtResource("14_lhbbi")
 
 [node name="S4MyndPickup" parent="." node_paths=PackedStringArray("player", "activation_overlay") instance=ExtResource("13_sof0w")]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 8.921295, -32.44916, -15.120401)

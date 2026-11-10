@@ -1,0 +1,574 @@
+[gd_resource type="SpriteFrames" load_steps=142 format=3 uid="uid://dfn6yajv8gan2"]
+
+[ext_resource type="Texture2D" uid="uid://gnx8noj7ggut" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_001.png" id="1_c2e1n"]
+[ext_resource type="Texture2D" uid="uid://cad286a4afh6h" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_002.png" id="2_dc2if"]
+[ext_resource type="Texture2D" uid="uid://cjw3m27rhnc1r" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_003.png" id="3_bf5f8"]
+[ext_resource type="Texture2D" uid="uid://cdoegxysunpah" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_004.png" id="4_y5an3"]
+[ext_resource type="Texture2D" uid="uid://dgtn4cmmbjl7m" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_005.png" id="5_w0fn2"]
+[ext_resource type="Texture2D" uid="uid://cykdmh2w70rv" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_006.png" id="6_uy4nx"]
+[ext_resource type="Texture2D" uid="uid://coxdx5rojxril" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_007.png" id="7_sok3p"]
+[ext_resource type="Texture2D" uid="uid://k7sli28l4wq2" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_008.png" id="8_j6g7d"]
+[ext_resource type="Texture2D" uid="uid://cwtjrfws0odb1" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_009.png" id="9_7od8h"]
+[ext_resource type="Texture2D" uid="uid://bnlv7hdaj44hn" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_010.png" id="10_foktu"]
+[ext_resource type="Texture2D" uid="uid://cdhhphopskcoi" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_011.png" id="11_wi63e"]
+[ext_resource type="Texture2D" uid="uid://bomvok7afmtte" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_012.png" id="12_bt45o"]
+[ext_resource type="Texture2D" uid="uid://bjsoe4yof8stm" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_013.png" id="13_jqpxb"]
+[ext_resource type="Texture2D" uid="uid://cr5ryyugb8l6s" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_014.png" id="14_1fssj"]
+[ext_resource type="Texture2D" uid="uid://b08as8b8eraq4" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_015.png" id="15_kgfdk"]
+[ext_resource type="Texture2D" uid="uid://bh2d5bcoissam" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_016.png" id="16_32bgh"]
+[ext_resource type="Texture2D" uid="uid://kt4idfvyg818" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_017.png" id="17_7t3i2"]
+[ext_resource type="Texture2D" uid="uid://dmm366fvobwp" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_018.png" id="18_ewn1y"]
+[ext_resource type="Texture2D" uid="uid://danxguq1u1g6e" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_019.png" id="19_j41yq"]
+[ext_resource type="Texture2D" uid="uid://d1jx4p2rklb62" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_020.png" id="20_bv30r"]
+[ext_resource type="Texture2D" uid="uid://c2jd8leyhy6lm" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_021.png" id="21_awtge"]
+[ext_resource type="Texture2D" uid="uid://4ycjyfd7j64p" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_022.png" id="22_gbakq"]
+[ext_resource type="Texture2D" uid="uid://bvnaa04encqg8" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_023.png" id="23_31i0y"]
+[ext_resource type="Texture2D" uid="uid://dg8eur72tby68" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_024.png" id="24_dhoel"]
+[ext_resource type="Texture2D" uid="uid://bmj4e3iwsru57" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_025.png" id="25_m20wh"]
+[ext_resource type="Texture2D" uid="uid://cv1vw8qwtuj2" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_026.png" id="26_6xa7f"]
+[ext_resource type="Texture2D" uid="uid://c10mkneytnyfh" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_027.png" id="27_5amd0"]
+[ext_resource type="Texture2D" uid="uid://c4hlxfhn74joi" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_028.png" id="28_qw8cr"]
+[ext_resource type="Texture2D" uid="uid://dvgk4yq3rgcbo" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_029.png" id="29_6ak5q"]
+[ext_resource type="Texture2D" uid="uid://ca36bk0yvawb" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_030.png" id="30_oqfpw"]
+[ext_resource type="Texture2D" uid="uid://banabu4l7c1d8" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_031.png" id="31_bo6dc"]
+[ext_resource type="Texture2D" uid="uid://bas1xfqpcgg5h" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_032.png" id="32_r6wuw"]
+[ext_resource type="Texture2D" uid="uid://c3nobbfso1nko" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_033.png" id="33_vng1t"]
+[ext_resource type="Texture2D" uid="uid://cletwihj1a3og" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_034.png" id="34_wfqp4"]
+[ext_resource type="Texture2D" uid="uid://byu6us2egxwyf" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_035.png" id="35_ix743"]
+[ext_resource type="Texture2D" uid="uid://csavdcl24ll0n" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_036.png" id="36_ml1m2"]
+[ext_resource type="Texture2D" uid="uid://dhr1cyu4cxq6t" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_037.png" id="37_d4s7o"]
+[ext_resource type="Texture2D" uid="uid://b58ifr0o6son4" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_038.png" id="38_xyx0u"]
+[ext_resource type="Texture2D" uid="uid://b17sif5d0unqt" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_039.png" id="39_6c6sk"]
+[ext_resource type="Texture2D" uid="uid://dvhtn226rosrp" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_040.png" id="40_p20p7"]
+[ext_resource type="Texture2D" uid="uid://clf0ov78yffap" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_041.png" id="41_xwmk1"]
+[ext_resource type="Texture2D" uid="uid://bkswdf45o5tp4" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_042.png" id="42_cukch"]
+[ext_resource type="Texture2D" uid="uid://qujavionr60u" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_043.png" id="43_arrmo"]
+[ext_resource type="Texture2D" uid="uid://dq5vcpph5dx1q" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_044.png" id="44_ba57y"]
+[ext_resource type="Texture2D" uid="uid://x4fqtxm57e54" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_045.png" id="45_pa7q1"]
+[ext_resource type="Texture2D" uid="uid://btyyngl3tmts1" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_046.png" id="46_sj41q"]
+[ext_resource type="Texture2D" uid="uid://ctrxgqgbis4bw" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_047.png" id="47_47dae"]
+[ext_resource type="Texture2D" uid="uid://cay6dshagqo3j" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_048.png" id="48_aob1s"]
+[ext_resource type="Texture2D" uid="uid://kyarp5n5wctf" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_049.png" id="49_p5vaa"]
+[ext_resource type="Texture2D" uid="uid://cqpvxwi1mcp57" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_050.png" id="50_27oo3"]
+[ext_resource type="Texture2D" uid="uid://vtg4vexdb0ai" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_051.png" id="51_toxvy"]
+[ext_resource type="Texture2D" uid="uid://0tnamtxtvfuw" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_052.png" id="52_bfqo1"]
+[ext_resource type="Texture2D" uid="uid://bejqb0433q0y4" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_053.png" id="53_gwu4n"]
+[ext_resource type="Texture2D" uid="uid://badu2otabrues" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_054.png" id="54_i5fer"]
+[ext_resource type="Texture2D" uid="uid://d4b5h8bv3kptt" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_055.png" id="55_dby7h"]
+[ext_resource type="Texture2D" uid="uid://bs0c5asclsluk" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_056.png" id="56_m3lba"]
+[ext_resource type="Texture2D" uid="uid://bv0lvhvu5brt3" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_057.png" id="57_5gisk"]
+[ext_resource type="Texture2D" uid="uid://eg3q7xin785o" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_058.png" id="58_pnbgr"]
+[ext_resource type="Texture2D" uid="uid://qitk403y5bqx" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_059.png" id="59_6dw7n"]
+[ext_resource type="Texture2D" uid="uid://c2p383bf4mdqv" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_060.png" id="60_jm3h6"]
+[ext_resource type="Texture2D" uid="uid://dxxspcwg8ts0" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_061.png" id="61_w5oyg"]
+[ext_resource type="Texture2D" uid="uid://57btqdtv1efc" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_062.png" id="62_b581g"]
+[ext_resource type="Texture2D" uid="uid://x06yo7oh438g" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_063.png" id="63_wr314"]
+[ext_resource type="Texture2D" uid="uid://dn66rakqh2nqo" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_064.png" id="64_pf4lr"]
+[ext_resource type="Texture2D" uid="uid://lngkh2dncfsb" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_065.png" id="65_3tys1"]
+[ext_resource type="Texture2D" uid="uid://dg4srrbxjxjhb" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_066.png" id="66_gqsr6"]
+[ext_resource type="Texture2D" uid="uid://bs8oppx20ko7h" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_067.png" id="67_a8y3g"]
+[ext_resource type="Texture2D" uid="uid://b3rpxvavhh5u7" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_068.png" id="68_6cr3b"]
+[ext_resource type="Texture2D" uid="uid://3p5340q6hu8b" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_069.png" id="69_fhxaw"]
+[ext_resource type="Texture2D" uid="uid://bu2qlo25evkxj" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_070.png" id="70_h7wjm"]
+[ext_resource type="Texture2D" uid="uid://cm1yacbvghufl" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_071.png" id="71_458r0"]
+[ext_resource type="Texture2D" uid="uid://u67wiwo51lfo" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_072.png" id="72_g3yk0"]
+[ext_resource type="Texture2D" uid="uid://dtn6yw8geewgl" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_073.png" id="73_we82s"]
+[ext_resource type="Texture2D" uid="uid://di8tvd4xdojnf" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_074.png" id="74_j1ves"]
+[ext_resource type="Texture2D" uid="uid://hnwoo3qxitcv" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_075.png" id="75_03bbc"]
+[ext_resource type="Texture2D" uid="uid://h34oj4ss4md4" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_076.png" id="76_dn02u"]
+[ext_resource type="Texture2D" uid="uid://c1dj6nsit2i3u" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_077.png" id="77_o005p"]
+[ext_resource type="Texture2D" uid="uid://etlsqxqip8oa" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_078.png" id="78_vo36q"]
+[ext_resource type="Texture2D" uid="uid://dfu2vjyqt0on" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_079.png" id="79_6nwnr"]
+[ext_resource type="Texture2D" uid="uid://d1upvojdeg2kr" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_080.png" id="80_6u68b"]
+[ext_resource type="Texture2D" uid="uid://mp8dlu1pv21" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_081.png" id="81_v08h5"]
+[ext_resource type="Texture2D" uid="uid://cy7s6dvsamtqs" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_082.png" id="82_ssk1x"]
+[ext_resource type="Texture2D" uid="uid://b4m8dywbdws66" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_083.png" id="83_uymot"]
+[ext_resource type="Texture2D" uid="uid://d4jl7d26jylxi" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_084.png" id="84_7k6mb"]
+[ext_resource type="Texture2D" uid="uid://csqbpcbievfhj" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_085.png" id="85_bq8bu"]
+[ext_resource type="Texture2D" uid="uid://cpj0vf8scq8y4" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_086.png" id="86_nirip"]
+[ext_resource type="Texture2D" uid="uid://dnbgv7d3pcybp" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_087.png" id="87_f6q5y"]
+[ext_resource type="Texture2D" uid="uid://c3cvdf5fsnevm" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_088.png" id="88_hqb0a"]
+[ext_resource type="Texture2D" uid="uid://dfjncdjvm1wa4" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_089.png" id="89_c3yba"]
+[ext_resource type="Texture2D" uid="uid://d1itw1yfp70n6" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_090.png" id="90_g77gc"]
+[ext_resource type="Texture2D" uid="uid://csvfj77x2eqqi" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_091.png" id="91_3vgis"]
+[ext_resource type="Texture2D" uid="uid://bdbwbpqqy1qww" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_092.png" id="92_5vwfv"]
+[ext_resource type="Texture2D" uid="uid://daub5wffu76tk" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_093.png" id="93_b858o"]
+[ext_resource type="Texture2D" uid="uid://bveia6kx4l6uu" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_094.png" id="94_5bjaw"]
+[ext_resource type="Texture2D" uid="uid://bjeo5lxu2qwok" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_095.png" id="95_b77i6"]
+[ext_resource type="Texture2D" uid="uid://ba7fblht6kj7j" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_096.png" id="96_cohtc"]
+[ext_resource type="Texture2D" uid="uid://byclqtxuxucab" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_097.png" id="97_nardg"]
+[ext_resource type="Texture2D" uid="uid://bon06tuwn420e" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_098.png" id="98_hojaf"]
+[ext_resource type="Texture2D" uid="uid://bgme1w0ihm7p4" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_099.png" id="99_e5fhk"]
+[ext_resource type="Texture2D" uid="uid://bxyycxly87nky" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_100.png" id="100_2j3df"]
+[ext_resource type="Texture2D" uid="uid://cm6kwba0klg7g" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_101.png" id="101_p3qjq"]
+[ext_resource type="Texture2D" uid="uid://bjcsjru1m0ks6" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_102.png" id="102_f8xx1"]
+[ext_resource type="Texture2D" uid="uid://f6yvpfcxfcen" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_103.png" id="103_m03xp"]
+[ext_resource type="Texture2D" uid="uid://edy4e7fbrr2x" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_104.png" id="104_aairj"]
+[ext_resource type="Texture2D" uid="uid://cgy4w07ml2cd" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_105.png" id="105_wvajc"]
+[ext_resource type="Texture2D" uid="uid://bmjp21f1t2m1b" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_106.png" id="106_34ifv"]
+[ext_resource type="Texture2D" uid="uid://dd8t1jbgcwa8g" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_107.png" id="107_n1g3y"]
+[ext_resource type="Texture2D" uid="uid://bfd1fb4jfj6as" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_108.png" id="108_64jja"]
+[ext_resource type="Texture2D" uid="uid://c7ouugcbtni3r" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_109.png" id="109_0iilx"]
+[ext_resource type="Texture2D" uid="uid://c0dvvbox2v361" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_110.png" id="110_xu1ah"]
+[ext_resource type="Texture2D" uid="uid://njqng5rtgm1u" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_111.png" id="111_b6eng"]
+[ext_resource type="Texture2D" uid="uid://de3md2bruhdqp" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_112.png" id="112_vdja1"]
+[ext_resource type="Texture2D" uid="uid://ble8l5b0a4tcu" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_113.png" id="113_cf38o"]
+[ext_resource type="Texture2D" uid="uid://cwlc78ftknidu" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_114.png" id="114_xevcp"]
+[ext_resource type="Texture2D" uid="uid://bw6s87tf0phdi" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_115.png" id="115_n7o52"]
+[ext_resource type="Texture2D" uid="uid://dunvnu1plgcwy" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_116.png" id="116_o3pm5"]
+[ext_resource type="Texture2D" uid="uid://cf0dk343n8rbb" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_117.png" id="117_421o0"]
+[ext_resource type="Texture2D" uid="uid://cs4t7us77pn0l" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_118.png" id="118_mc1eh"]
+[ext_resource type="Texture2D" uid="uid://sy5aq3kmw6wj" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_119.png" id="119_8cmwl"]
+[ext_resource type="Texture2D" uid="uid://cfliak04hgrrx" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_120.png" id="120_5056s"]
+[ext_resource type="Texture2D" uid="uid://4wboc5n187m2" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_121.png" id="121_43wgm"]
+[ext_resource type="Texture2D" uid="uid://b43hxocr8smhf" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_122.png" id="122_el6by"]
+[ext_resource type="Texture2D" uid="uid://d063np3i0ktv3" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_123.png" id="123_rjf0w"]
+[ext_resource type="Texture2D" uid="uid://djwxtj40qkj4a" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_124.png" id="124_jfqsd"]
+[ext_resource type="Texture2D" uid="uid://b37pfheo0r0hh" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_125.png" id="125_em70h"]
+[ext_resource type="Texture2D" uid="uid://c6ju7xwjhgakw" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_126.png" id="126_yits6"]
+[ext_resource type="Texture2D" uid="uid://v0q38d5cptq1" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_127.png" id="127_cxy24"]
+[ext_resource type="Texture2D" uid="uid://clr8w5qi3ur24" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_128.png" id="128_imthm"]
+[ext_resource type="Texture2D" uid="uid://bryla8vbfi24g" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_129.png" id="129_gyyn2"]
+[ext_resource type="Texture2D" uid="uid://n8qotu4ue3hc" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_130.png" id="130_8twb0"]
+[ext_resource type="Texture2D" uid="uid://c465adt2061yn" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_131.png" id="131_t30gu"]
+[ext_resource type="Texture2D" uid="uid://bcjhncecc8qwo" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_132.png" id="132_v8iew"]
+[ext_resource type="Texture2D" uid="uid://bi5i2gdq6okm4" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_133.png" id="133_26dss"]
+[ext_resource type="Texture2D" uid="uid://cmjg8u7s3tmdw" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_134.png" id="134_mnlq4"]
+[ext_resource type="Texture2D" uid="uid://bvggihmeyujxa" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_135.png" id="135_32s1w"]
+[ext_resource type="Texture2D" uid="uid://cy4hwh75quuq2" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_136.png" id="136_gjklf"]
+[ext_resource type="Texture2D" uid="uid://fxipvsfcgaf4" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_137.png" id="137_joibc"]
+[ext_resource type="Texture2D" uid="uid://bcgnvhv28tc63" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_138.png" id="138_q1fax"]
+[ext_resource type="Texture2D" uid="uid://bh1w4hihksct6" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_139.png" id="139_u7kkw"]
+[ext_resource type="Texture2D" uid="uid://teir4hl7e7ue" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_140.png" id="140_1mchk"]
+[ext_resource type="Texture2D" uid="uid://3ffkpsgrfv5w" path="res://tutorial_videos/flashlight_tut_vid_frames/flashlight_tut_vid_141.png" id="141_m5f8x"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c2e1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dc2if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bf5f8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y5an3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w0fn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uy4nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sok3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_j6g7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7od8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_foktu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wi63e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bt45o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jqpxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1fssj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kgfdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_32bgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7t3i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ewn1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_j41yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bv30r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_awtge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_gbakq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_31i0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_dhoel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_m20wh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6xa7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_5amd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qw8cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_6ak5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_oqfpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_bo6dc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_r6wuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_vng1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_wfqp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ix743")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ml1m2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_d4s7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_xyx0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_6c6sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_p20p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_xwmk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_cukch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_arrmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ba57y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_pa7q1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_sj41q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_47dae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_aob1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_p5vaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_27oo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_toxvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_bfqo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_gwu4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_i5fer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_dby7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_m3lba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_5gisk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_pnbgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_6dw7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_jm3h6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_w5oyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_b581g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_wr314")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_pf4lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_3tys1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_gqsr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_a8y3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_6cr3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_fhxaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_h7wjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_458r0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_g3yk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_we82s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_j1ves")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_03bbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_dn02u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_o005p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_vo36q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_6nwnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_6u68b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_v08h5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_ssk1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_uymot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_7k6mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_bq8bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_nirip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_f6q5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_hqb0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_c3yba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_g77gc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_3vgis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_5vwfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_b858o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_5bjaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_b77i6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_cohtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_nardg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_hojaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_e5fhk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_2j3df")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_p3qjq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_f8xx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_m03xp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_aairj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_wvajc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_34ifv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_n1g3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_64jja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_0iilx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_xu1ah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_b6eng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_vdja1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_cf38o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_xevcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_n7o52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_o3pm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_421o0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_mc1eh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_8cmwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_5056s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_43wgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_el6by")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_rjf0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_jfqsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_em70h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_yits6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_cxy24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_imthm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_gyyn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_8twb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_t30gu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_v8iew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_26dss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_mnlq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_32s1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_gjklf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_joibc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_q1fax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_u7kkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_1mchk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_m5f8x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]

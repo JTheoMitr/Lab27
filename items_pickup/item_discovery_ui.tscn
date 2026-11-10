@@ -1,18 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnvp4o3xhrd5y"]
+[gd_scene load_steps=6 format=3 uid="uid://dnvp4o3xhrd5y"]
 
 [ext_resource type="Script" uid="uid://dpvf2mcfe4ks5" path="res://items_pickup/item_discovery_ui.gd" id="1_dksv3"]
+[ext_resource type="FontFile" uid="uid://mxako3pcxsj3" path="res://fonts/PixelTandysoft-0rJG.ttf" id="2_e5314"]
+[ext_resource type="SpriteFrames" uid="uid://dfn6yajv8gan2" path="res://tutorial_videos/flashlight_tut.tres" id="3_cp5nm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_old5t"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
 bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.1882353, 0.8, 0.8, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5314"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.03529412, 0.078431375, 0.08627451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27450982, 0.49803922, 0.5254902, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="ItemDiscoveryUI" type="CanvasLayer"]
 script = ExtResource("1_dksv3")
@@ -42,59 +64,96 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Screen/CenterContainer"]
+[node name="Panel" type="PanelContainer" parent="Screen/CenterContainer"]
+custom_minimum_size = Vector2(650, 500)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_old5t")
 
 [node name="Content" type="VBoxContainer" parent="Screen/CenterContainer/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Header" type="Label" parent="Screen/CenterContainer/Panel/Content"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_e5314")
+theme_override_font_sizes/font_size = 25
+text = "ITEM ACQUIRED"
+horizontal_alignment = 1
 
-[node name="ItemStage" type="VBoxContainer" parent="Screen/CenterContainer/Panel/Content"]
+[node name="ViewerFrame" type="PanelContainer" parent="Screen/CenterContainer/Panel/Content"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5314")
 
-[node name="ModelViewport" type="SubViewportContainer" parent="Screen/CenterContainer/Panel/Content/ItemStage"]
+[node name="ViewerContent" type="Control" parent="Screen/CenterContainer/Panel/Content/ViewerFrame"]
 custom_minimum_size = Vector2(420, 280)
 layout_mode = 2
+
+[node name="ModelViewport" type="SubViewportContainer" parent="Screen/CenterContainer/Panel/Content/ViewerFrame/ViewerContent"]
+custom_minimum_size = Vector2(420, 280)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 602.0
+offset_bottom = 288.0
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="Screen/CenterContainer/Panel/Content/ItemStage/ModelViewport"]
+[node name="SubViewport" type="SubViewport" parent="Screen/CenterContainer/Panel/Content/ViewerFrame/ViewerContent/ModelViewport"]
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(420, 280)
+size = Vector2i(594, 280)
 render_target_update_mode = 4
 
-[node name="PreviewWorld" type="Node3D" parent="Screen/CenterContainer/Panel/Content/ItemStage/ModelViewport/SubViewport"]
+[node name="PreviewWorld" type="Node3D" parent="Screen/CenterContainer/Panel/Content/ViewerFrame/ViewerContent/ModelViewport/SubViewport"]
 
-[node name="ModelPivot" type="Node3D" parent="Screen/CenterContainer/Panel/Content/ItemStage/ModelViewport/SubViewport/PreviewWorld"]
+[node name="ModelPivot" type="Node3D" parent="Screen/CenterContainer/Panel/Content/ViewerFrame/ViewerContent/ModelViewport/SubViewport/PreviewWorld"]
 
-[node name="PreviewCamera" type="Camera3D" parent="Screen/CenterContainer/Panel/Content/ItemStage/ModelViewport/SubViewport"]
+[node name="PreviewCamera" type="Camera3D" parent="Screen/CenterContainer/Panel/Content/ViewerFrame/ViewerContent/ModelViewport/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 current = true
 fov = 45.0
 
-[node name="PreviewLight" type="OmniLight3D" parent="Screen/CenterContainer/Panel/Content/ItemStage/ModelViewport/SubViewport"]
+[node name="PreviewLight" type="OmniLight3D" parent="Screen/CenterContainer/Panel/Content/ViewerFrame/ViewerContent/ModelViewport/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 3)
 shadow_enabled = true
 
-[node name="ItemTitle" type="Label" parent="Screen/CenterContainer/Panel/Content/ItemStage"]
+[node name="TutorialVideo" type="AnimatedSprite2D" parent="Screen/CenterContainer/Panel/Content/ViewerFrame/ViewerContent"]
+position = Vector2(43, -6)
+scale = Vector2(0.452, 0.452)
+sprite_frames = ExtResource("3_cp5nm")
+centered = false
+
+[node name="ItemStage" type="VBoxContainer" parent="Screen/CenterContainer/Panel/Content"]
 layout_mode = 2
 
-[node name="ItemDescription" type="Label" parent="Screen/CenterContainer/Panel/Content/ItemStage"]
+[node name="ItemTitle" type="Label" parent="Screen/CenterContainer/Panel/Content/ItemStage"]
+custom_minimum_size = Vector2(250, 55)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.23529412, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_e5314")
+theme_override_font_sizes/font_size = 28
+text = "Flashlight"
+horizontal_alignment = 1
+
+[node name="ItemDescription" type="Label" parent="Screen/CenterContainer/Panel/Content/ItemStage"]
+custom_minimum_size = Vector2(250, 55)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8175215, 0.81752115, 0.81752133, 1)
+theme_override_fonts/font = ExtResource("2_e5314")
+theme_override_font_sizes/font_size = 24
+text = "A portable light source"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="InstructionStage" type="VBoxContainer" parent="Screen/CenterContainer/Panel/Content"]
 visible = false
 layout_mode = 2
 
 [node name="InstructionTitle" type="Label" parent="Screen/CenterContainer/Panel/Content/InstructionStage"]
+custom_minimum_size = Vector2(250, 30)
 layout_mode = 2
+theme_override_colors/font_color = Color(0.11764706, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -104,4 +163,8 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="ContinueButton" type="Button" parent="Screen/CenterContainer/Panel/Content"]
+custom_minimum_size = Vector2(180, 44)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Continue"

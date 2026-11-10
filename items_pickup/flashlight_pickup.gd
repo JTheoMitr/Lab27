@@ -19,6 +19,11 @@ extends Node3D
 @export var preview_offset: Vector3 = Vector3.ZERO
 
 
+@export_group("Tutorial Animation")
+@export var tutorial_frames: SpriteFrames
+@export var tutorial_animation: StringName = &"default"
+
+
 var pickup_started: bool = false
 
 
@@ -98,6 +103,7 @@ func play_pickup_animation(hand_anim: AnimationPlayer) -> void:
 
 	# Display the item reveal while player movement remains locked.
 	if discovery_ui != null:
+		
 		discovery_ui.show_item(
 			preview_scene,
 			"FLASHLIGHT",
@@ -105,10 +111,13 @@ func play_pickup_animation(hand_anim: AnimationPlayer) -> void:
 			"FLASHLIGHT CONTROLS",
 			"Press T to toggle the flashlight on or off.",
 			preview_scale,
-			preview_offset
+			preview_offset,
+			tutorial_frames,
+			tutorial_animation
 		)
 
 		await discovery_ui.presentation_finished
+
 
 	# Restore player controls after dismissal.
 	player.set_cutscene_locked(false)
