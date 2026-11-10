@@ -11,6 +11,14 @@ extends Node3D
 @export var grab_animation: StringName = &"grab_R"
 @export var pickup_disappear_delay: float = 0.4
 
+
+@export_group("Item Discovery")
+@export var discovery_ui: ItemDiscoveryUI
+@export var preview_scene: PackedScene
+@export var preview_scale: float = 1.0
+@export var preview_offset: Vector3 = Vector3.ZERO
+
+
 var pickup_started: bool = false
 
 
@@ -84,11 +92,27 @@ func play_pickup_animation(hand_anim: AnimationPlayer) -> void:
 	if hand_anim.is_playing() and hand_anim.current_animation == grab_animation:
 		await hand_anim.animation_finished
 
+	
 	# Unlock the flashlight.
 	flashlight_controller.acquire_flashlight()
 
+	# Display the item reveal while player movement remains locked.
+	if discovery_ui != null:
+		discovery_ui.show_item(
+			preview_scene,
+			"FLASHLIGHT",
+			"A portable light source recovered from the facility.",
+			"FLASHLIGHT CONTROLS",
+			"Press T to toggle the flashlight on or off.",
+			preview_scale,
+			preview_offset
+		)
+
+		await discovery_ui.presentation_finished
+
+	# Restore player controls after dismissal.
 	player.set_cutscene_locked(false)
 
-	print("FLASHLIGHT: Pickup complete. Press T to toggle.")
+	print("FLASHLIGHT: Pickup complete.")
 
 	queue_free()

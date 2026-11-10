@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq7ytn4l5hrp"]
+
+[ext_resource type="PackedScene" uid="uid://chj8qk72ghhve" path="res://items_pickup/horror_game_flashlight_download_game-ready.glb" id="1_o1b3e"]
+
+[node name="FlashlightPreview" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_o1b3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08972347, -1.1920929e-07, -0.049016237)

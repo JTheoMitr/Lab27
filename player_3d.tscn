@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://daqbvqf406dyu"]
+[gd_scene load_steps=31 format=3 uid="uid://daqbvqf406dyu"]
 
 [ext_resource type="Script" uid="uid://ca7fmse5ox873" path="res://player_3d.gd" id="1_5wjm4"]
 [ext_resource type="PackedScene" uid="uid://d1i30815kiilr" path="res://inventory/flare_gun.tscn" id="3_4i51g"]
@@ -25,6 +25,7 @@
 [ext_resource type="FontFile" uid="uid://mxako3pcxsj3" path="res://fonts/PixelTandysoft-0rJG.ttf" id="19_s2aq0"]
 [ext_resource type="AudioStream" uid="uid://ckqsikul0jjbo" path="res://sfx_player/electricity_glitch_11.wav" id="20_d2kcw"]
 [ext_resource type="AudioStream" uid="uid://wla2b3am20a5" path="res://sfx_player/beep-24.wav" id="21_s2aq0"]
+[ext_resource type="PackedScene" uid="uid://dnvp4o3xhrd5y" path="res://items_pickup/item_discovery_ui.tscn" id="26_uhqg4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3n4ta"]
 radius = 0.265625
@@ -277,6 +278,8 @@ scroll_active = false
 stream = ExtResource("21_s2aq0")
 volume_db = -2.0
 pitch_scale = 0.85
+
+[node name="ItemDiscoveryUI" parent="." instance=ExtResource("26_uhqg4")]
 
 [editable path="Camera3D/HandOffset/arms_rig"]
 [editable path="Camera3D/HandOffset/arms_rig/ArmsRig/Skeleton3D/RightHandAttachment/WeaponGrip/FlareGun"]

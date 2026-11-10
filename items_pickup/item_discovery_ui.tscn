@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnvp4o3xhrd5y"]
+
+[ext_resource type="Script" uid="uid://dpvf2mcfe4ks5" path="res://items_pickup/item_discovery_ui.gd" id="1_dksv3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_old5t"]
+bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.1882353, 0.8, 0.8, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="ItemDiscoveryUI" type="CanvasLayer"]
+script = ExtResource("1_dksv3")
+
+[node name="Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DimBackground" type="ColorRect" parent="Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7019608)
+
+[node name="CenterContainer" type="CenterContainer" parent="Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Screen/CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_old5t")
+
+[node name="Content" type="VBoxContainer" parent="Screen/CenterContainer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+
+[node name="Header" type="Label" parent="Screen/CenterContainer/Panel/Content"]
+layout_mode = 2
+
+[node name="ItemStage" type="VBoxContainer" parent="Screen/CenterContainer/Panel/Content"]
+layout_mode = 2
+
+[node name="ModelViewport" type="SubViewportContainer" parent="Screen/CenterContainer/Panel/Content/ItemStage"]
+custom_minimum_size = Vector2(420, 280)
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Screen/CenterContainer/Panel/Content/ItemStage/ModelViewport"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(420, 280)
+render_target_update_mode = 4
+
+[node name="PreviewWorld" type="Node3D" parent="Screen/CenterContainer/Panel/Content/ItemStage/ModelViewport/SubViewport"]
+
+[node name="ModelPivot" type="Node3D" parent="Screen/CenterContainer/Panel/Content/ItemStage/ModelViewport/SubViewport/PreviewWorld"]
+
+[node name="PreviewCamera" type="Camera3D" parent="Screen/CenterContainer/Panel/Content/ItemStage/ModelViewport/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+current = true
+fov = 45.0
+
+[node name="PreviewLight" type="OmniLight3D" parent="Screen/CenterContainer/Panel/Content/ItemStage/ModelViewport/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 3)
+shadow_enabled = true
+
+[node name="ItemTitle" type="Label" parent="Screen/CenterContainer/Panel/Content/ItemStage"]
+layout_mode = 2
+
+[node name="ItemDescription" type="Label" parent="Screen/CenterContainer/Panel/Content/ItemStage"]
+layout_mode = 2
+
+[node name="InstructionStage" type="VBoxContainer" parent="Screen/CenterContainer/Panel/Content"]
+visible = false
+layout_mode = 2
+
+[node name="InstructionTitle" type="Label" parent="Screen/CenterContainer/Panel/Content/InstructionStage"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="InstructionBody" type="Label" parent="Screen/CenterContainer/Panel/Content/InstructionStage"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ContinueButton" type="Button" parent="Screen/CenterContainer/Panel/Content"]
+layout_mode = 2

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b3s10pn6blyex"]
+[gd_scene load_steps=19 format=3 uid="uid://b3s10pn6blyex"]
 
 [ext_resource type="Script" uid="uid://bti3wk0i5heun" path="res://level_1.gd" id="1_hn12h"]
 [ext_resource type="PackedScene" uid="uid://daqbvqf406dyu" path="res://player_3d.tscn" id="2_hbghi"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cjt3grnca4x0y" path="res://furniture/autopsy_lab_-_assets.glb" id="11_1pe0h"]
 [ext_resource type="PackedScene" uid="uid://dnogfmtmice7k" path="res://lights/work_light.glb" id="11_27bay"]
 [ext_resource type="PackedScene" uid="uid://bob1t1myv68m8" path="res://items_pickup/flashlight_pickup.tscn" id="12_ubhxj"]
+[ext_resource type="PackedScene" uid="uid://cq7ytn4l5hrp" path="res://items_pickup/flashlight_preview.tscn" id="13_65or1"]
 [ext_resource type="PackedScene" uid="uid://b1x6ijhpbawy0" path="res://items_pickup/s4_mynd_pickup.tscn" id="13_sof0w"]
 [ext_resource type="PackedScene" uid="uid://bhmo6clhd7ili" path="res://furniture/scifi_terminal_2.glb" id="14_ggavl"]
 
@@ -432,11 +433,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.399143, -33.23101, -15.2742
 
 [node name="Items" type="Node3D" parent="."]
 
-[node name="FlashlightPickup" parent="Items" node_paths=PackedStringArray("player", "flashlight_controller", "flashlight_model") instance=ExtResource("12_ubhxj")]
+[node name="FlashlightPickup" parent="Items" node_paths=PackedStringArray("player", "flashlight_controller", "flashlight_model", "discovery_ui") instance=ExtResource("12_ubhxj")]
 transform = Transform3D(0.25, 0, 0, 0, 0.012064259, -0.24970874, 0, 0.24970874, 0.012064259, 18.60626, -33.055595, -14.51906)
 player = NodePath("../../Player3D")
 flashlight_controller = NodePath("../../Player3D/Camera3D/FlashLight")
 flashlight_model = NodePath("FlashlightModel")
+discovery_ui = NodePath("../../Player3D/ItemDiscoveryUI")
+preview_scene = ExtResource("13_65or1")
 
 [node name="S4MyndPickup" parent="." node_paths=PackedStringArray("player", "activation_overlay") instance=ExtResource("13_sof0w")]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 8.921295, -32.44916, -15.120401)
