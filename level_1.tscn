@@ -317,14 +317,6 @@ light_volumetric_fog_energy = 0.0
 distance_fade_enabled = true
 distance_fade_shadow = 20.0
 
-[node name="OmniLight3D28" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.944868, -31.839344, -12.370615)
-light_color = Color(0.21176471, 0.4745098, 0.77254903, 1)
-light_energy = 0.5
-light_volumetric_fog_energy = 0.0
-distance_fade_enabled = true
-distance_fade_shadow = 20.0
-
 [node name="OmniLight3D7" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.781113, -30.15672, -19.793047)
 light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)

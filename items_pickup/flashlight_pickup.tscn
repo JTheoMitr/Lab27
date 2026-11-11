@@ -13,6 +13,12 @@ script = ExtResource("1_7a4qc")
 [node name="FlashlightModel" parent="." instance=ExtResource("1_dk60f")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.20092154, -1.1920929e-07, -0.05237496)
 
+[node name="SpotLight3D" type="SpotLight3D" parent="FlashlightModel"]
+transform = Transform3D(-4.371139e-08, -0.061518945, -0.99810594, -1, 2.6890785e-09, 4.3628596e-08, 0, 0.99810594, -0.061518945, 0.9463804, -0.03299384, 0.05237496)
+light_color = Color(0.59278727, 0.7304391, 1, 1)
+light_energy = 0.5
+spot_angle = 30.0
+
 [node name="InteractionBody" type="StaticBody3D" parent="."]
 collision_layer = 2
 collision_mask = 0
