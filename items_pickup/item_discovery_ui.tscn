@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnvp4o3xhrd5y"]
+[gd_scene load_steps=7 format=3 uid="uid://dnvp4o3xhrd5y"]
 
 [ext_resource type="Script" uid="uid://dpvf2mcfe4ks5" path="res://items_pickup/item_discovery_ui.gd" id="1_dksv3"]
 [ext_resource type="FontFile" uid="uid://mxako3pcxsj3" path="res://fonts/PixelTandysoft-0rJG.ttf" id="2_e5314"]
 [ext_resource type="SpriteFrames" uid="uid://dfn6yajv8gan2" path="res://tutorial_videos/flashlight_tut.tres" id="3_cp5nm"]
+[ext_resource type="Script" uid="uid://cepj001ixmbli" path="res://items_pickup/tutorial_pingpong.gd" id="4_d5alm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_old5t"]
 content_margin_left = 20.0
@@ -122,6 +123,7 @@ position = Vector2(43, -6)
 scale = Vector2(0.452, 0.452)
 sprite_frames = ExtResource("3_cp5nm")
 centered = false
+script = ExtResource("4_d5alm")
 
 [node name="ItemStage" type="VBoxContainer" parent="Screen/CenterContainer/Panel/Content"]
 layout_mode = 2

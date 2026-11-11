@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1i30815kiilr"]
+[gd_scene load_steps=5 format=3 uid="uid://d1i30815kiilr"]
 
 [ext_resource type="Script" uid="uid://dqknxfa8nk4pl" path="res://inventory/flare_gun.gd" id="1_q2rf8"]
 [ext_resource type="PackedScene" uid="uid://djoheq3j1fsfa" path="res://items_pickup/flare_gun.glb" id="1_veowv"]
+[ext_resource type="PackedScene" uid="uid://dbn7ydmglx3k2" path="res://inventory/flare_projectile.tscn" id="2_5bh3s"]
 [ext_resource type="AudioStream" uid="uid://bymgf2aab4sqs" path="res://sfx_inventory/FIREBrst_ImpactFlare 04_ESM_EM2.wav" id="2_stfui"]
 
 [node name="FlareGun" type="Node3D"]
 script = ExtResource("1_q2rf8")
+projectile_scene = ExtResource("2_5bh3s")
+aim_position_offset = Vector3(-0.36, 0.035, 0.2)
+aim_rotation_offset = Vector3(-10, -6, 0)
+aim_transition_speed = 0.5
 
 [node name="GunModel" parent="." instance=ExtResource("1_veowv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0820446, -1.1920929e-07, 0.08186698)

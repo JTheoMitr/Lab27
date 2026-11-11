@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3s10pn6blyex"]
+[gd_scene load_steps=21 format=3 uid="uid://b3s10pn6blyex"]
 
 [ext_resource type="Script" uid="uid://bti3wk0i5heun" path="res://level_1.gd" id="1_hn12h"]
 [ext_resource type="PackedScene" uid="uid://daqbvqf406dyu" path="res://player_3d.tscn" id="2_hbghi"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b1x6ijhpbawy0" path="res://items_pickup/s4_mynd_pickup.tscn" id="13_sof0w"]
 [ext_resource type="PackedScene" uid="uid://bhmo6clhd7ili" path="res://furniture/scifi_terminal_2.glb" id="14_ggavl"]
 [ext_resource type="SpriteFrames" uid="uid://dfn6yajv8gan2" path="res://tutorial_videos/flashlight_tut.tres" id="14_lhbbi"]
+[ext_resource type="PackedScene" uid="uid://51fagsx3c0kf" path="res://furniture/lab_bench.glb" id="18_gjkv5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hbghi"]
 size = Vector3(159.3381, 1, 156.0597)
@@ -56,7 +57,6 @@ bones/7/rotation = Quaternion(-0.016746076, -0.020631455, 0.00795285, 0.99961525
 bones/8/rotation = Quaternion(-0.0020922462, -0.0032982046, 0.004392738, 0.9999827)
 bones/9/position = Vector3(0.008271288, -0.0027545462, 0.020711206)
 bones/9/rotation = Quaternion(0.012231383, -0.41402337, -0.309255, 0.8560353)
-bones/10/rotation = Quaternion(0.17710981, 0.003341802, 0.022471419, 0.98392886)
 bones/11/rotation = Quaternion(0.09226219, -0.11139584, 0.031415015, 0.9889852)
 bones/12/position = Vector3(0.0069003785, 0.041151706, 0.0076276883)
 bones/12/rotation = Quaternion(-0.032968737, -0.7301289, -0.07126142, 0.6787833)
@@ -318,8 +318,8 @@ distance_fade_enabled = true
 distance_fade_shadow = 20.0
 
 [node name="OmniLight3D28" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.110596, -30.15672, -13.969341)
-light_color = Color(0.8955409, 0.8618836, 0.4537574, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.944868, -31.839344, -12.370615)
+light_color = Color(0.21176471, 0.4745098, 0.77254903, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.0
 distance_fade_enabled = true
@@ -435,7 +435,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.399143, -33.23101, -15.2742
 [node name="Items" type="Node3D" parent="."]
 
 [node name="FlashlightPickup" parent="Items" node_paths=PackedStringArray("player", "flashlight_controller", "flashlight_model", "discovery_ui") instance=ExtResource("12_ubhxj")]
-transform = Transform3D(0.25, 0, 0, 0, 0.012064259, -0.24970874, 0, 0.24970874, 0.012064259, 18.60626, -33.055595, -14.51906)
+transform = Transform3D(0.22827798, 0.1018085, 0.0049187066, 0, 0.012064259, -0.24970874, -0.10192725, 0.22801203, 0.011016019, 16.097525, -32.43995, -15.032384)
 player = NodePath("../../Player3D")
 flashlight_controller = NodePath("../../Player3D/Camera3D/FlashLight")
 flashlight_model = NodePath("FlashlightModel")
@@ -461,6 +461,9 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 25.832846, -31.77651
 
 [node name="KeyPad3" parent="KeyPads" instance=ExtResource("7_5rr72")]
 transform = Transform3D(-0.15, 0, -2.2649372e-08, 0, 0.15, 0, 2.2649372e-08, 0, -0.15, 20.288496, -31.776518, -21.519789)
+
+[node name="Sketchfab_Scene3" parent="." instance=ExtResource("18_gjkv5")]
+transform = Transform3D(0.1060732, 0, 0.9943583, 0, 1, 0, -0.9943583, 0, 0.1060732, 15.7600975, -33, -14.004898)
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 

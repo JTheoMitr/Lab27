@@ -62,4 +62,4 @@ func acquire_flashlight() -> void:
 	has_flashlight = true
 	FlashlightState.acquired = true
 
-	print("FLASHLIGHT ACQUIRED. Press T to toggle.")
+	print("FLASHLIGHT ACQUIRED. Press F to toggle.")

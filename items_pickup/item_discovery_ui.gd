@@ -241,6 +241,8 @@ func show_instruction_page() -> void:
 		model_viewport.hide()
 
 		tutorial_video.show()
+		tutorial_video.playing_forward = true
+		tutorial_video.stop()
 		tutorial_video.frame = 0
 		tutorial_video.play()
 	else:

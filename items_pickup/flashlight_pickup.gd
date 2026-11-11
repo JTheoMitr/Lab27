@@ -109,7 +109,7 @@ func play_pickup_animation(hand_anim: AnimationPlayer) -> void:
 			"FLASHLIGHT",
 			"A portable light source recovered from the facility.",
 			"FLASHLIGHT CONTROLS",
-			"Press T to toggle the flashlight on or off.",
+			"Press F to toggle the flashlight on or off.",
 			preview_scale,
 			preview_offset,
 			tutorial_frames,
