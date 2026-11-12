@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://4xyeevc8gv80"]
+[gd_scene load_steps=6 format=3 uid="uid://4xyeevc8gv80"]
 
 [ext_resource type="PackedScene" uid="uid://5sknobpujwkg" path="res://cabinets/armored_cabinet.glb" id="1_7xhln"]
 [ext_resource type="Script" uid="uid://dtqw28pmv4xpq" path="res://cabinets/gun_cabinet.gd" id="1_16orp"]
+[ext_resource type="PackedScene" uid="uid://cw57dstdqbyll" path="res://items_pickup/flaregun_pickup.tscn" id="3_2p8nr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_16orp"]
 size = Vector3(0.7487793, 1.0988464, 0.17785645)
@@ -19,10 +20,16 @@ contents = NodePath("Contents")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42828012, 0, 0.33015227)
 
 [node name="Skeleton3D" parent="CabinetModel/Sketchfab_model/root/GLTF_SceneRootNode/skeleton_13/GLTF_created_0" index="0"]
-bones/2/rotation = Quaternion(0.353556, 0.6123729, 0.61237097, 0.35355264)
-bones/3/rotation = Quaternion(0.6123742, 0.3535538, 0.35355037, 0.6123722)
+bones/1/rotation = Quaternion(0, 0.92387855, 0, 0.38268593)
+bones/2/rotation = Quaternion(0.7071068, 9.194486e-07, -2.9950745e-06, 0.70710677)
+bones/3/rotation = Quaternion(-0.18300922, 0.6830126, 0.68301374, -0.18301304)
+bones/4/position = Vector3(-0.28827575, 0.9261206, -0.12506706)
+bones/5/position = Vector3(-0.16178404, 0.92612076, -0.12506771)
+bones/6/rotation = Quaternion(0, -0.9238806, 0, 0.38268095)
 
 [node name="InteractionArea" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43662298, 1.0110376, 0.63787055)
@@ -35,5 +42,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4265995, 0.9744873, 0.32902
 shape = SubResource("BoxShape3D_2p8nr")
 
 [node name="Contents" type="Node3D" parent="."]
+
+[node name="FlareGunPickup" parent="Contents" instance=ExtResource("3_2p8nr")]
+transform = Transform3D(-0.02176628, 0, 0.64963543, 0, 0.65, 0, -0.64963543, 0, -0.02176628, 0.619341, 0.84450793, 0)
 
 [editable path="CabinetModel"]

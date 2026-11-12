@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 S4State="*res://scripts/s4_state.gd"
 FlashlightState="*res://scripts/flashlight_state.gd"
+KeyState="*res://scripts/key_state.gd"
 
 [input]
 

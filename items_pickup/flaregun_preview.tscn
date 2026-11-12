@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm2af4yldyot4"]
+
+[ext_resource type="PackedScene" uid="uid://djoheq3j1fsfa" path="res://items_pickup/flare_gun.glb" id="1_nxnky"]
+
+[node name="FlareGunPreview" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_nxnky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018941164, -0.09469926, 0.011037886)
+
+[node name="shell" parent="Sketchfab_Scene/Sketchfab_model/Flaregun_FBX/RootNode" index="1"]
+visible = false
+
+[editable path="Sketchfab_Scene"]

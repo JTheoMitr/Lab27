@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b3s10pn6blyex"]
+[gd_scene load_steps=24 format=3 uid="uid://b3s10pn6blyex"]
 
 [ext_resource type="Script" uid="uid://bti3wk0i5heun" path="res://level_1.gd" id="1_hn12h"]
 [ext_resource type="PackedScene" uid="uid://daqbvqf406dyu" path="res://player_3d.tscn" id="2_hbghi"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dhyjp61m6guuy" path="res://corpses/murder_scene_cloth_body.glb" id="8_5rr72"]
 [ext_resource type="PackedScene" uid="uid://4xyeevc8gv80" path="res://cabinets/gun_cabinet.tscn" id="9_5rr72"]
 [ext_resource type="PackedScene" uid="uid://r81w2ils2070" path="res://enemy/scp-096/source/Long_n_pale_boi.tscn" id="9_gyffv"]
+[ext_resource type="PackedScene" uid="uid://bm2af4yldyot4" path="res://items_pickup/flaregun_preview.tscn" id="10_kb5eu"]
 [ext_resource type="PackedScene" uid="uid://cjt3grnca4x0y" path="res://furniture/autopsy_lab_-_assets.glb" id="11_1pe0h"]
 [ext_resource type="PackedScene" uid="uid://dnogfmtmice7k" path="res://lights/work_light.glb" id="11_27bay"]
 [ext_resource type="PackedScene" uid="uid://bob1t1myv68m8" path="res://items_pickup/flashlight_pickup.tscn" id="12_ubhxj"]
@@ -18,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://bhmo6clhd7ili" path="res://furniture/scifi_terminal_2.glb" id="14_ggavl"]
 [ext_resource type="SpriteFrames" uid="uid://dfn6yajv8gan2" path="res://tutorial_videos/flashlight_tut.tres" id="14_lhbbi"]
 [ext_resource type="PackedScene" uid="uid://51fagsx3c0kf" path="res://furniture/lab_bench.glb" id="18_gjkv5"]
+[ext_resource type="PackedScene" uid="uid://civaug8xpvh4q" path="res://keys/gun_cabinet_key_pickup.tscn" id="19_00ld1"]
+[ext_resource type="PackedScene" uid="uid://7bjd37nm3h48" path="res://items_pickup/key_preview.tscn" id="20_3qmij"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hbghi"]
 size = Vector3(159.3381, 1, 156.0597)
@@ -416,13 +419,28 @@ volume_db = -6.0
 [node name="GunCabinet" parent="Furniture" instance=ExtResource("9_5rr72")]
 transform = Transform3D(0.8633163, 0, 0.5046632, 0, 1, 0, -0.5046632, 0, 0.8633163, 10.847237, -33.231007, -27.16832)
 
+[node name="FlareGunPickup" parent="Furniture/GunCabinet/Contents" index="0" node_paths=PackedStringArray("player", "flare_gun", "flare_gun_model", "discovery_ui", "cabinet")]
+player = NodePath("../../../../Player3D")
+flare_gun = NodePath("../../../../Player3D/Camera3D/HandOffset/arms_rig/ArmsRig/Skeleton3D/RightHandAttachment/WeaponGrip/FlareGun")
+flare_gun_model = NodePath("../../../../Player3D/Camera3D/HandOffset/arms_rig/ArmsRig/Skeleton3D/RightHandAttachment/WeaponGrip/FlareGun/GunModel")
+discovery_ui = NodePath("../../../../Player3D/ItemDiscoveryUI")
+preview_scene = ExtResource("10_kb5eu")
+preview_scale = 3.0
+cabinet = NodePath("../..")
+
+[node name="AutopsyTable" parent="Furniture" instance=ExtResource("11_1pe0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.399143, -33.23101, -15.274292)
+
+[node name="MedicalScreenHub" parent="Furniture" instance=ExtResource("14_ggavl")]
+transform = Transform3D(-0.5689063, 0, 0.82240236, 0, 1, 0, -0.82240236, 0, -0.5689063, 10.389147, -31.225403, -14.343224)
+
+[node name="LabBench" parent="Furniture" instance=ExtResource("18_gjkv5")]
+transform = Transform3D(0.1060732, 0, 0.9943583, 0, 1, 0, -0.9943583, 0, 0.1060732, 15.7600975, -33, -14.004898)
+
 [node name="Corpses" type="Node3D" parent="."]
 
 [node name="Corpse" parent="Corpses" instance=ExtResource("8_5rr72")]
 transform = Transform3D(0.058140453, 0, 0.19136272, 0, 0.2, 0, -0.19136272, 0, 0.058140453, 28.095829, -33.229546, -26.551126)
-
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("11_1pe0h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.399143, -33.23101, -15.274292)
 
 [node name="Items" type="Node3D" parent="."]
 
@@ -435,13 +453,10 @@ discovery_ui = NodePath("../../Player3D/ItemDiscoveryUI")
 preview_scene = ExtResource("13_65or1")
 tutorial_frames = ExtResource("14_lhbbi")
 
-[node name="S4MyndPickup" parent="." node_paths=PackedStringArray("player", "activation_overlay") instance=ExtResource("13_sof0w")]
+[node name="S4MyndPickup" parent="Items" node_paths=PackedStringArray("player", "activation_overlay") instance=ExtResource("13_sof0w")]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 8.921295, -32.44916, -15.120401)
-player = NodePath("../Player3D")
-activation_overlay = NodePath("../Player3D/S4ActivationOverlay")
-
-[node name="Sketchfab_Scene2" parent="." instance=ExtResource("14_ggavl")]
-transform = Transform3D(-0.5689063, 0, 0.82240236, 0, 1, 0, -0.82240236, 0, -0.5689063, 10.389147, -31.225403, -14.343224)
+player = NodePath("../../Player3D")
+activation_overlay = NodePath("../../Player3D/S4ActivationOverlay")
 
 [node name="KeyPads" type="Node3D" parent="."]
 
@@ -454,8 +469,14 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 25.832846, -31.77651
 [node name="KeyPad3" parent="KeyPads" instance=ExtResource("7_5rr72")]
 transform = Transform3D(-0.15, 0, -2.2649372e-08, 0, 0.15, 0, 2.2649372e-08, 0, -0.15, 20.288496, -31.776518, -21.519789)
 
-[node name="Sketchfab_Scene3" parent="." instance=ExtResource("18_gjkv5")]
-transform = Transform3D(0.1060732, 0, 0.9943583, 0, 1, 0, -0.9943583, 0, 0.1060732, 15.7600975, -33, -14.004898)
+[node name="Keys" type="Node3D" parent="."]
+
+[node name="GunCabinetKeyPickup" parent="Keys" node_paths=PackedStringArray("player", "key_model", "discovery_ui") instance=ExtResource("19_00ld1")]
+transform = Transform3D(0.01, 0, 0, 0, -4.3711387e-10, -0.01, 0, 0.01, -4.3711387e-10, 21.646055, -33.179356, -25.14274)
+player = NodePath("../../Player3D")
+key_model = NodePath("KeyModel")
+discovery_ui = NodePath("../../Player3D/ItemDiscoveryUI")
+preview_scene = ExtResource("20_3qmij")
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 
@@ -463,4 +484,7 @@ transform = Transform3D(0.1060732, 0, 0.9943583, 0, 1, 0, -0.9943583, 0, 0.10607
 [editable path="Player3D/Camera3D/HandOffset/arms_rig"]
 [editable path="Player3D/Camera3D/HandOffset/arms_rig/ArmsRig/Skeleton3D/RightHandAttachment/WeaponGrip/FlareGun"]
 [editable path="Player3D/Camera3D/HandOffset/arms_rig/ArmsRig/Skeleton3D/RightHandAttachment/WeaponGrip/FlareGun/GunModel"]
+[editable path="Furniture/GunCabinet"]
+[editable path="Furniture/GunCabinet/CabinetModel"]
 [editable path="Items/FlashlightPickup"]
+[editable path="Keys/GunCabinetKeyPickup"]

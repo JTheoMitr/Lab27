@@ -4,12 +4,17 @@ extends Node3D
 @export_group("Cabinet Settings")
 @export var is_locked: bool = true
 @export var opening_animation: StringName = &"loop"
-@export_range(0.0, 1.0, 0.01) var open_stop_fraction: float = 0.75
+@export_range(0.0, 1.0, 0.01) var open_stop_fraction: float = 0.50
 
 @export_group("References")
 @export var animation_player: AnimationPlayer
 @export var interaction_area: Area3D
 @export var contents: Node3D
+
+@export_range(0.0, 1.0, 0.01) var pickup_available_fraction: float = 0.25
+
+var pickup_available: bool = false
+var pickup_available_time: float = 0.0
 
 var is_open: bool = false
 var is_opening: bool = false
@@ -29,38 +34,46 @@ func _ready() -> void:
 		return
 
 	var animation: Animation = animation_player.get_animation(opening_animation)
-	stop_time = animation.length * open_stop_fraction
 
-	# Begin with the cabinet fully closed.
+	# Prevent the imported animation from looping.
+	animation.loop_mode = Animation.LOOP_NONE
+
+	stop_time = animation.length * open_stop_fraction
+	pickup_available_time = animation.length * pickup_available_fraction
+
+	# Start fully closed.
 	animation_player.play(opening_animation)
 	animation_player.seek(0.0, true)
 	animation_player.pause()
 
 	if contents != null:
 		contents.hide()
+		print("CABINET: Contents assigned: ", contents.get_path())
+	else:
+		push_warning("CABINET: Contents not assigned!")
 
-	print("Cabinet ready. Stop time: ", stop_time)
+	print("CABINET: Ready. Animation length = ", animation.length)
+	print("CABINET: Stop time = ", stop_time)
+
 
 func is_interactable() -> bool:
 	return not is_open and not is_opening
 
-func interact(has_key: bool = false) -> void:
+
+func interact() -> void:
 	print("CABINET: interact() called!")
-	print("CABINET: is_locked = ", is_locked)
-	print("CABINET: is_open = ", is_open)
-	print("CABINET: is_opening = ", is_opening)
+	print("CABINET: Key acquired = ", KeyState.gun_cabinet_key)
 
 	if is_open or is_opening:
-		print("CABINET: Interaction blocked by current state!")
 		return
 
 	if is_locked:
-		if not has_key:
+		if not KeyState.gun_cabinet_key:
 			print("CABINET: Missing key!")
 			return
 
 		is_locked = false
-		print("CABINET: Unlocked!")
+		print("CABINET: Key accepted!")
 
 	open_cabinet()
 
@@ -69,31 +82,62 @@ func interact(has_key: bool = false) -> void:
 func open_cabinet() -> void:
 	is_opening = true
 
-	print("Cabinet opening!")
+	print("CABINET: Opening...")
 
-	# Restart at the beginning, even if previously paused.
+	# Reveal the gun before the door begins moving.
+	# The closed cabinet should physically conceal it.
+	if contents != null:
+		contents.show()
+		print("CABINET: Contents revealed behind doors.")
+
 	animation_player.play(opening_animation)
 	animation_player.seek(0.0, true)
 	animation_player.advance(0.0)
 
-	# Let Godot play the animation normally.
 	set_process(true)
+
+
 
 
 func _process(_delta: float) -> void:
 	if not is_opening:
 		return
 
-	if animation_player.current_animation_position >= stop_time:
-		# Freeze the cabinet in the fully open pose.
-		animation_player.pause()
-		animation_player.seek(stop_time, true)
+	var current_time: float = animation_player.current_animation_position
 
-		is_open = true
-		is_opening = false
-		set_process(false)
+	# Make the flare gun collectible once the doors are sufficiently open.
+	if not pickup_available and current_time >= pickup_available_time:
+		pickup_available = true
+		print("CABINET: Flare gun can now be collected.")
 
-		if contents != null:
-			contents.show()
+	if current_time >= stop_time:
+		finish_opening()
 
-		print("Cabinet opened and held at ", stop_time, " seconds.")
+
+
+
+func finish_opening() -> void:
+	is_opening = false
+	is_open = true
+	set_process(false)
+
+	# Freeze the cabinet at the open position.
+	animation_player.seek(stop_time, true)
+	animation_player.pause()
+
+	print("CABINET: Animation stopped at ", stop_time)
+
+	# Reveal the flare gun.
+	if contents != null:
+		contents.show()
+		print("CABINET: Contents visible = ", contents.visible)
+
+	# Disable the cabinet's interaction area now that it's open.
+	# This allows the player's raycast to reach the flare gun.
+	if interaction_area != null:
+		interaction_area.collision_layer = 0
+		interaction_area.collision_mask = 0
+
+		print("CABINET: Interaction area disabled.")
+
+	print("CABINET: Open and ready for item pickup.")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw57dstdqbyll"]
+
+[ext_resource type="Script" uid="uid://cq4xajxpgrxws" path="res://items_pickup/flaregun_pickup.gd" id="1_v7aj0"]
+[ext_resource type="PackedScene" uid="uid://djoheq3j1fsfa" path="res://items_pickup/flare_gun.glb" id="2_v7aj0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7a4qc"]
+radius = 0.8925781
+height = 2.036621
+
+[node name="FlareGunPickup" type="Node3D"]
+script = ExtResource("1_v7aj0")
+
+[node name="FlareGunModel" parent="." instance=ExtResource("2_v7aj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31537417, 0.007412553, 0.033768415)
+
+[node name="shell" parent="FlareGunModel/Sketchfab_model/Flaregun_FBX/RootNode" index="1"]
+visible = false
+
+[node name="InteractionBody" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27333295, 0.19275749, 0.0071742535)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionBody"]
+transform = Transform3D(0.14288807, 0, -0.9897389, 0, 1, 0, 0.9897389, 0, 0.14288807, -0.011528015, -0.020256758, 0)
+shape = SubResource("CapsuleShape3D_7a4qc")
+
+[editable path="FlareGunModel"]
