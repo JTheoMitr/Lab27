@@ -5,4 +5,7 @@
 [node name="KeyPreview" type="Node3D"]
 
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("1_3g50w")]
-transform = Transform3D(-1.3113416e-09, -0.03, 0, 0.03, -1.3113416e-09, 0, 0, 0, 0.03, 0.7886505, 0, -0.03664255)
+transform = Transform3D(-2.1855695e-09, -0.05, 0, 0.05, -2.1855695e-09, 0, 0, 0, 0.05, 0.7886505, 0, -0.03664255)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.011483969, 0.9999341, 0, -0.9999341, 0.011483969, 0, 2.1090138, 0)

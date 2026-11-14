@@ -11,7 +11,7 @@ extends Node3D
 @export var interaction_area: Area3D
 @export var contents: Node3D
 
-@export_range(0.0, 1.0, 0.01) var pickup_available_fraction: float = 0.25
+@export_range(0.0, 1.0, 0.01) var pickup_available_fraction: float = 0.15
 
 var pickup_available: bool = false
 var pickup_available_time: float = 0.0

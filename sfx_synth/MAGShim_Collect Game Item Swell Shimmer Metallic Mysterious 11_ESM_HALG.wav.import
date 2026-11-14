@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://o7c3m8pooccp"
+path="res://.godot/imported/MAGShim_Collect Game Item Swell Shimmer Metallic Mysterious 11_ESM_HALG.wav-3d1aa3dbe7d42e759ee229cd245c1065.sample"
+
+[deps]
+
+source_file="res://sfx_synth/MAGShim_Collect Game Item Swell Shimmer Metallic Mysterious 11_ESM_HALG.wav"
+dest_files=["res://.godot/imported/MAGShim_Collect Game Item Swell Shimmer Metallic Mysterious 11_ESM_HALG.wav-3d1aa3dbe7d42e759ee229cd245c1065.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

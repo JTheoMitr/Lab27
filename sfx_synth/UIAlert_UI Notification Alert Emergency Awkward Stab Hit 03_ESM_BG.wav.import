@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhokkg73yu0x"
+path="res://.godot/imported/UIAlert_UI Notification Alert Emergency Awkward Stab Hit 03_ESM_BG.wav-f4704098ec29d5b9c9b1537c8f793ee0.sample"
+
+[deps]
+
+source_file="res://sfx_synth/UIAlert_UI Notification Alert Emergency Awkward Stab Hit 03_ESM_BG.wav"
+dest_files=["res://.godot/imported/UIAlert_UI Notification Alert Emergency Awkward Stab Hit 03_ESM_BG.wav-f4704098ec29d5b9c9b1537c8f793ee0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

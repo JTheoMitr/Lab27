@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bob1t1myv68m8"]
+[gd_scene load_steps=5 format=3 uid="uid://bob1t1myv68m8"]
 
 [ext_resource type="Script" uid="uid://dngk5x604s83x" path="res://items_pickup/flashlight_pickup.gd" id="1_7a4qc"]
 [ext_resource type="PackedScene" uid="uid://chj8qk72ghhve" path="res://items_pickup/horror_game_flashlight_download_game-ready.glb" id="1_dk60f"]
+[ext_resource type="AudioStream" uid="uid://o7c3m8pooccp" path="res://sfx_synth/MAGShim_Collect Game Item Swell Shimmer Metallic Mysterious 11_ESM_HALG.wav" id="2_yapqf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7a4qc"]
 radius = 0.92041016
@@ -9,6 +10,15 @@ height = 3.6184082
 
 [node name="FlashlightPickup" type="Node3D"]
 script = ExtResource("1_7a4qc")
+max_pickup_distance = null
+grab_animation = null
+pickup_disappear_delay = null
+discovery_sound = ExtResource("2_yapqf")
+discovery_sound_pitch = 1.3
+discovery_sound_volume_db = null
+preview_scale = null
+preview_offset = null
+tutorial_animation = null
 
 [node name="FlashlightModel" parent="." instance=ExtResource("1_dk60f")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.20092154, -1.1920929e-07, -0.05237496)

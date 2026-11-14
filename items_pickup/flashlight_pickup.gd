@@ -12,6 +12,13 @@ extends Node3D
 @export var pickup_disappear_delay: float = 0.4
 
 
+@export_group("Item Audio")
+@export var discovery_sound: AudioStream
+@export_range(0.5, 2.0, 0.01) var discovery_sound_pitch: float = 1.0
+@export_range(-40.0, 12.0, 0.5) var discovery_sound_volume_db: float = 0.0
+
+
+
 @export_group("Item Discovery")
 @export var discovery_ui: ItemDiscoveryUI
 @export var preview_scene: PackedScene
@@ -113,7 +120,10 @@ func play_pickup_animation(hand_anim: AnimationPlayer) -> void:
 			preview_scale,
 			preview_offset,
 			tutorial_frames,
-			tutorial_animation
+			tutorial_animation,
+			discovery_sound,
+			discovery_sound_pitch,
+			discovery_sound_volume_db
 		)
 
 		await discovery_ui.presentation_finished

@@ -5,9 +5,12 @@
 [node name="FlareGunPreview" type="Node3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_nxnky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018941164, -0.09469926, 0.011037886)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018941164, -0.122187376, 0.011037886)
 
 [node name="shell" parent="Sketchfab_Scene/Sketchfab_model/Flaregun_FBX/RootNode" index="1"]
 visible = false
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.101941854, 0.9947904, 0, -0.9947904, -0.101941854, 0, 0.77714574, 0)
 
 [editable path="Sketchfab_Scene"]

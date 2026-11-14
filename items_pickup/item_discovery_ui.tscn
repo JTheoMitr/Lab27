@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnvp4o3xhrd5y"]
+[gd_scene load_steps=8 format=3 uid="uid://dnvp4o3xhrd5y"]
 
 [ext_resource type="Script" uid="uid://dpvf2mcfe4ks5" path="res://items_pickup/item_discovery_ui.gd" id="1_dksv3"]
 [ext_resource type="FontFile" uid="uid://mxako3pcxsj3" path="res://fonts/PixelTandysoft-0rJG.ttf" id="2_e5314"]
@@ -10,7 +10,7 @@ content_margin_left = 20.0
 content_margin_top = 20.0
 content_margin_right = 20.0
 content_margin_bottom = 20.0
-bg_color = Color(0.14406255, 0.14406255, 0.14406249, 1)
+bg_color = Color(0.049776644, 0.049776644, 0.049776636, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -26,12 +26,24 @@ content_margin_left = 8.0
 content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
-bg_color = Color(0.03529412, 0.078431375, 0.08627451, 1)
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.27450982, 0.49803922, 0.5254902, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5alm"]
+bg_color = Color(0, 0, 0, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.27450982, 0.49803922, 0.5254902, 1)
+border_color = Color(0, 0.8, 0.8, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -119,8 +131,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, 3)
 shadow_enabled = true
 
 [node name="TutorialVideo" type="AnimatedSprite2D" parent="Screen/CenterContainer/Panel/Content/ViewerFrame/ViewerContent"]
-position = Vector2(43, -6)
-scale = Vector2(0.452, 0.452)
+position = Vector2(45, -3)
+scale = Vector2(0.445, 0.445)
 sprite_frames = ExtResource("3_cp5nm")
 centered = false
 script = ExtResource("4_d5alm")
@@ -169,4 +181,11 @@ custom_minimum_size = Vector2(180, 44)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.3019608, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_e5314")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_d5alm")
 text = "Continue"
+
+[node name="ItemFoundSound" type="AudioStreamPlayer" parent="."]

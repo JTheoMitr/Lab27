@@ -109,7 +109,7 @@ func play_pickup_animation(hand_anim: AnimationPlayer) -> void:
 			"FLARE GUN",
 			"An emergency signal launcher. Its burning projectiles can illuminate dark areas.",
 			"FLARE GUN CONTROLS",
-			"Press 2 to equip or holster.\nHold V to aim down sights.\nLeft-click to fire.",
+			"Press 2 to equip or holster.\nHold Right-click (or V key) to aim down sights.\nLeft-click to fire.",
 			preview_scale,
 			preview_offset,
 			tutorial_frames,

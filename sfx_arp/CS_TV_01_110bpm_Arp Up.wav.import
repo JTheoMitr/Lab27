@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://br1ckwrawtc7g"
+path="res://.godot/imported/CS_TV_01_110bpm_Arp Up.wav-39ee136cf3ab1e957eae3038938a3e13.sample"
+
+[deps]
+
+source_file="res://sfx_arp/CS_TV_01_110bpm_Arp Up.wav"
+dest_files=["res://.godot/imported/CS_TV_01_110bpm_Arp Up.wav-39ee136cf3ab1e957eae3038938a3e13.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -23,6 +23,7 @@ signal presentation_finished
 @onready var instruction_body: Label = $Screen/CenterContainer/Panel/Content/InstructionStage/InstructionBody
 
 @onready var continue_button: Button = $Screen/CenterContainer/Panel/Content/ContinueButton
+@onready var item_found_sound: AudioStreamPlayer = $ItemFoundSound
 
 var preview_model: Node3D = null
 
@@ -66,11 +67,28 @@ func show_item(
 	model_scale: float = 1.0,
 	model_offset: Vector3 = Vector3.ZERO,
 	tutorial_frames: SpriteFrames = null,
-	tutorial_animation: StringName = &"default"
+	tutorial_animation: StringName = &"default",
+	item_sound: AudioStream = null,
+	item_sound_pitch: float = 1.0,
+	item_sound_volume_db: float = 0.0
 ) -> void:
 	if is_open:
 		return
+	
+	
+	
+	# Configure this item's discovery sound.
+	item_found_sound.stop()
 
+	item_found_sound.stream = item_sound
+	item_found_sound.pitch_scale = item_sound_pitch
+	item_found_sound.volume_db = item_sound_volume_db
+
+	if item_sound != null:
+		item_found_sound.play()
+
+
+	
 	is_open = true
 	showing_instructions = false
 	has_instructions = not controls_title.is_empty() or not controls_description.is_empty()
